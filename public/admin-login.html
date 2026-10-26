@@ -301,46 +301,6 @@
       to { transform: rotate(360deg); }
     }
 
-    /* Demo Helper Box */
-    .demo-hint-box {
-      margin-top: 24px;
-      padding: 14px 16px;
-      background: #f1f5f9;
-      border: 1px dashed #cbd5e1;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .demo-hint-text {
-      font-size: 0.78rem;
-      color: #475569;
-      line-height: 1.4;
-    }
-
-    .demo-hint-text strong {
-      color: var(--text-main);
-    }
-
-    .btn-autofill {
-      flex-shrink: 0;
-      background: #ffffff;
-      color: var(--accent-red);
-      border: 1px solid rgba(234, 40, 70, 0.3);
-      font-size: 0.76rem;
-      font-weight: 700;
-      padding: 6px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-
-    .btn-autofill:hover {
-      background: var(--accent-light);
-    }
-
     /* Footer links */
     .login-footer {
       text-align: center;
@@ -448,15 +408,6 @@
           <svg id="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </button>
       </form>
-
-      <!-- Quick Demo Credentials Box -->
-      <div class="demo-hint-box">
-        <div class="demo-hint-text">
-          Authorized Credentials:<br>
-          User ID: <strong>Mimori</strong> &bull; Pass: <strong>Demo123</strong>
-        </div>
-        <button type="button" class="btn-autofill" onclick="autofillDemo()">Autofill</button>
-      </div>
     </main>
 
     <!-- Footer link to website -->
@@ -476,12 +427,6 @@
         pwdInput.type = 'password';
         eyeIcon.innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>';
       }
-    }
-
-    function autofillDemo() {
-      document.getElementById('inp-username').value = 'Mimori';
-      document.getElementById('inp-password').value = 'Demo123';
-      showAlert('', false);
     }
 
     function showAlert(msg, isSuccess = false) {

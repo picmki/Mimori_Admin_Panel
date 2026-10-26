@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Global Concierge | Mimori Digital</title>
+  <meta name="description" content="Connect with Mimori Digital's event directors in London, Cotswolds, Manchester, Lake Como, and Dubai. Bespoke photobooths and interactive activations.">
+  <link rel="stylesheet" href="/css/style.css?v=20261014_contact_v1">
+  <link rel="icon" type="image/svg+xml" href="/images/Fav Icon.svg">
+  <style>
+    .contact-hero {
+      padding: 140px 0 60px 0;
+      background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
+      text-align: center;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .contact-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(227, 29, 28, 0.08);
+      color: var(--primary);
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+    .contact-hero-title {
+      font-size: clamp(2.4rem, 4.8vw, 3.6rem);
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+    }
+    .contact-hero-sub {
+      font-size: 1.12rem;
+      color: #64748B;
+      max-width: 660px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* Layout */
+    .contact-main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 50px;
+      padding: 70px 0;
+      align-items: start;
+    }
+
+    /* Left Column Details */
+    .contact-info-card {
+      background: #F8FAFC;
+      border: 1px solid var(--border-light);
+      border-radius: 24px;
+      padding: 36px 32px;
+      margin-bottom: 30px;
+    }
+    .contact-info-card h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .contact-detail-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      align-items: flex-start;
+    }
+    .contact-detail-item:last-child {
+      margin-bottom: 0;
+    }
+    .contact-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--primary);
+    }
+    .contact-detail-text h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0F172A;
+      margin-bottom: 4px;
+    }
+    .contact-detail-text p, .contact-detail-text a {
+      font-size: 0.92rem;
+      color: #64748B;
+      line-height: 1.5;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .contact-detail-text a:hover {
+      color: var(--primary);
+    }
+
+    /* WhatsApp Direct Action Card */
+    .whatsapp-direct-card {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+    .whatsapp-direct-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #25D366;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 10px 18px;
+      border-radius: 9999px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .whatsapp-direct-btn:hover {
+      background: #20bd5a;
+      transform: translateY(-2px);
+    }
+
+    /* Live Fleet Dispatch Tracker */
+    .fleet-status-widget {
+      background: #0B0E14;
+      color: #FFFFFF;
+      border-radius: 24px;
+      padding: 32px 28px;
+    }
+    .fleet-widget-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .fleet-status-pulse {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 10px #10B981;
+      display: inline-block;
+      animation: pulseGreen 1.5s infinite;
+    }
+    @keyframes pulseGreen {
+      0% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .fleet-desc {
+      font-size: 0.85rem;
+      color: #94A3B8;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .fleet-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .fleet-input {
+      background: #1E293B;
+      border: 1px solid #334155;
+      color: #FFFFFF;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 0.85rem;
+      width: 100%;
+    }
+    .fleet-check-btn {
+      width: 100%;
+      background: var(--primary);
+      color: #FFFFFF;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .fleet-check-btn:hover {
+      background: #c41615;
+    }
+    .fleet-result-box {
+      margin-top: 14px;
+      padding: 12px 14px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 8px;
+      font-size: 0.82rem;
+      color: #34D399;
+      display: none;
+    }
+
+    /* Right Column Form */
+    .contact-form-container {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 24px;
+      padding: 44px 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+    .contact-form-header {
+      margin-bottom: 28px;
+    }
+    .contact-form-header h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .contact-form-header p {
+      font-size: 0.95rem;
+      color: #64748B;
+      line-height: 1.5;
+    }
+    .contact-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 6px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      background: #FFFFFF;
+      font-size: 0.95rem;
+      color: #0F172A;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      font-family: inherit;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(227, 29, 28, 0.12);
+    }
+    .btn-submit-contact {
+      width: 100%;
+      background: var(--primary);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 24px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: background 0.2s ease, transform 0.2s ease;
+      box-shadow: 0 4px 14px rgba(227, 29, 28, 0.25);
+    }
+    .btn-submit-contact:hover {
+      background: #c41615;
+      transform: translateY(-1px);
+    }
+
+    /* Hubs Section */
+    .hubs-section {
+      padding: 80px 0;
+      background: #F8FAFC;
+      border-top: 1px solid var(--border-light);
+    }
+    .hubs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .hub-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 24px;
+      transition: transform 0.2s ease;
+    }
+    .hub-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+    }
+    .hub-city {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 6px;
+    }
+    .hub-address {
+      font-size: 0.85rem;
+      color: #64748B;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+    .hub-link {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .contact-main-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .contact-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .contact-form-container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Site Header -->
+  <header class="site-header scrolled">
+    <div class="container nav-container">
+      <a href="/" class="brand-logo" aria-label="Mimori">
+        <img src="/images/Header Logo.svg" onerror="this.onerror=null;this.src='/images/header-logo.svg';" alt="Mimori - Look. Book. Enjoy" class="header-logo-img">
+      </a>
+
+      <ul class="nav-links">
+        <li class="nav-item-has-megamenu">
+          <a href="/services" class="nav-link" id="nav-booths-trigger">
+            <span>Our Booths</span>
+            <svg class="nav-caret" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="1 1 5 5 9 1"></polyline>
+            </svg>
+          </a>
+          
+          <!-- MEGA MENU DROPDOWN PANEL (Matching User Specification) -->
+          <div class="megamenu-dropdown-panel" id="megamenu-dropdown" aria-label="Our Booths Menu">
+            <!-- CATEGORY TABS -->
+            <div class="megamenu-tabs-row" role="tablist">
+              <button class="megamenu-tab-btn active" data-tab="photobooth" type="button">Photo Booth</button>
+              <button class="megamenu-tab-btn" data-tab="videobooth" type="button">Video Booth</button>
+              <button class="megamenu-tab-btn" data-tab="customtech" type="button">Custom Tech Development</button>
+              <button class="megamenu-tab-btn" data-tab="digitalengagement" type="button">Digital Engagement Activities</button>
+              <button class="megamenu-tab-btn" data-tab="argame" type="button">AR Game</button>
+            </div>
+
+            <!-- TAB PANES -->
+            <div class="megamenu-body">
+              <!-- PANE 1: PHOTO BOOTH (ACTIVE) -->
+              <div class="megamenu-tab-pane active" id="megamenu-pane-photobooth">
+                <div class="megamenu-links-cols">
+                  <div class="megamenu-col">
+                    <a href="/service-detail?id=ai-photo-booth" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">AI Photo Booth</span>
+                    </a>
+                    <a href="/service-detail?id=caricature-photo-booth" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Caricature Photo Booth</span>
+                    </a>
+                    <a href="/service-detail?id=green-screen-booth" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Green Screen Photo Booth</span>
+                    </a>
+                    <a href="/service-detail?id=photo-booth-ideas" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Photo Booth Ideas</span>
+                    </a>
+                    <a href="/service-detail?id=strip-photo-booth" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Strip Photo Booth</span>
+                    </a>
+                  </div>
+                  <div class="megamenu-col">
+                    <a href="/service-detail?id=ar-photo-booth" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">AR Photo Booth</span>
+                    </a>
+                    <a href="/service-detail?id=clone-photo-booth" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Clone Photo Booth</span>
+                    </a>
+                    <a href="/service-detail?id=magazine-cover-booth" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Magazine Photo Booth</span>
+                    </a>
+                    <a href="/service-detail?id=selfie-photo-booth" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Selfie Photo Booth</span>
+                    </a>
+                    <a href="/service-detail?id=word-cloud-booth" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Word Cloud Photo Booth</span>
+                    </a>
+                  </div>
+                  <div class="megamenu-col">
+                    <a href="/service-detail?id=bobble-head-booth" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Bobble Head Photo Booths</span>
+                    </a>
+                    <a href="/service-detail?id=flip-book-booth" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Flip Book</span>
+                    </a>
+                    <a href="/service-detail?id=mirror-photo-booth" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Mirror Photo Booth</span>
+                    </a>
+                    <a href="/service-detail?id=signature-photo-booth" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Signature Photo Booth</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="megamenu-preview-box">
+                  <img src="/images/megamenu_photobooth_featured.jpg" alt="Photo Booth Experience" loading="lazy">
+                </div>
+              </div>
+
+              <!-- PANE 2: VIDEO BOOTH -->
+              <div class="megamenu-tab-pane" id="megamenu-pane-videobooth">
+                <div class="megamenu-links-cols">
+                  <div class="megamenu-col">
+                    <a href="/service-detail?id=360-video-booth" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">360 Video Booth</span>
+                    </a>
+                    <a href="/service-detail?id=glambot-highspeed" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Glambot High-Speed Camera</span>
+                    </a>
+                    <a href="/service-detail?id=slow-mo-video-booth" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Slow-Mo Video Booth</span>
+                    </a>
+                    <a href="/service-detail?id=bullet-time-matrix" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">180 Matrix Bullet Time</span>
+                    </a>
+                  </div>
+                  <div class="megamenu-col">
+                    <a href="/service-detail?id=vogue-tunnel-booth" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Vogue LED Tunnel</span>
+                    </a>
+                    <a href="/service-detail?id=cinematic-video-walkway" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Cinematic Video Walkway</span>
+                    </a>
+                    <a href="/service-detail?id=fx-green-screen-video" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Dynamic FX Video Booth</span>
+                    </a>
+                    <a href="/service-detail?id=vintage-audio-guestbook" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Audio & Video Guestbook</span>
+                    </a>
+                  </div>
+                  <div class="megamenu-col">
+                    <a href="/service-detail?id=live-stream-hub" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Live Event Broadcast Studio</span>
+                    </a>
+                    <a href="/service-detail?id=testimonial-video-booth" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Executive Testimonial Booth</span>
+                    </a>
+                    <a href="/service-detail?id=multi-camera-rig" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Synchronized Multi-Cam Array</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="megamenu-preview-box">
+                  <img src="/images/hero_booth_glambot.jpg" alt="Video Booth Experience" loading="lazy">
+                </div>
+              </div>
+
+              <!-- PANE 3: CUSTOM TECH DEVELOPMENT -->
+              <div class="megamenu-tab-pane" id="megamenu-pane-customtech">
+                <div class="megamenu-links-cols">
+                  <div class="megamenu-col">
+                    <a href="/service-detail?id=ai-portrait-synthesis" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">AI Portrait Synthesis</span>
+                    </a>
+                    <a href="/service-detail?id=holographic-display-fans" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">3D Holographic Fans</span>
+                    </a>
+                    <a href="/service-detail?id=face-tracking-kiosk" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Real-Time Facial Tracking</span>
+                    </a>
+                    <a href="/service-detail?id=rfid-nfc-sync" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">RFID & NFC Photo Sync</span>
+                    </a>
+                  </div>
+                  <div class="megamenu-col">
+                    <a href="/service-detail?id=touch-interactive-wall" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Multi-Touch Interactive Walls</span>
+                    </a>
+                    <a href="/service-detail?id=custom-hardware-kiosk" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Bespoke Hardware Fabrication</span>
+                    </a>
+                    <a href="/service-detail?id=face-swap-ai" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Instant Face-Swap Technology</span>
+                    </a>
+                    <a href="/service-detail?id=live-cloud-render" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Cloud AI Live Renderer</span>
+                    </a>
+                  </div>
+                  <div class="megamenu-col">
+                    <a href="/service-detail?id=virtual-avatar-kiosk" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Virtual 3D Avatar Kiosks</span>
+                    </a>
+                    <a href="/service-detail?id=brand-micromobility" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Mobile Roaming Tech Kits</span>
+                    </a>
+                    <a href="/service-detail?id=interactive-touch-table" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Smart Touch Matrix Tables</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="megamenu-preview-box">
+                  <img src="/images/hero_booth_ai_mosaic.jpg" alt="Custom Tech Development" loading="lazy">
+                </div>
+              </div>
+
+              <!-- PANE 4: DIGITAL ENGAGEMENT ACTIVITIES -->
+              <div class="megamenu-tab-pane" id="megamenu-pane-digitalengagement">
+                <div class="megamenu-links-cols">
+                  <div class="megamenu-col">
+                    <a href="/service-detail?id=digital-mosaic-wall" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Digital Photo Mosaic Wall</span>
+                    </a>
+                    <a href="/service-detail?id=live-social-feed" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Live Social Media Wall</span>
+                    </a>
+                    <a href="/service-detail?id=spin-wheel-gamification" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Digital Spin-the-Wheel</span>
+                    </a>
+                    <a href="/service-detail?id=scratch-win-kiosk" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Interactive Scratch & Win</span>
+                    </a>
+                  </div>
+                  <div class="megamenu-col">
+                    <a href="/service-detail?id=ipad-roamer-photographers" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Roaming iPad Photographers</span>
+                    </a>
+                    <a href="/service-detail?id=digital-slingshot" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Virtual Photo Slingshot</span>
+                    </a>
+                    <a href="/service-detail?id=live-event-polling" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Live Polling & Quiz Kiosk</span>
+                    </a>
+                    <a href="/service-detail?id=instant-qr-gallery" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Instant QR Code AirDrop Station</span>
+                    </a>
+                  </div>
+                  <div class="megamenu-col">
+                    <a href="/service-detail?id=hashtag-print-station" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Hashtag Live Print Station</span>
+                    </a>
+                    <a href="/service-detail?id=digital-signature-canvas" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Digital Signature Graffiti Wall</span>
+                    </a>
+                    <a href="/service-detail?id=ar-filter-mirror" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">AR Social Filter Mirror</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="megamenu-preview-box">
+                  <img src="/images/hero_booth_vintage_audio.jpg" alt="Digital Engagement Activities" loading="lazy">
+                </div>
+              </div>
+
+              <!-- PANE 5: AR GAME -->
+              <div class="megamenu-tab-pane" id="megamenu-pane-argame">
+                <div class="megamenu-links-cols">
+                  <div class="megamenu-col">
+                    <a href="/service-detail?id=gesture-ar-game" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Gesture-Controlled AR Game</span>
+                    </a>
+                    <a href="/service-detail?id=virtual-product-tryon" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Virtual Product Try-On</span>
+                    </a>
+                    <a href="/service-detail?id=ar-sports-simulator" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">AR Sports & Soccer Simulator</span>
+                    </a>
+                    <a href="/service-detail?id=motion-boxing-game" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Motion-Sensor Boxing Arena</span>
+                    </a>
+                  </div>
+                  <div class="megamenu-col">
+                    <a href="/service-detail?id=ar-dance-off" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">AR Dance-Off Contest</span>
+                    </a>
+                    <a href="/service-detail?id=immersive-3d-portal" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Immersive 3D Space Portal</span>
+                    </a>
+                    <a href="/service-detail?id=webar-treasure-hunt" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Interactive AR Treasure Hunt</span>
+                    </a>
+                    <a href="/service-detail?id=mixed-reality-stage" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Mixed Reality Stage Arena</span>
+                    </a>
+                  </div>
+                  <div class="megamenu-col">
+                    <a href="/service-detail?id=holo-avatar-challenge" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Holo-Avatar Challenge</span>
+                    </a>
+                    <a href="/service-detail?id=virtual-runway-experience" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">AR Virtual Fashion Runway</span>
+                    </a>
+                    <a href="/service-detail?id=touchless-kiosk-gaming" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Touchless Brand Game Kiosk</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="megamenu-preview-box">
+                  <img src="/images/service_ar.webp" alt="AR Game Experience" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="/#destinations" class="nav-link">Experiences</a></li>
+        <li><a href="/showcase" class="nav-link">Gallery</a></li>
+        <li><a href="/about" class="nav-link">Abouts</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#booking-modal" class="header-btn-book btn-book-modal" onclick="openBookingModal(); return false;">
+          <span>Book Your Event</span>
+          <span class="btn-arrow-circle">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </a>
+        <button class="circular-menu-btn mobile-toggle" aria-label="Toggle Navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav">
+    <ul class="mobile-nav-links">
+      <li><a href="/services">Our Booths</a></li>
+      <li><a href="/#destinations">Experiences</a></li>
+      <li><a href="/showcase">Gallery</a></li>
+      <li><a href="/about">Abouts</a></li>
+      <li><a href="/contact">Contact Us</a></li>
+    </ul>
+    <a href="#booking-modal" class="header-btn-book btn-book-modal" style="width: 100%; justify-content: center;" onclick="openBookingModal(); return false;">
+      <span>Book Your Event</span>
+      <span class="btn-arrow-circle">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </span>
+    </a>
+  </div>
+
+  <main>
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+      <div class="container">
+        <div class="contact-badge">Direct Concierge &amp; Dispatch</div>
+        <h1 class="contact-hero-title">Masters of Connection</h1>
+        <p class="contact-hero-sub">
+          Connect directly with our event production directors in London, Cotswolds, Manchester, Lake Como &amp; Dubai. We guarantee a tailored proposal within 2 hours.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section>
+      <div class="container">
+        <div class="contact-main-grid">
+
+          <!-- Left Column: Details & Live Dispatch -->
+          <div>
+            <!-- Direct WhatsApp Action -->
+            <div class="whatsapp-direct-card">
+              <div>
+                <h4 style="font-size: 1.05rem; font-weight: 800; color: #166534; margin-bottom: 4px;">Instant WhatsApp Concierge</h4>
+                <p style="font-size: 0.85rem; color: #15803D;">Direct messaging with senior event manager</p>
+              </div>
+              <a href="https://wa.me/916786981769?text=Hello%20Mimori%20Digital%2C%20I%20would%20like%20to%20enquire%20about%20booking%20a%20photobooth." 
+                 target="_blank" 
+                 rel="noopener" 
+                 class="whatsapp-direct-btn">
+                <span>Chat Now</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.947.556 3.766 1.523 5.309L2 22l4.82-1.488a9.986 9.986 0 005.211 1.52c5.536 0 10.031-4.495 10.031-10.031S17.567 2 12.031 2zm5.834 14.17c-.244.686-1.42 1.328-1.957 1.385-.494.053-1.127.076-3.238-.8-2.697-1.118-4.423-3.864-4.557-4.043-.134-.179-1.09-1.45-1.09-2.766 0-1.316.689-1.961.933-2.227.244-.266.533-.333.711-.333.178 0 .356.002.511.01.167.009.39-.064.611.467.222.533.756 1.844.822 1.978.067.133.111.289.022.467-.089.178-.133.289-.267.444-.133.156-.28.348-.4.467-.133.133-.272.278-.117.544.156.267.689 1.133 1.478 1.833 1.016.903 1.872 1.182 2.139 1.315.267.133.422.111.578-.067.156-.178.667-.778.844-1.044.178-.267.356-.222.6-.133.244.089 1.556.733 1.822.867.267.133.444.2.511.311.067.111.067.644-.178 1.33z"/>
+                </svg>
+              </a>
+            </div>
+
+            <!-- London Headquarters -->
+            <div class="contact-info-card">
+              <h3>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>Global Headquarters</span>
+              </h3>
+
+              <div class="contact-detail-item">
+                <div class="contact-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                </div>
+                <div class="contact-detail-text">
+                  <h4>Mayfair Production Studio</h4>
+                  <p>48 Berkeley Square, Mayfair<br>London W1J 5AW, United Kingdom</p>
+                </div>
+              </div>
+
+              <div class="contact-detail-item">
+                <div class="contact-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+                <div class="contact-detail-text">
+                  <h4>Dedicated Telephone</h4>
+                  <p><a href="tel:+442079460912">+44 20 7946 0912</a> (24/7 Production Line)</p>
+                </div>
+              </div>
+
+              <div class="contact-detail-item">
+                <div class="contact-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div class="contact-detail-text">
+                  <h4>Concierge Email</h4>
+                  <p><a href="mailto:concierge@mimoridigital.com">concierge@mimoridigital.com</a></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Live Fleet Dispatch Tracker -->
+            <div class="fleet-status-widget">
+              <div class="fleet-widget-title">
+                <span class="fleet-status-pulse"></span>
+                <span>Live Fleet Availability</span>
+              </div>
+              <p class="fleet-desc">
+                Real-time connection with our Mayfair, Cotswolds, and Lake Como warehouse dispatch management systems.
+              </p>
+              <form id="fleet-tracker-form">
+                <div class="fleet-form-row">
+                  <select class="fleet-input" id="fleet-hub" required>
+                    <option value="London">London &amp; Home Counties</option>
+                    <option value="Cotswolds">Oxfordshire &amp; Cotswolds</option>
+                    <option value="Manchester">Manchester &amp; Cheshire</option>
+                    <option value="Como">Lake Como &amp; Europe</option>
+                    <option value="Dubai">Dubai &amp; UAE</option>
+                  </select>
+                  <input type="date" class="fleet-input" id="fleet-date" required>
+                </div>
+                <button type="submit" class="fleet-check-btn" id="fleet-submit-btn">Check Dispatch Availability</button>
+              </form>
+              <div class="fleet-result-box" id="fleet-result">
+                ✓ Available: 4 Premium Rigs, 2 Technical Attendants &amp; Backup Van ready for dispatch.
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Bespoke Enquiry Form -->
+          <div class="contact-form-container">
+            <div class="contact-form-header">
+              <h2>Request a Bespoke Proposal</h2>
+              <p>Please provide your event parameters below. Our concierge team will review calendar logistics and transmit a comprehensive quote within 2 hours.</p>
+            </div>
+
+            <form id="contact-page-form">
+              <div class="contact-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="contact-name">Full Name*</label>
+                  <input type="text" id="contact-name" class="form-control" placeholder="e.g. Lady Evelyn Montgomery" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-email">Email Address*</label>
+                  <input type="email" id="contact-email" class="form-control" placeholder="e.g. evelyn@luxuryevents.com" required>
+                </div>
+              </div>
+
+              <div class="contact-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="contact-phone">Phone Number*</label>
+                  <input type="tel" id="contact-phone" class="form-control" placeholder="+44 7700 900077" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-date">Event Date*</label>
+                  <input type="date" id="contact-date" class="form-control" required>
+                </div>
+              </div>
+
+              <div class="contact-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="contact-city">Event Location / City*</label>
+                  <select id="contact-city" class="form-control" required>
+                    <option value="" disabled selected>Select Region / Hub</option>
+                    <option value="London">London (Central &amp; Greater)</option>
+                    <option value="Cotswolds">Oxfordshire &amp; Cotswolds</option>
+                    <option value="Berkshire">Berkshire &amp; Surrey</option>
+                    <option value="Manchester">Manchester &amp; Cheshire</option>
+                    <option value="Edinburgh">Edinburgh &amp; Scotland</option>
+                    <option value="Lake Como">Lake Como &amp; Italy</option>
+                    <option value="Dubai">Dubai &amp; UAE</option>
+                    <option value="International">Other International Destination</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-experience">Preferred Experience*</label>
+                  <select id="contact-experience" class="form-control" required>
+                    <option value="" disabled selected>Choose Activation</option>
+                    <option value="The Signature Studio Photobooth">Signature Studio Photobooth</option>
+                    <option value="360° Cinematic Video Booth">360° Cinematic Glambot</option>
+                    <option value="The B&W Kardashian Glam Booth">Kardashian Glam B&amp;W Suite</option>
+                    <option value="Vintage Audio Guestbook">Vintage 1970s Audio Guestbook</option>
+                    <option value="Custom Immersive & AI Set Experience">AR Digital Mirror Experience</option>
+                    <option value="Corporate & Brand Activation Booth">AI Live Mosaic Wall &amp; Touch Games</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="contact-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="contact-venue">Venue Name</label>
+                  <input type="text" id="contact-venue" class="form-control" placeholder="e.g. The Savoy / Private Residence">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-guests">Estimated Guests</label>
+                  <input type="number" id="contact-guests" class="form-control" placeholder="e.g. 250">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-notes">Custom Branding &amp; Special Requests</label>
+                <textarea id="contact-notes" class="form-control" rows="4" placeholder="Detail any backdrop styles, vinyl wraps, print template monograms, or special arrival timing requirements..."></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit-contact" id="contact-submit-btn">
+                <span>Submit VIP Proposal Request</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Dispatch Hubs Section -->
+    <section class="hubs-section">
+      <div class="container">
+        <div style="text-align: center; max-width: 650px; margin: 0 auto;">
+          <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.82rem;">Territories &amp; Availability</span>
+          <h2 style="font-size: 2.2rem; font-weight: 800; color: #0F172A; margin: 10px 0 14px 0;">Permanent Dispatch Hubs</h2>
+          <p style="font-size: 1rem; color: #64748B; line-height: 1.6;">
+            Operating direct fleets from our permanent hubs ensures no third-party courier delays, dedicated company attendants, and guaranteed 90-minute pre-call setup.
+          </p>
+        </div>
+
+        <div class="hubs-grid">
+          <div class="hub-box">
+            <h3 class="hub-city">London Mayfair HQ</h3>
+            <p class="hub-address">48 Berkeley Square, Mayfair, London W1J 5AW<br>Serving Central London &amp; Home Counties</p>
+            <a href="#" class="hub-link" onclick="openBookingModal('The Signature Studio Photobooth'); return false;">
+              <span>Check London Availability &rarr;</span>
+            </a>
+          </div>
+
+          <div class="hub-box">
+            <h3 class="hub-city">Oxfordshire &amp; Cotswolds</h3>
+            <p class="hub-address">Chipping Norton Estate Studios, OX7 5AB<br>Serving Blenheim, Soho Farmhouse &amp; Daylesford</p>
+            <a href="#" class="hub-link" onclick="openBookingModal('Vintage Audio Guestbook'); return false;">
+              <span>Check Cotswolds Availability &rarr;</span>
+            </a>
+          </div>
+
+          <div class="hub-box">
+            <h3 class="hub-city">Manchester &amp; North</h3>
+            <p class="hub-address">Spinningfields Plaza, Manchester M3 3AP<br>Serving Cheshire, Lake District &amp; Leeds</p>
+            <a href="#" class="hub-link" onclick="openBookingModal('360° Cinematic Video Booth'); return false;">
+              <span>Check Manchester Availability &rarr;</span>
+            </a>
+          </div>
+
+          <div class="hub-box">
+            <h3 class="hub-city">Lake Como &amp; Europe</h3>
+            <p class="hub-address">Via Regina, 22010 Tremezzina, Como, Italy<br>Serving Milan, Lake Como, Tuscany &amp; Swiss Alps</p>
+            <a href="#" class="hub-link" onclick="openBookingModal('The B&W Kardashian Glam Booth'); return false;">
+              <span>Check Europe Availability &rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-banner">
+        <div class="footer-cta-text">
+          <p>Ready to create unforgettable moments?</p>
+          <h3>Let's curate your event activation</h3>
+        </div>
+        <button type="button" class="btn btn-primary btn-lg" onclick="openBookingModal()">
+          <span>Book Your Event Experience</span>
+        </button>
+      </div>
+
+      <div class="footer-columns-grid">
+        <div>
+          <a href="/" class="footer-logo-wrap" aria-label="Mimori">
+            <img src="/images/Footer Logo.svg" onerror="this.onerror=null;this.src='/images/footer-logo.svg';" alt="Mimori - Look. Book. Enjoy" class="footer-logo-img">
+          </a>
+          <p style="color: #94A3B8; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+            Premier photobooths, 360° video entertainment, and digital event registration for luxury celebrations worldwide.
+          </p>
+          <p style="color: #CBD5E1; font-size: 0.85rem;">📞 +44 20 7946 0912</p>
+          <p style="color: #CBD5E1; font-size: 0.85rem;">✉️ concierge@mimoridigital.com</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Photo Booth Products</h5>
+          <ul class="footer-links-list">
+            <li><a href="/services">Signature Studio Booth</a></li>
+            <li><a href="/services">B&amp;W Kardashian Glam</a></li>
+            <li><a href="/services">Vintage Audio Guestbook</a></li>
+            <li><a href="/services">AR Digital Mirror</a></li>
+            <li><a href="/services">AI Mosaic Wall</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul class="footer-links-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">All Services</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/showcase">Showcase</a></li>
+            <li><a href="/contact">Contact Concierge</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Coverage Hubs</h5>
+          <ul class="footer-links-list">
+            <li><a href="/contact">London Mayfair HQ</a></li>
+            <li><a href="/contact">Oxfordshire &amp; Cotswolds</a></li>
+            <li><a href="/contact">Manchester &amp; North</a></li>
+            <li><a href="/contact">Lake Como &amp; Europe</a></li>
+            <li><a href="/contact">Dubai &amp; Middle East</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p>&copy; 2026 Mimori Digital. All rights reserved.</p>
+        <div style="display: flex; gap: 20px;">
+          <a href="/contact">Privacy Policy</a>
+          <a href="/contact">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Booking Request Modal Popup -->
+  <div class="booking-modal-overlay" id="booking-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="booking-modal-card">
+      <button type="button" class="booking-modal-close" id="booking-modal-close" aria-label="Close modal">&times;</button>
+      <div id="modal-form-view">
+        <div class="booking-modal-header">
+          <span class="booking-modal-pill">VIP Reservation</span>
+          <h2 class="booking-modal-title" id="modal-title">Request Your Experience</h2>
+          <p class="booking-modal-subtitle">Tell us about your event. We will verify hardware availability and prepare a bespoke proposal within 2 hours.</p>
+        </div>
+
+        <form id="modal-booking-form">
+          <div class="booking-form-grid">
+            <div class="booking-form-row">
+              <input type="text" id="modal-name" class="booking-input" placeholder="Full Name*" required>
+              <input type="email" id="modal-email" class="booking-input" placeholder="Email Address*" required>
+            </div>
+            <div class="booking-form-row">
+              <input type="tel" id="modal-phone" class="booking-input" placeholder="Phone Number (with Country Code)*" required>
+              <input type="date" id="modal-date" class="booking-input" required>
+            </div>
+            <div class="booking-form-row">
+              <select id="modal-city" class="booking-input" required>
+                <option value="" disabled selected>Choose Event City*</option>
+                <option value="London">London (Central &amp; Greater)</option>
+                <option value="Cotswolds">Oxfordshire &amp; Cotswolds</option>
+                <option value="Berkshire">Berkshire &amp; Surrey</option>
+                <option value="Manchester">Manchester &amp; Cheshire</option>
+                <option value="Edinburgh">Edinburgh &amp; Scotland</option>
+                <option value="Lake Como">Lake Como &amp; Europe</option>
+                <option value="Dubai">Dubai &amp; UAE</option>
+                <option value="Other">Other Global Destination</option>
+              </select>
+              <select id="modal-booking-product" class="booking-input" required>
+                <option value="" disabled selected>Preferred Booth Setup*</option>
+                <option value="The Signature Studio Photobooth">Signature Studio Photobooth</option>
+                <option value="360° Cinematic Video Booth">360° Cinematic Glambot</option>
+                <option value="The B&W Kardashian Glam Booth">Kardashian Glam B&amp;W Booth</option>
+                <option value="Vintage Audio Guestbook">Vintage 1970s Audio Guestbook</option>
+                <option value="Custom Immersive & AI Set Experience">AR Digital Mirror Activation</option>
+                <option value="Corporate & Brand Activation Booth">AI Live Mosaic Wall &amp; Touch Games</option>
+              </select>
+            </div>
+            <textarea id="modal-notes" class="booking-input" rows="3" placeholder="Venue name, guest count, estimated hours, custom backdrop requests..."></textarea>
+            <button type="submit" class="booking-modal-submit">
+              <span>Submit VIP Booking Request</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div id="modal-success-view" class="booking-modal-success">
+        <div class="success-icon">✓</div>
+        <h3 style="font-size: 1.7rem; font-weight: 800; color: #0F172A; margin-bottom: 8px;">Reservation Request Sent!</h3>
+        <p style="color: #64748B; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+          Thank you! Our concierge team has received your event details. We are checking calendar availability and will email your tailored quote shortly.
+        </p>
+        <button type="button" class="btn btn-secondary btn-sm" onclick="closeBookingModal()">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/916786981769?text=Hello%20Mimori%20Digital%2C%20I%20would%20like%20to%20enquire%20about%20booking%20a%20photobooth." 
+     class="whatsapp-float-btn" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Chat with Mimori Concierge on WhatsApp">
+    <span class="whatsapp-tooltip">Chat on WhatsApp (+91 67869 81769)</span>
+    <svg viewBox="0 0 24 24" width="58" height="58">
+      <path fill="#25D366" d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.947.556 3.766 1.523 5.309L2 22l4.82-1.488a9.986 9.986 0 005.211 1.52c5.536 0 10.031-4.495 10.031-10.031S17.567 2 12.031 2z"/>
+      <path fill="#FFFFFF" d="M17.865 16.17c-.244.686-1.42 1.328-1.957 1.385-.494.053-1.127.076-3.238-.8-2.697-1.118-4.423-3.864-4.557-4.043-.134-.179-1.09-1.45-1.09-2.766 0-1.316.689-1.961.933-2.227.244-.266.533-.333.711-.333.178 0 .356.002.511.01.167.009.39-.064.611.467.222.533.756 1.844.822 1.978.067.133.111.289.022.467-.089.178-.133.289-.267.444-.133.156-.28.348-.4.467-.133.133-.272.278-.117.544.156.267.689 1.133 1.478 1.833 1.016.903 1.872 1.182 2.139 1.315.267.133.422.111.578-.067.156-.178.667-.778.844-1.044.178-.267.356-.222.6-.133.244.089 1.556.733 1.822.867.267.133.444.2.511.311.067.111.067.644-.178 1.33z"/>
+    </svg>
+  </a>
+
+  <script src="/js/app.js?v=20261014_contact_v1"></script>
+  <script>
+    // Fleet Dispatch Live Checker
+    document.addEventListener('DOMContentLoaded', () => {
+      const fleetForm = document.getElementById('fleet-tracker-form');
+      const fleetBtn = document.getElementById('fleet-submit-btn');
+      const fleetResult = document.getElementById('fleet-result');
+      const fleetHub = document.getElementById('fleet-hub');
+
+      if (fleetForm && fleetBtn && fleetResult) {
+        fleetForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          fleetBtn.textContent = 'Verifying Hardware & Crew...';
+          fleetBtn.disabled = true;
+
+          setTimeout(() => {
+            const hubName = fleetHub ? fleetHub.options[fleetHub.selectedIndex].text : 'Selected Region';
+            fleetResult.style.display = 'block';
+            fleetResult.innerHTML = `✓ <strong>${hubName}</strong>: Hardware rigs and crew certified ready for dispatch on requested date.`;
+            fleetBtn.textContent = 'Check Another Date';
+            fleetBtn.disabled = false;
+          }, 800);
+        });
+      }
+
+      // Contact Page Form submission
+      const contactForm = document.getElementById('contact-page-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const submitBtn = document.getElementById('contact-submit-btn');
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>Transmitting Request...</span>';
+          }
+
+          setTimeout(() => {
+            contactForm.innerHTML = `
+              <div style="text-align: center; padding: 40px 20px;">
+                <div class="success-icon" style="width: 60px; height: 60px; background: rgba(16, 185, 129, 0.1); color: #10B981; border-radius: 0; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 20px auto;">✓</div>
+                <h3 style="font-size: 1.8rem; font-weight: 800; color: #0F172A; margin-bottom: 12px;">Enquiry Received</h3>
+                <p style="color: #64748B; font-size: 1.05rem; line-height: 1.6; max-width: 480px; margin: 0 auto 24px auto;">
+                  Thank you! Our senior event manager has received your submission and will contact you within 45 minutes with a bespoke deck and availability confirmation.
+                </p>
+                <a href="https://wa.me/916786981769?text=Hello%20Mimori%20Digital%2C%20I%20have%20submitted%20my%20enquiry%20form." target="_blank" rel="noopener" class="whatsapp-direct-btn">
+                  <span>Follow Up via WhatsApp</span>
+                </a>
+              </div>
+            `;
+            if (typeof showToast === 'function') {
+              showToast('✨ Proposal Request Sent! Senior event manager notified.', 'success');
+            }
+          }, 900);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

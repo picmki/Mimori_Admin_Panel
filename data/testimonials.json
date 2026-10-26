@@ -1,0 +1,42 @@
+[
+  {
+    "id": "test-1",
+    "name": "Camilla & Harrison Vance",
+    "role": "Bride & Groom",
+    "event": "Wedding at Hedsor House, Buckinghamshire",
+    "date": "August 2025",
+    "rating": 5,
+    "quote": "Mimori Digital completely elevated our wedding. The Glam Booth made everyone look like Hollywood royalty. Guests are still messaging us asking how their skin looked so flawless in the prints! The queue never stopped, and the attendants were so gracious.",
+    "avatar": "CV"
+  },
+  {
+    "id": "test-2",
+    "name": "Julian Montgomery",
+    "role": "Head of Global Events",
+    "event": "Fintech Summit 2025 (1,400 Attendees)",
+    "date": "November 2025",
+    "rating": 5,
+    "quote": "Executing corporate activations at scale is stressful, but Mimori was by far the easiest vendor we worked with. Flawless hardware reliability, stunning custom UI with our sponsors' branding, and we captured over 850 qualified opt-in leads in 6 hours.",
+    "avatar": "JM"
+  },
+  {
+    "id": "test-3",
+    "name": "Sienna Thorne",
+    "role": "Brand Marketing Director",
+    "event": "Luxury Fragrance Launch, Covent Garden",
+    "date": "December 2025",
+    "rating": 5,
+    "quote": "The 360° video booth was the centerpiece of our launch party. The slow-mo video quality with custom music was viral on TikTok within minutes. If you want a photobooth that feels truly luxurious rather than tacky, Mimori is in a league of its own.",
+    "avatar": "ST"
+  },
+  {
+    "id": "test-4",
+    "name": "Lord & Lady Harrington",
+    "role": "Hosts",
+    "event": "Silver Wedding Anniversary at The Ritz London",
+    "date": "January 2026",
+    "rating": 5,
+    "quote": "The vintage audio guestbook telephone was such a touching highlight. Listening back to voice notes from dear friends — some tearful, some hilarious — is a treasure we will keep forever. The hardware and booth setup looked exquisite in the Marie Antoinette suite.",
+    "avatar": "LH"
+  }
+]

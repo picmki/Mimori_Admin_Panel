@@ -1,0 +1,2209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mimori Digital | Event Registration System, Photo & Video Booth Rental</title>
+  <meta name="description" content="Explore Mimori Digital's event experiences, studio photobooth, 360° video booth rental, and QR registration systems for luxury weddings, corporate galas, and brand activations.">
+  <meta name="theme-color" content="#E31D1C">
+
+  <!-- Core White Theme Stylesheet with Cache Busting -->
+  <link rel="stylesheet" href="/css/style.css?v=20261014_parentcard_v44">
+  <link rel="icon" type="image/svg+xml" href="/images/Fav Icon.svg">
+
+  <!-- Luxury Modern Typography for Hero Headlines & Content -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;0,900;1,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Absolute White Theme Guards (Bypasses any stale browser disk cache) */
+    html, body {
+      background-color: #FFFFFF !important;
+      background: #FFFFFF !important;
+      color: #111827 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    body::before, body::after {
+      display: none !important;
+    }
+    /* Fixed Header: White Background Default, Black Text */
+    .site-header {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      height: 72px !important;
+      background: #FFFFFF !important;
+      background-color: #FFFFFF !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05) !important;
+      z-index: 1000 !important;
+      display: flex !important;
+      align-items: center !important;
+      transition: height 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+    }
+    .site-header.scrolled {
+      height: 60px !important;
+      background: #FFFFFF !important;
+      background-color: #FFFFFF !important;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    }
+    .brand-title {
+      font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      font-weight: 800 !important;
+      color: #000000 !important;
+      font-size: 1.25rem !important;
+      text-shadow: none !important;
+      transition: color 0.25s ease, font-size 0.25s ease !important;
+    }
+    .site-header.scrolled .brand-title {
+      color: #000000 !important;
+      font-size: 1.18rem !important;
+      text-shadow: none !important;
+    }
+    .brand-subtitle {
+      font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      font-weight: 700 !important;
+      color: #000000 !important;
+      text-shadow: none !important;
+      transition: color 0.25s ease !important;
+    }
+    .site-header.scrolled .brand-subtitle {
+      color: #000000 !important;
+      text-shadow: none !important;
+    }
+    .header-logo-img {
+      height: 44px !important;
+      width: auto !important;
+      max-width: 150px !important;
+      object-fit: contain !important;
+      display: block !important;
+      transition: height 0.25s ease, transform 0.25s ease !important;
+    }
+    .site-header.scrolled .header-logo-img {
+      height: 38px !important;
+    }
+    /* Menu Typography: Avenir, Medium (500) for normal, Bold (700) for active - Matching user reference */
+    .nav-links {
+      display: flex !important;
+      align-items: center !important;
+      gap: 36px !important;
+      list-style: none !important;
+    }
+    .nav-link {
+      font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      font-size: 0.95rem !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.01em !important;
+      color: #111827 !important;
+      text-shadow: none !important;
+      text-decoration: none !important;
+      padding: 6px 0 !important;
+      transition: color 0.25s ease, font-weight 0.2s ease !important;
+    }
+    .nav-link:hover {
+      color: #E31D1C !important;
+    }
+    .nav-link.active {
+      color: #E31D1C !important;
+      font-weight: 700 !important;
+    }
+    .nav-actions {
+      display: flex !important;
+      align-items: center !important;
+      gap: 22px !important;
+    }
+    .nav-contact-link {
+      font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      font-size: 0.95rem !important;
+      font-weight: 500 !important;
+      color: #111827 !important;
+      text-decoration: none !important;
+      padding: 6px 0 !important;
+      transition: color 0.25s ease, font-weight 0.2s ease !important;
+      white-space: nowrap !important;
+    }
+    .nav-contact-link:hover {
+      color: #E31D1C !important;
+    }
+    .nav-contact-link.active {
+      color: #E31D1C !important;
+      font-weight: 700 !important;
+    }
+    /* User's Exact Red Pill Button with White Circular Arrow */
+    .header-btn-book {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 12px !important;
+      background-color: #E31D1C !important;
+      color: #FFFFFF !important;
+      font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      font-size: 0.92rem !important;
+      font-weight: 700 !important;
+      padding: 7px 8px 7px 22px !important;
+      border-radius: 0px !important;
+      text-decoration: none !important;
+      box-shadow: 0 4px 14px rgba(227, 29, 28, 0.28) !important;
+      transition: all 0.25s ease !important;
+      white-space: nowrap !important;
+      border: none !important;
+      cursor: pointer !important;
+    }
+    .header-btn-book:hover {
+      background-color: #c41615 !important;
+      box-shadow: 0 6px 20px rgba(227, 29, 28, 0.4) !important;
+      transform: translateY(-1px) !important;
+    }
+    .header-btn-book .btn-arrow-circle {
+      width: 28px !important;
+      height: 28px !important;
+      border-radius: 0px !important;
+      background-color: #FFFFFF !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+      transition: transform 0.25s ease !important;
+    }
+    .header-btn-book:hover .btn-arrow-circle {
+      transform: translateX(3px) !important;
+    }
+    .header-btn-book .btn-arrow-circle svg {
+      stroke: #000000 !important;
+    }
+    @media (max-width: 992px) {
+      .nav-links {
+        display: none !important;
+      }
+      .nav-contact-link {
+        display: none !important;
+      }
+      .header-btn-book {
+        padding: 6px 6px 6px 14px !important;
+        font-size: 0.82rem !important;
+        gap: 8px !important;
+      }
+      .header-btn-book .btn-arrow-circle {
+        width: 24px !important;
+        height: 24px !important;
+      }
+      .circular-menu-btn {
+        display: inline-flex !important;
+      }
+    }
+    @media (min-width: 993px) {
+      .circular-menu-btn {
+        display: none !important;
+      }
+    }
+    .hero-banner-section {
+      padding-top: 0 !important;
+      background-color: #F8F9FA !important;
+    }
+    .hero-slide {
+      display: none !important;
+    }
+    .hero-slide.active {
+      display: block !important;
+    }
+    .hero-banner-title {
+      color: #0F172A !important;
+    }
+    .hero-banner-desc {
+      color: #4B5563 !important;
+    }
+    .section-heading {
+      color: #0F172A !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Full Screen Flash Simulation Overlay -->
+  <div id="flash-overlay"></div>
+
+  <!-- ====================================================================
+       SITE HEADER (BILIMBE CLEAN WHITE DESIGN)
+       ==================================================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="/" class="brand-logo" aria-label="Mimori">
+        <img src="/images/Header Logo.svg" onerror="this.onerror=null;this.src='/images/header-logo.svg';" alt="Mimori - Look. Book. Enjoy" class="header-logo-img">
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links">
+        <li class="nav-item-has-megamenu">
+          <a href="/services" class="nav-link" id="nav-booths-trigger">
+            <span>Our Booths</span>
+            <svg class="nav-caret" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="1 1 5 5 9 1"></polyline>
+            </svg>
+          </a>
+          
+          <!-- MEGA MENU DROPDOWN PANEL (Matching User Specification) -->
+          <div class="megamenu-dropdown-panel" id="megamenu-dropdown" aria-label="Our Booths Menu">
+            <!-- CATEGORY TABS -->
+            <div class="megamenu-tabs-row" role="tablist">
+              <button class="megamenu-tab-btn active" data-tab="photobooth" type="button">Photo Booth</button>
+              <button class="megamenu-tab-btn" data-tab="videobooth" type="button">Video Booth</button>
+              <button class="megamenu-tab-btn" data-tab="customtech" type="button">Custom Tech Development</button>
+              <button class="megamenu-tab-btn" data-tab="digitalengagement" type="button">Digital Engagement Activities</button>
+              <button class="megamenu-tab-btn" data-tab="argame" type="button">AR Game</button>
+            </div>
+
+            <!-- TAB PANES (REAL DATABASE BOOTHS ONLY) -->
+            <div class="megamenu-body">
+              <!-- PANE 1: PHOTO BOOTH (ACTIVE) -->
+              <div class="megamenu-tab-pane active" id="megamenu-pane-photobooth">
+                <div class="megamenu-links-cols">
+                  <div class="megamenu-col">
+                    <a href="/service-detail.html?id=signature-booth" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">The Signature Studio Photobooth</span>
+                    </a>
+                    <a href="/service-detail.html?id=kardashian-glam" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">The B&amp;W Kardashian Glam Booth</span>
+                    </a>
+                    <a href="/service-detail.html?id=retro-audio-guestbook" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Vintage Audio Guestbook</span>
+                    </a>
+                    <a href="/service-detail.html?id=testing" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">testing</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="megamenu-preview-box">
+                  <img src="/images/megamenu_photobooth_featured.jpg" alt="Photo Booth Experience" loading="lazy">
+                </div>
+              </div>
+
+              <!-- PANE 2: VIDEO BOOTH -->
+              <div class="megamenu-tab-pane" id="megamenu-pane-videobooth">
+                <div class="megamenu-links-cols">
+                  <div class="megamenu-col">
+                    <a href="/service-detail.html?id=glam-360" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">The 360 Hollywood Glam Platform</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="megamenu-preview-box">
+                  <img src="/images/service_booth.webp" alt="Video Booth Experience" loading="lazy">
+                </div>
+              </div>
+
+              <!-- PANE 3: CUSTOM TECH DEVELOPMENT -->
+              <div class="megamenu-tab-pane" id="megamenu-pane-customtech">
+                <div class="megamenu-links-cols">
+                  <div class="megamenu-col">
+                    <a href="/service-detail.html?id=custom-themed" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Custom Themed Experiential Booth</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="megamenu-preview-box">
+                  <img src="/images/service_interactive.webp" alt="Custom Tech Development" loading="lazy">
+                </div>
+              </div>
+
+              <!-- PANE 4: DIGITAL ENGAGEMENT ACTIVITIES -->
+              <div class="megamenu-tab-pane" id="megamenu-pane-digitalengagement">
+                <div class="megamenu-links-cols">
+                  <div class="megamenu-col">
+                    <a href="/service-detail.html?id=brand-activation" class="megamenu-item-link">
+                      <span class="mega-arrow">&gt;</span>
+                      <span class="mega-label">Corporate &amp; Brand Activation Suite</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="megamenu-preview-box">
+                  <img src="/images/service_qr.webp" alt="Digital Engagement Activities" loading="lazy">
+                </div>
+              </div>
+
+              <!-- PANE 5: AR GAME -->
+              <div class="megamenu-tab-pane" id="megamenu-pane-argame">
+                <div class="megamenu-links-cols" style="grid-template-columns: 1fr;">
+                  <div class="megamenu-col" style="padding: 24px 12px;">
+                    <div style="font-size: 0.95rem; font-weight: 700; color: #0F172A; margin-bottom: 6px;">Experiences Coming Soon</div>
+                    <p style="font-size: 0.84rem; color: #64748B; margin: 0; line-height: 1.5;">We are curating bespoke activations for AR Game. Contact our creative studio for tailored activations.</p>
+                  </div>
+                </div>
+                <div class="megamenu-preview-box">
+                  <img src="/images/service_games.webp" alt="AR Game Experience" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="/#destinations" class="nav-link">Experiences</a></li>
+        <li><a href="/showcase" class="nav-link">Gallery</a></li>
+        <li><a href="/about" class="nav-link">Abouts</a></li>
+      </ul>
+
+      <!-- Action Buttons (Matching User's Reference) -->
+      <div class="nav-actions">
+        <a href="#booking-modal" class="header-btn-book btn-book-modal" onclick="openBookingModal(); return false;">
+          <span>Book Your Event</span>
+          <span class="btn-arrow-circle">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </a>
+        <button class="circular-menu-btn mobile-toggle" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav">
+    <ul class="mobile-nav-links">
+      <li><a href="/services">Our Booths</a></li>
+      <li><a href="/#destinations">Experiences</a></li>
+      <li><a href="/showcase">Gallery</a></li>
+      <li><a href="/about">Abouts</a></li>
+      <li><a href="/contact">Contact Us</a></li>
+    </ul>
+    <a href="#booking-modal" class="header-btn-book btn-book-modal" style="width: 100%; justify-content: center;" onclick="openBookingModal(); return false;">
+      <span>Book Your Event</span>
+      <span class="btn-arrow-circle">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </span>
+    </a>
+  </div>
+
+  <main>
+    <!-- ====================================================================
+         IMMERSIVE PHOTO & BACKGROUND CAROUSEL HERO SECTION
+         (MATCHING USER'S GLOBE EXPRESS REFERENCE DESIGN)
+         ==================================================================== -->
+    <section id="hero" class="globe-hero-section">
+      <!-- Background Layers for Smooth Crossfade & Zoom Transitions -->
+      <div class="globe-bg-layer current" id="globe-bg-current" style="background-image: url('/images/hero_booth_studio.jpg');"></div>
+      <div class="globe-bg-layer next" id="globe-bg-next"></div>
+      
+      <!-- Directional Vignette Overlay for Crisp White Typography -->
+      <div class="globe-hero-vignette"></div>
+
+      <div class="globe-hero-container">
+        <!-- Main Content Row -->
+        <div class="globe-hero-main-row">
+          <!-- Left Editorial Content Column -->
+          <div class="globe-hero-content">
+            <!-- Location Subtitle with Dash -->
+            <div class="globe-hero-sub" id="globe-hero-sub">Studio Photobooth</div>
+
+            <!-- Big Majestic Headline -->
+            <h1 class="globe-hero-title" id="globe-hero-title">
+              Signature<br><span style="white-space: nowrap;">Studio Booth</span>
+            </h1>
+
+            <!-- Descriptive Paragraph -->
+            <p class="globe-hero-desc" id="globe-hero-desc">
+              Magazine-quality portraiture powered by full-frame Canon DSLR optics, studio beauty strobe lighting, and instant 7-second lab prints for luxury celebrations.
+            </p>
+
+            <!-- Action Buttons: Book & View Gallery -->
+            <div class="globe-hero-actions">
+              <!-- Book Button (Primary Red Pill) -->
+              <a href="#get-in-touch" class="globe-btn-book" id="globe-book-btn">
+                <span>Book</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+
+              <!-- View Gallery Button (Sleek Glass Pill) -->
+              <a href="#gallery" class="globe-btn-gallery" id="globe-gallery-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+                <span>View Gallery</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Cards Carousel Container (Cards with Horizontal Peek) -->
+          <div class="globe-cards-carousel-container">
+            <div class="globe-cards-track" id="globe-cards-track">
+              <!-- Card 0: Signature Studio Photobooth (Active) -->
+              <div class="globe-card-item active" data-index="0" role="button" tabindex="0" aria-label="Signature Studio Photobooth">
+                <img src="/images/hero_booth_studio.jpg" alt="Signature Studio Photobooth" class="globe-card-img" loading="eager">
+                <div class="globe-card-overlay">
+                  <h3 class="globe-card-title">STUDIO BOOTH</h3>
+                </div>
+              </div>
+
+              <!-- Card 1: 360 Cinematic Glambot -->
+              <div class="globe-card-item" data-index="1" role="button" tabindex="0" aria-label="360 Cinematic Glambot Booth">
+                <img src="/images/hero_booth_glambot.jpg" alt="360 Cinematic Glambot Video Booth" class="globe-card-img" loading="eager">
+                <div class="globe-card-overlay">
+                  <h3 class="globe-card-title">GLAMBOT 360</h3>
+                </div>
+              </div>
+
+              <!-- Card 2: B&W Kardashian Glam Booth -->
+              <div class="globe-card-item" data-index="2" role="button" tabindex="0" aria-label="B&W Kardashian Glam Booth">
+                <img src="/images/hero_booth_kardashian.jpg" alt="Kardashian Glam Photobooth" class="globe-card-img" loading="eager">
+                <div class="globe-card-overlay">
+                  <h3 class="globe-card-title">KARDASHIAN GLAM</h3>
+                </div>
+              </div>
+
+              <!-- Card 3: AI Mosaic Wall -->
+              <div class="globe-card-item" data-index="3" role="button" tabindex="0" aria-label="AI Mosaic Wall">
+                <img src="/images/hero_booth_ai_mosaic.jpg" alt="AI Mosaic Wall" class="globe-card-img" loading="lazy">
+                <div class="globe-card-overlay">
+                  <h3 class="globe-card-title">AI MOSAIC WALL</h3>
+                </div>
+              </div>
+
+              <!-- Card 4: Vintage Audio & Magic Mirror -->
+              <div class="globe-card-item" data-index="4" role="button" tabindex="0" aria-label="Vintage Audio & Magic Mirror">
+                <img src="/images/hero_booth_vintage_audio.jpg" alt="Vintage Audio & Magic Mirror" class="globe-card-img" loading="lazy">
+                <div class="globe-card-overlay">
+                  <h3 class="globe-card-title">AUDIO & MIRROR</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Controls: Navigation Arrows, Progress Track, Counter -->
+        <div class="globe-hero-bottom-controls">
+          <div class="globe-controls-left">
+            <!-- Previous & Next Arrow Buttons -->
+            <div class="globe-arrow-btns">
+              <button type="button" class="globe-arrow-btn" id="globe-prev-btn" aria-label="Previous photo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button type="button" class="globe-arrow-btn" id="globe-next-btn" aria-label="Next photo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Progress Track -->
+            <div class="globe-progress-track">
+              <div class="globe-progress-bar" id="globe-progress-bar" style="width: 20%;"></div>
+            </div>
+          </div>
+
+          <!-- Counter Indicator -->
+          <div class="globe-counter">
+            <span id="globe-current-num">01</span>
+            <span class="globe-counter-total">/ 05</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Showreel Video Modal -->
+    <div class="showreel-modal" id="showreel-modal">
+      <div class="showreel-modal-backdrop" id="showreel-modal-close"></div>
+      <div class="showreel-modal-content">
+        <button type="button" class="showreel-close-btn" id="showreel-close-x" aria-label="Close Showreel">✕</button>
+        <div class="showreel-video-wrap">
+          <img src="/images/banner_glambot.webp" alt="Showreel Video Highlight" style="width: 100%; height: 100%; object-fit: cover;">
+          <div class="showreel-player-overlay">
+            <span class="status-pulse-dot" style="width: 12px; height: 12px;"></span>
+            <h3>Mimori Digital 4K Showreel</h3>
+            <p>Capturing VIP Weddings, Red Carpet Premieres &amp; Global Galas</p>
+            <a href="#get-in-touch" class="btn btn-primary" onclick="document.getElementById('showreel-modal').classList.remove('active');">
+              <span>Book Your Event Now</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         EDITORIAL SHOWCASE SECTION (PHOTOBOOTH ACTIVATIONS & STANDARDS)
+         ==================================================================== -->
+    <section id="showcase" class="editorial-showcase-section">
+      <div class="container">
+        <!-- Centered Giant Headline -->
+        <div class="editorial-headline-wrap">
+          <h2 class="editorial-main-heading" id="editorial-headline-interactive">
+            Engineering Moments<br>
+            That Go Viral
+          </h2>
+        </div>
+
+        <!-- Lower Split Content: Left Value Column & Right Staggered Cards -->
+        <div class="editorial-split-layout">
+          <!-- Left Column -->
+          <div class="editorial-left-col">
+            <div class="editorial-value-pill">
+              <span class="editorial-value-dot"></span>
+              <span>01 Our Standard</span>
+            </div>
+
+            <h3 class="editorial-value-title">
+              Not Your Boring<br>
+              Photobooth
+            </h3>
+
+            <p class="editorial-value-desc">
+              We engineer high-energy, magazine-grade photo &amp; video activations that keep your dancefloor alive and guests raving.
+            </p>
+
+            <a href="#get-in-touch" class="editorial-btn-black">
+              <span>Book Your Booth</span>
+            </a>
+          </div>
+
+          <!-- Right Column: Staggered Cards Track -->
+          <div class="editorial-cards-col">
+            <div class="editorial-cards-track" id="editorial-cards-track">
+              <!-- Card 1 (Tall, Top-Aligned): Studio Vogue Photobooth -->
+              <div class="editorial-card card-tall">
+                <div class="editorial-card-img-box">
+                  <img src="/images/hero_booth_studio.jpg" alt="Editorial Studio Photobooth" loading="lazy">
+                  <span class="editorial-card-tag">Studio Vogue</span>
+                </div>
+                <div class="editorial-card-caption">
+                  <h4 class="editorial-card-title">Editorial Studio Booth</h4>
+                  <p class="editorial-card-sub">Full-frame Canon optics &amp; beauty softbox</p>
+                </div>
+              </div>
+
+              <!-- Card 2 (Medium, Shifted DOWNWARDS): 1970s Vintage Audio Guestbook -->
+              <div class="editorial-card card-offset">
+                <div class="editorial-card-img-box">
+                  <img src="/images/hero_booth_vintage_audio.jpg" alt="Vintage Audio Guestbook" loading="lazy">
+                  <span class="editorial-card-tag">Vintage Audio</span>
+                </div>
+                <div class="editorial-card-caption">
+                  <h4 class="editorial-card-title">1970s Rotary Guestbook</h4>
+                  <p class="editorial-card-sub">Authentic retro phone audio recordings</p>
+                </div>
+              </div>
+
+              <!-- Card 3 (Tall, Top-Aligned): 360 Time-Freeze Matrix Rig -->
+              <div class="editorial-card card-tall">
+                <div class="editorial-card-img-box">
+                  <img src="/images/banner_time_freeze.webp" alt="360 Time Freeze Matrix Rig" loading="lazy">
+                  <span class="editorial-card-tag frosted-tag">360 Bullet-Time</span>
+                </div>
+                <div class="editorial-card-caption">
+                  <h4 class="editorial-card-title">Matrix 360 Time-Freeze</h4>
+                  <p class="editorial-card-sub">Multi-angle cinema camera slow motion</p>
+                </div>
+              </div>
+
+              <!-- Card 4 (Carousel Next Slide): Canon Studio Touch Podium -->
+              <div class="editorial-card card-offset">
+                <div class="editorial-card-img-box">
+                  <img src="/images/hero_canon_podium.jpg" alt="Canon Studio Touch Podium" loading="lazy">
+                  <span class="editorial-card-tag">Canon Podium</span>
+                </div>
+                <div class="editorial-card-caption">
+                  <h4 class="editorial-card-title">Canon Studio Kiosk</h4>
+                  <p class="editorial-card-sub">Instant 7s lab prints &amp; AirDrop sharing</p>
+                </div>
+              </div>
+
+              <!-- Card 5 (Carousel Next Slide): Smart QR Registration -->
+              <div class="editorial-card card-tall">
+                <div class="editorial-card-img-box">
+                  <img src="/images/showcase_qr_kiosk.jpg" alt="Smart QR Registration Kiosk" loading="lazy">
+                  <span class="editorial-card-tag frosted-tag">Smart QR Kiosk</span>
+                </div>
+                <div class="editorial-card-caption">
+                  <h4 class="editorial-card-title">VIP Fast-Track Check-In</h4>
+                  <p class="editorial-card-sub">Contactless badge printing &amp; live analytics</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CLIENT LOGOS MARQUEE (OUR CLIENTS - PLACED DIRECTLY AFTER HERO)
+         ==================================================================== -->
+    <section class="clients-marquee-section">
+      <div class="container">
+        <div class="section-title-wrap" style="margin-bottom: 22px;">
+          <span class="section-eyebrow" style="color: #E31D1C; font-weight: 800; letter-spacing: 0.12em;">OUR CLIENTS</span>
+          <h3 style="font-size: 1.55rem; font-weight: 800; color: #0F172A; margin: 4px 0 0 0;">Trusted by the best, <span style="color: #E31D1C;">loved by all.</span></h3>
+        </div>
+      </div>
+      <div class="marquee-container">
+        <div class="marquee-row scroll-left">
+          <!-- 01: Aston Martin -->
+          <div class="client-logo-card" title="Aston Martin">
+            <svg class="client-brand-svg" viewBox="0 0 170 30" height="24" aria-label="Aston Martin">
+              <g fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4 16c5-4 12-6 20-6s15 2 20 6" />
+                <path d="M7 19c4-3 10-5 17-5s13 2 17 5" />
+                <path d="M11 22c4-2 8-3 13-3s9 1 13 3" />
+                <rect x="17" y="13" width="14" height="6" rx="1" fill="currentColor" />
+              </g>
+              <text x="52" y="20" font-family="'Montserrat', 'Arial', sans-serif" font-weight="800" font-size="12.5" letter-spacing="2.5" fill="currentColor">ASTON MARTIN</text>
+            </svg>
+          </div>
+
+          <!-- 02: The Savile Club -->
+          <div class="client-logo-card" title="The Savile Club Mayfair">
+            <svg class="client-brand-svg" viewBox="0 0 165 30" height="24" aria-label="The Savile Club">
+              <path d="M14 4L23 7v8c0 5.5-4 9-9 11-5-2-9-5.5-9-11V7l9-3z" fill="none" stroke="currentColor" stroke-width="1.6" />
+              <circle cx="14" cy="14" r="3" fill="#E31D1C" />
+              <text x="30" y="17" font-family="'Cinzel', Georgia, serif" font-weight="700" font-size="12.5" letter-spacing="1.5" fill="currentColor">THE SAVILE CLUB</text>
+              <text x="31" y="26" font-family="'Montserrat', sans-serif" font-weight="600" font-size="6.5" letter-spacing="2.5" fill="#94A3B8">MAYFAIR · EST. 1868</text>
+            </svg>
+          </div>
+
+          <!-- 03: Harrods Knightsbridge -->
+          <div class="client-logo-card" title="Harrods Knightsbridge">
+            <svg class="client-brand-svg" viewBox="0 0 155 30" height="24" aria-label="Harrods Knightsbridge">
+              <text x="4" y="21" font-family="'Baskerville', 'Playfair Display', Georgia, serif" font-style="italic" font-weight="700" font-size="20" letter-spacing="1" fill="currentColor">Harrods</text>
+              <rect x="86" y="8" width="1" height="15" fill="#CBD5E1" />
+              <text x="94" y="15" font-family="'Montserrat', sans-serif" font-weight="800" font-size="6.5" letter-spacing="2" fill="#15803D">LONDON</text>
+              <text x="94" y="23" font-family="'Montserrat', sans-serif" font-weight="600" font-size="5.5" letter-spacing="1" fill="#64748B">KNIGHTSBRIDGE</text>
+            </svg>
+          </div>
+
+          <!-- 04: British Vogue -->
+          <div class="client-logo-card" title="British Vogue">
+            <svg class="client-brand-svg" viewBox="0 0 160 30" height="24" aria-label="British Vogue">
+              <text x="2" y="22" font-family="'Didot', 'Bodoni MT', 'Playfair Display', Georgia, serif" font-weight="900" font-size="24" letter-spacing="3" fill="currentColor">VOGUE</text>
+              <rect x="114" y="8" width="1" height="15" fill="#CBD5E1" />
+              <text x="122" y="15" font-family="'Montserrat', sans-serif" font-weight="800" font-size="7" letter-spacing="2" fill="#E31D1C">BRITISH</text>
+              <text x="122" y="23" font-family="'Montserrat', sans-serif" font-weight="700" font-size="6" letter-spacing="1.5" fill="#64748B">EDITION</text>
+            </svg>
+          </div>
+
+          <!-- 05: Red Bull Racing -->
+          <div class="client-logo-card" title="Red Bull Racing">
+            <svg class="client-brand-svg" viewBox="0 0 165 30" height="24" aria-label="Red Bull Racing">
+              <circle cx="16" cy="15" r="9" fill="#F59E0B" opacity="0.9" />
+              <path d="M4 20c1.5-2 3.5-3 6.5-3 3 0 5 1.5 6.5 3-1.8-3.5-4-5-6.5-5-3.5 0-5 2-6.5 5z" fill="#E31D1C" />
+              <text x="32" y="21" font-family="'Impact', 'Arial Black', sans-serif" font-style="italic" font-weight="900" font-size="17" letter-spacing="0.5" fill="currentColor">Red Bull</text>
+              <text x="108" y="21" font-family="'Montserrat', sans-serif" font-weight="800" font-size="10" letter-spacing="2.5" fill="#E31D1C">RACING</text>
+            </svg>
+          </div>
+
+          <!-- 06: Chanel Beauty -->
+          <div class="client-logo-card" title="Chanel Beauty">
+            <svg class="client-brand-svg" viewBox="0 0 155 30" height="24" aria-label="Chanel Beauty">
+              <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
+                <path d="M19 7 C12 7 7 11.5 7 16 C7 20.5 12 25 19 25 C23 25 26 23 27.5 20.5" />
+                <path d="M17 7 C24 7 29 11.5 29 16 C29 20.5 24 25 17 25 C13 25 10 23 8.5 20.5" />
+              </g>
+              <text x="38" y="21" font-family="'Montserrat', 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="16" letter-spacing="4" fill="currentColor">CHANEL</text>
+            </svg>
+          </div>
+
+          <!-- 07: Soho House London -->
+          <div class="client-logo-card" title="Soho House London">
+            <svg class="client-brand-svg" viewBox="0 0 170 30" height="24" aria-label="Soho House London">
+              <g fill="currentColor">
+                <path d="M5 13L9 8L13 13V24H5V13Z" />
+                <path d="M14 10L18 5L22 10V24H14V10Z" />
+                <path d="M23 13L27 8L31 13V24H23V13Z" />
+              </g>
+              <text x="39" y="18" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-weight="700" font-size="13" letter-spacing="3" fill="currentColor">SOHO HOUSE</text>
+              <text x="40" y="26" font-family="'Montserrat', sans-serif" font-weight="600" font-size="6.5" letter-spacing="3" fill="#94A3B8">LONDON · 76 DEAN ST</text>
+            </svg>
+          </div>
+
+          <!-- 08: The Dorchester Mayfair -->
+          <div class="client-logo-card" title="The Dorchester Mayfair">
+            <svg class="client-brand-svg" viewBox="0 0 175 30" height="24" aria-label="The Dorchester">
+              <path d="M6 21h16l2-11-5 4-5-6-5 6-5-4z" fill="#D97706" />
+              <circle cx="6" cy="9" r="1.4" fill="#D97706" />
+              <circle cx="14" cy="7" r="1.4" fill="#D97706" />
+              <circle cx="22" cy="9" r="1.4" fill="#D97706" />
+              <text x="32" y="17" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-weight="700" font-size="13.5" letter-spacing="1" fill="currentColor">The Dorchester</text>
+              <text x="33" y="26" font-family="'Montserrat', sans-serif" font-weight="600" font-size="6.5" letter-spacing="3.5" fill="#94A3B8">MAYFAIR · LONDON</text>
+            </svg>
+          </div>
+
+          <!-- 09: TechCrunch Disrupt -->
+          <div class="client-logo-card" title="TechCrunch Disrupt">
+            <svg class="client-brand-svg" viewBox="0 0 160 30" height="24" aria-label="TechCrunch Disrupt">
+              <rect x="2" y="4" width="22" height="22" rx="4" fill="#00D084" />
+              <text x="5" y="20" font-family="'Arial Black', sans-serif" font-weight="900" font-size="14" fill="#FFFFFF">TC</text>
+              <text x="32" y="18" font-family="'Montserrat', sans-serif" font-weight="800" font-size="14.5" letter-spacing="-0.3" fill="currentColor">TechCrunch</text>
+              <text x="32" y="26" font-family="'Montserrat', sans-serif" font-weight="700" font-size="6.5" letter-spacing="2" fill="#00D084">DISRUPT</text>
+            </svg>
+          </div>
+
+          <!-- Seamless Loop Duplicate -->
+          <div class="client-logo-card" title="Aston Martin">
+            <svg class="client-brand-svg" viewBox="0 0 170 30" height="24" aria-label="Aston Martin">
+              <g fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4 16c5-4 12-6 20-6s15 2 20 6" />
+                <path d="M7 19c4-3 10-5 17-5s13 2 17 5" />
+                <path d="M11 22c4-2 8-3 13-3s9 1 13 3" />
+                <rect x="17" y="13" width="14" height="6" rx="1" fill="currentColor" />
+              </g>
+              <text x="52" y="20" font-family="'Montserrat', 'Arial', sans-serif" font-weight="800" font-size="12.5" letter-spacing="2.5" fill="currentColor">ASTON MARTIN</text>
+            </svg>
+          </div>
+
+          <div class="client-logo-card" title="The Savile Club Mayfair">
+            <svg class="client-brand-svg" viewBox="0 0 165 30" height="24" aria-label="The Savile Club">
+              <path d="M14 4L23 7v8c0 5.5-4 9-9 11-5-2-9-5.5-9-11V7l9-3z" fill="none" stroke="currentColor" stroke-width="1.6" />
+              <circle cx="14" cy="14" r="3" fill="#E31D1C" />
+              <text x="30" y="17" font-family="'Cinzel', Georgia, serif" font-weight="700" font-size="12.5" letter-spacing="1.5" fill="currentColor">THE SAVILE CLUB</text>
+              <text x="31" y="26" font-family="'Montserrat', sans-serif" font-weight="600" font-size="6.5" letter-spacing="2.5" fill="#94A3B8">MAYFAIR · EST. 1868</text>
+            </svg>
+          </div>
+
+          <div class="client-logo-card" title="Harrods Knightsbridge">
+            <svg class="client-brand-svg" viewBox="0 0 155 30" height="24" aria-label="Harrods Knightsbridge">
+              <text x="4" y="21" font-family="'Baskerville', 'Playfair Display', Georgia, serif" font-style="italic" font-weight="700" font-size="20" letter-spacing="1" fill="currentColor">Harrods</text>
+              <rect x="86" y="8" width="1" height="15" fill="#CBD5E1" />
+              <text x="94" y="15" font-family="'Montserrat', sans-serif" font-weight="800" font-size="6.5" letter-spacing="2" fill="#15803D">LONDON</text>
+              <text x="94" y="23" font-family="'Montserrat', sans-serif" font-weight="600" font-size="5.5" letter-spacing="1" fill="#64748B">KNIGHTSBRIDGE</text>
+            </svg>
+          </div>
+
+          <div class="client-logo-card" title="British Vogue">
+            <svg class="client-brand-svg" viewBox="0 0 160 30" height="24" aria-label="British Vogue">
+              <text x="2" y="22" font-family="'Didot', 'Bodoni MT', 'Playfair Display', Georgia, serif" font-weight="900" font-size="24" letter-spacing="3" fill="currentColor">VOGUE</text>
+              <rect x="114" y="8" width="1" height="15" fill="#CBD5E1" />
+              <text x="122" y="15" font-family="'Montserrat', sans-serif" font-weight="800" font-size="7" letter-spacing="2" fill="#E31D1C">BRITISH</text>
+              <text x="122" y="23" font-family="'Montserrat', sans-serif" font-weight="700" font-size="6" letter-spacing="1.5" fill="#64748B">EDITION</text>
+            </svg>
+          </div>
+
+          <div class="client-logo-card" title="Red Bull Racing">
+            <svg class="client-brand-svg" viewBox="0 0 165 30" height="24" aria-label="Red Bull Racing">
+              <circle cx="16" cy="15" r="9" fill="#F59E0B" opacity="0.9" />
+              <path d="M4 20c1.5-2 3.5-3 6.5-3 3 0 5 1.5 6.5 3-1.8-3.5-4-5-6.5-5-3.5 0-5 2-6.5 5z" fill="#E31D1C" />
+              <text x="32" y="21" font-family="'Impact', 'Arial Black', sans-serif" font-style="italic" font-weight="900" font-size="17" letter-spacing="0.5" fill="currentColor">Red Bull</text>
+              <text x="108" y="21" font-family="'Montserrat', sans-serif" font-weight="800" font-size="10" letter-spacing="2.5" fill="#E31D1C">RACING</text>
+            </svg>
+          </div>
+
+          <div class="client-logo-card" title="Chanel Beauty">
+            <svg class="client-brand-svg" viewBox="0 0 155 30" height="24" aria-label="Chanel Beauty">
+              <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
+                <path d="M19 7 C12 7 7 11.5 7 16 C7 20.5 12 25 19 25 C23 25 26 23 27.5 20.5" />
+                <path d="M17 7 C24 7 29 11.5 29 16 C29 20.5 24 25 17 25 C13 25 10 23 8.5 20.5" />
+              </g>
+              <text x="38" y="21" font-family="'Montserrat', 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="16" letter-spacing="4" fill="currentColor">CHANEL</text>
+            </svg>
+          </div>
+
+          <div class="client-logo-card" title="Soho House London">
+            <svg class="client-brand-svg" viewBox="0 0 170 30" height="24" aria-label="Soho House London">
+              <g fill="currentColor">
+                <path d="M5 13L9 8L13 13V24H5V13Z" />
+                <path d="M14 10L18 5L22 10V24H14V10Z" />
+                <path d="M23 13L27 8L31 13V24H23V13Z" />
+              </g>
+              <text x="39" y="18" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-weight="700" font-size="13" letter-spacing="3" fill="currentColor">SOHO HOUSE</text>
+              <text x="40" y="26" font-family="'Montserrat', sans-serif" font-weight="600" font-size="6.5" letter-spacing="3" fill="#94A3B8">LONDON · 76 DEAN ST</text>
+            </svg>
+          </div>
+
+          <div class="client-logo-card" title="The Dorchester Mayfair">
+            <svg class="client-brand-svg" viewBox="0 0 175 30" height="24" aria-label="The Dorchester">
+              <path d="M6 21h16l2-11-5 4-5-6-5 6-5-4z" fill="#D97706" />
+              <circle cx="6" cy="9" r="1.4" fill="#D97706" />
+              <circle cx="14" cy="7" r="1.4" fill="#D97706" />
+              <circle cx="22" cy="9" r="1.4" fill="#D97706" />
+              <text x="32" y="17" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-weight="700" font-size="13.5" letter-spacing="1" fill="currentColor">The Dorchester</text>
+              <text x="33" y="26" font-family="'Montserrat', sans-serif" font-weight="600" font-size="6.5" letter-spacing="3.5" fill="#94A3B8">MAYFAIR · LONDON</text>
+            </svg>
+          </div>
+
+          <div class="client-logo-card" title="TechCrunch Disrupt">
+            <svg class="client-brand-svg" viewBox="0 0 160 30" height="24" aria-label="TechCrunch Disrupt">
+              <rect x="2" y="4" width="22" height="22" rx="4" fill="#00D084" />
+              <text x="5" y="20" font-family="'Arial Black', sans-serif" font-weight="900" font-size="14" fill="#FFFFFF">TC</text>
+              <text x="32" y="18" font-family="'Montserrat', sans-serif" font-weight="800" font-size="14.5" letter-spacing="-0.3" fill="currentColor">TechCrunch</text>
+              <text x="32" y="26" font-family="'Montserrat', sans-serif" font-weight="700" font-size="6.5" letter-spacing="2" fill="#00D084">DISRUPT</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         POPULAR EXPERIENCES ("PICK THE BOOTH") SECTION
+         ==================================================================== -->
+    <!-- ====================================================================
+         POPULAR EXPERIENCES 2025 SECTION (LUXURY DARK CAROUSEL UI)
+         ==================================================================== -->
+    <section id="destinations" class="destinations-section">
+      <div class="container">
+        <!-- Centered Header matching reference -->
+        <div class="dest-header-centered">
+          <span class="dest-eyebrow-text">EXPERIENCES</span>
+          <h2 class="dest-section-title">Popular Experiences 2025</h2>
+        </div>
+
+        <!-- Carousel Wrapper (No Arrow Buttons, Natural Horizontal Scroll) -->
+        <div class="dest-carousel-wrapper">
+          <!-- Cards Carousel Track -->
+          <div class="dest-carousel-track" id="dest-carousel-track">
+            <!-- Card 1: Studio Booth -->
+            <div class="dest-program-card header-book-trigger" role="button" tabindex="0" aria-label="Book The Studio Booth">
+              <div class="dest-card-media-box">
+                <img src="/images/hero_booth_studio.jpg" alt="Signature Studio Photobooth" loading="lazy">
+              </div>
+              <div class="dest-card-content">
+                <h3 class="dest-program-title">The <span class="dest-highlight">Studio</span> Booth</h3>
+                <div class="dest-program-rating">
+                  <span class="dest-rating-val">4.9</span>
+                  <span class="dest-rating-star">★</span>
+                  <span class="dest-rating-count">380+ event reviews</span>
+                </div>
+                <p class="dest-program-desc">
+                  Magazine-grade portraiture powered by full-frame Canon DSLR optics, studio beauty strobe lighting, and instant 7-second lab prints for luxury celebrations.
+                </p>
+                <div class="dest-program-hosts">
+                  <div class="dest-avatar-group">
+                    <img src="/images/branch_london.webp" alt="Host avatar" class="dest-avatar-img">
+                    <img src="/images/branch_dubai.webp" alt="Host avatar" class="dest-avatar-img">
+                    <img src="/images/branch_lakecomo.webp" alt="Host avatar" class="dest-avatar-img">
+                    <img src="/images/branch_berkshire.webp" alt="Host avatar" class="dest-avatar-img">
+                    <span class="dest-avatar-more">+12</span>
+                  </div>
+                  <span class="dest-hosts-text">Hosted by 2 certified production engineers &amp; stylists</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: 360 Glambot (MOST POPULAR - CENTER FEATURED) -->
+            <div class="dest-program-card featured header-book-trigger" role="button" tabindex="0" aria-label="Book The Glambot 360">
+              <div class="dest-popular-badge">MOST POPULAR</div>
+              <div class="dest-card-media-box" id="open-showreel-btn">
+                <img src="/images/hero_booth_glambot.jpg" alt="360 Cinematic Glambot Booth" loading="lazy">
+                <div class="dest-media-play-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                  </svg>
+                  <span>WATCH REEL</span>
+                </div>
+              </div>
+              <div class="dest-card-content">
+                <h3 class="dest-program-title">The <span class="dest-highlight">Glambot</span> 360</h3>
+                <div class="dest-program-rating">
+                  <span class="dest-rating-val">5.0</span>
+                  <span class="dest-rating-star">★</span>
+                  <span class="dest-rating-count">650+ event reviews</span>
+                </div>
+                <p class="dest-program-desc">
+                  High-speed motorized 120fps camera arm on an illuminated LED platform with Hollywood slow-motion video, custom soundtrack, and instant AirDrop &amp; QR distribution.
+                </p>
+                <div class="dest-program-hosts">
+                  <div class="dest-avatar-group">
+                    <img src="/images/branch_london.webp" alt="Host avatar" class="dest-avatar-img">
+                    <img src="/images/branch_dubai.webp" alt="Host avatar" class="dest-avatar-img">
+                    <img src="/images/branch_lakecomo.webp" alt="Host avatar" class="dest-avatar-img">
+                    <img src="/images/branch_manchester.webp" alt="Host avatar" class="dest-avatar-img">
+                    <img src="/images/branch_berkshire.webp" alt="Host avatar" class="dest-avatar-img">
+                    <span class="dest-avatar-more">+24</span>
+                  </div>
+                  <span class="dest-hosts-text">Engineered by Hollywood slow-motion video directors</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Kardashian Glam -->
+            <div class="dest-program-card header-book-trigger" role="button" tabindex="0" aria-label="Book The Kardashian Glam">
+              <div class="dest-card-media-box">
+                <img src="/images/hero_booth_kardashian.jpg" alt="Kardashian Glam Editorial Photobooth" loading="lazy">
+              </div>
+              <div class="dest-card-content">
+                <h3 class="dest-program-title">The <span class="dest-highlight">Kardashian</span> Glam</h3>
+                <div class="dest-program-rating">
+                  <span class="dest-rating-val">4.9</span>
+                  <span class="dest-rating-star">★</span>
+                  <span class="dest-rating-count">480+ event reviews</span>
+                </div>
+                <p class="dest-program-desc">
+                  Celebrity red-carpet aesthetic with real-time skin-smoothing algorithms, high-contrast studio ring flash, and heavyweight metallic monochrome prints.
+                </p>
+                <div class="dest-program-hosts">
+                  <div class="dest-avatar-group">
+                    <img src="/images/branch_lakecomo.webp" alt="Host avatar" class="dest-avatar-img">
+                    <img src="/images/branch_dubai.webp" alt="Host avatar" class="dest-avatar-img">
+                    <img src="/images/branch_london.webp" alt="Host avatar" class="dest-avatar-img">
+                    <span class="dest-avatar-more">+18</span>
+                  </div>
+                  <span class="dest-hosts-text">Chosen by luxury wedding planners &amp; red-carpet VIPs</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         EXPERIENCE GALLERY SECTION (REAL EVENT ACTIVATIONS & IMAGERY)
+         ==================================================================== -->
+    <!-- ====================================================================
+         EXPERIENCE GALLERY SECTION (UPGRADED WITH FILTERS & SPEC PILLS)
+         ==================================================================== -->
+    <section id="gallery" class="experience-gallery-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-eyebrow">IMMERSIVE HARDWARE &amp; TECH</span>
+          <h2 class="section-heading">Live Photobooth &amp; <span class="highlight">Event Activations in Action</span></h2>
+          <p class="section-desc">
+            Explore our state-of-the-art interactive installations engineered for luxury galas, international brand launches, and VIP weddings.
+          </p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="gallery-category-filter">
+          <button type="button" class="gallery-cat-pill active" data-filter="all" onclick="filterGalleryCategory(this, 'all')">All Activations (6)</button>
+          <button type="button" class="gallery-cat-pill" data-filter="studio" onclick="filterGalleryCategory(this, 'studio')">Studio &amp; Glam</button>
+          <button type="button" class="gallery-cat-pill" data-filter="glambot" onclick="filterGalleryCategory(this, 'glambot')">360 &amp; Glambot</button>
+          <button type="button" class="gallery-cat-pill" data-filter="interactive" onclick="filterGalleryCategory(this, 'interactive')">AR &amp; Interactive</button>
+          <button type="button" class="gallery-cat-pill" data-filter="audio" onclick="filterGalleryCategory(this, 'audio')">Audio Keepsake</button>
+        </div>
+
+        <div class="experience-gallery-grid">
+          <!-- Card 1: Signature Studio -->
+          <div class="gallery-card" data-category="studio">
+            <div class="gallery-card-media">
+              <img src="/images/service_booth.webp" alt="Signature Studio Photobooth Activation" loading="lazy">
+              <span class="gallery-card-tag">Studio Hardware</span>
+            </div>
+            <div class="gallery-card-body">
+              <div>
+                <h3>Signature Studio Setup</h3>
+                <p>Full-frame Canon optics, softbox strobe lighting, and 7-second lab prints on 300gsm metallic photo cardstock.</p>
+                <div class="gallery-spec-pills">
+                  <span class="gallery-spec-pill">Canon R5 45MP</span>
+                  <span class="gallery-spec-pill">Profoto Softbox</span>
+                  <span class="gallery-spec-pill">7s Lab Prints</span>
+                </div>
+              </div>
+              <div class="gallery-card-actions">
+                <a href="/services" class="gallery-card-link">
+                  <span>View Specifications</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <button type="button" class="gallery-btn-reserve" onclick="openBookingModal('The Signature Studio Photobooth')">
+                  <span>Reserve Setup</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: 360 Glambot -->
+          <div class="gallery-card" data-category="glambot">
+            <div class="gallery-card-media">
+              <img src="/images/banner_glambot.webp" alt="Glambot High-Speed Camera Rig" loading="lazy">
+              <span class="gallery-card-tag">Cinematic Rig</span>
+            </div>
+            <div class="gallery-card-body">
+              <div>
+                <h3>360° Glambot Slow-Motion</h3>
+                <p>High-speed robotic arm capturing 4K 120fps Hollywood-grade slow motion with real-time video rendering.</p>
+                <div class="gallery-spec-pills">
+                  <span class="gallery-spec-pill">Sony FX3 Rig</span>
+                  <span class="gallery-spec-pill">120fps 4K Cinema</span>
+                  <span class="gallery-spec-pill">Instant QR Delivery</span>
+                </div>
+              </div>
+              <div class="gallery-card-actions">
+                <a href="/services" class="gallery-card-link">
+                  <span>View Specifications</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <button type="button" class="gallery-btn-reserve" onclick="openBookingModal('360° Cinematic Video Booth')">
+                  <span>Reserve Setup</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: AR Magic Mirror -->
+          <div class="gallery-card" data-category="interactive">
+            <div class="gallery-card-media">
+              <img src="/images/service_ar.webp" alt="AR Magic Mirror Booth" loading="lazy">
+              <span class="gallery-card-tag">Augmented Reality</span>
+            </div>
+            <div class="gallery-card-body">
+              <div>
+                <h3>AR Digital Mirror Activation</h3>
+                <p>Interactive full-length mirror with AI background synthesis, real-time animated face filters, and gesture controls.</p>
+                <div class="gallery-spec-pills">
+                  <span class="gallery-spec-pill">65" 4K Glass Mirror</span>
+                  <span class="gallery-spec-pill">AI Background Swap</span>
+                  <span class="gallery-spec-pill">Touch Signatures</span>
+                </div>
+              </div>
+              <div class="gallery-card-actions">
+                <a href="/services" class="gallery-card-link">
+                  <span>View Specifications</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <button type="button" class="gallery-btn-reserve" onclick="openBookingModal('Custom Immersive & AI Set Experience')">
+                  <span>Reserve Setup</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Vintage Audio Guestbook -->
+          <div class="gallery-card" data-category="audio">
+            <div class="gallery-card-media">
+              <img src="/images/banner_slide7.webp" alt="Vintage Rotary Audio Guestbook" loading="lazy">
+              <span class="gallery-card-tag">Emotional Keepsake</span>
+            </div>
+            <div class="gallery-card-body">
+              <div>
+                <h3>1970s Rotary Audio Guestbook</h3>
+                <p>Restored classic GPO rotary phones capturing intimate audio memories from family, friends, and VIP guests.</p>
+                <div class="gallery-spec-pills">
+                  <span class="gallery-spec-pill">Original 1970s Phone</span>
+                  <span class="gallery-spec-pill">HD Audio Codec</span>
+                  <span class="gallery-spec-pill">Custom Vinyl Box</span>
+                </div>
+              </div>
+              <div class="gallery-card-actions">
+                <a href="/services" class="gallery-card-link">
+                  <span>View Specifications</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <button type="button" class="gallery-btn-reserve" onclick="openBookingModal('Vintage Audio Guestbook')">
+                  <span>Reserve Setup</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Interactive Games & Digital Mosaic -->
+          <div class="gallery-card" data-category="interactive">
+            <div class="gallery-card-media">
+              <img src="/images/service_games.webp" alt="Interactive Digital Games &amp; Mosaic Wall" loading="lazy">
+              <span class="gallery-card-tag">Interactive Tech</span>
+            </div>
+            <div class="gallery-card-body">
+              <div>
+                <h3>Digital Mosaic &amp; Touch Games</h3>
+                <p>Crowdsourced live mosaic wall projecting every guest photo in real-time alongside branded touch arcade games.</p>
+                <div class="gallery-spec-pills">
+                  <span class="gallery-spec-pill">Live Photo Mural</span>
+                  <span class="gallery-spec-pill">Custom Branding</span>
+                  <span class="gallery-spec-pill">Arcade Leaderboard</span>
+                </div>
+              </div>
+              <div class="gallery-card-actions">
+                <a href="/services" class="gallery-card-link">
+                  <span>View Specifications</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <button type="button" class="gallery-btn-reserve" onclick="openBookingModal('Corporate & Brand Activation Booth')">
+                  <span>Reserve Setup</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: QR Event Registration -->
+          <div class="gallery-card" data-category="interactive">
+            <div class="gallery-card-media">
+              <img src="/images/service_qr.webp" alt="Smart QR Event Registration Kiosk" loading="lazy">
+              <span class="gallery-card-tag">Enterprise Check-In</span>
+            </div>
+            <div class="gallery-card-body">
+              <div>
+                <h3>Smart QR Registration Kiosks</h3>
+                <p>Contactless guest check-in counter with instant high-speed badge printing and live attendee telemetry analytics.</p>
+                <div class="gallery-spec-pills">
+                  <span class="gallery-spec-pill">Thermal Printing</span>
+                  <span class="gallery-spec-pill">NFC / QR Sync</span>
+                  <span class="gallery-spec-pill">Live Telemetry</span>
+                </div>
+              </div>
+              <div class="gallery-card-actions">
+                <a href="/services" class="gallery-card-link">
+                  <span>View Specifications</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <button type="button" class="gallery-btn-reserve" onclick="openBookingModal('Corporate & Brand Activation Booth')">
+                  <span>Reserve Setup</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SERVICES SECTION (BILIMBE ACCORDION & PREVIEW STYLE)
+         ==================================================================== -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-eyebrow">OUR SERVICES</span>
+          <h2 class="section-heading">Discover Our Elegant <span class="highlight">Event Solutions</span></h2>
+          <p class="section-desc">
+            Explore our curated catalog of photobooths, 360° video platforms, and interactive digital activations.
+          </p>
+        </div>
+
+        <!-- Main Full Parent Card Enclosing All Interactive Catalog Cards -->
+        <div class="services-main-parent-card">
+          <div class="services-split-wrap">
+          <!-- Accordion on Left (Luxury Interactive Catalog) -->
+          <div class="service-accordion-list" id="services-accordion" role="tablist" aria-label="Our Activations Catalog">
+            <!-- Item 1 -->
+            <div class="service-accordion-item active" data-service-key="signature" tabindex="0" role="tab" aria-selected="true">
+              <button type="button" class="service-accordion-header">
+                <div class="service-header-left">
+                  <span class="service-item-num">01</span>
+                  <span class="service-item-title">The Signature Studio Photobooth</span>
+                </div>
+                <div class="service-header-right">
+                  <span class="service-item-tag">Classic Prints</span>
+                  <span class="service-accordion-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </span>
+                </div>
+              </button>
+              <div class="service-accordion-body">
+                <p>Full-Frame Canon EOS R camera, studio beauty softbox, unlimited custom 4x6" magnetic photo prints in 7 seconds, instant AirDrop/QR sharing lounge, and two certified concierges on-site.</p>
+                <div class="service-body-footer">
+                  <div class="service-body-chips">
+                    <span class="service-chip">Canon Full-Frame</span>
+                    <span class="service-chip">7s Lab Prints</span>
+                    <span class="service-chip">2 Concierges</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 10px; margin-left: auto;">
+                    <a href="/service-detail?id=signature-booth" style="color: #0F172A; font-weight: 700; font-size: 0.78rem; text-decoration: none; border-bottom: 1.5px solid #CBD5E1; padding-bottom: 2px;">Explore Details →</a>
+                    <button type="button" class="service-inline-book-btn" onclick="event.stopPropagation(); openBookingModal('The Signature Studio Photobooth');">
+                      <span>Reserve Setup →</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="service-accordion-item" data-service-key="video360" tabindex="0" role="tab" aria-selected="false">
+              <button type="button" class="service-accordion-header">
+                <div class="service-header-left">
+                  <span class="service-item-num">02</span>
+                  <span class="service-item-title">360° Cinematic Video Booth</span>
+                </div>
+                <div class="service-header-right">
+                  <span class="service-item-tag">Viral Video</span>
+                  <span class="service-accordion-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </span>
+                </div>
+              </button>
+              <div class="service-accordion-body">
+                <p>Motorized gyro-stabilized 4K 120fps rotating camera arm, synchronized sound-activated RGB perimeter lighting, custom soundtracks, and 15-second QR code video distribution.</p>
+                <div class="service-body-footer">
+                  <div class="service-body-chips">
+                    <span class="service-chip">4K 120fps Slow-Mo</span>
+                    <span class="service-chip">RGB Ambient Lighting</span>
+                    <span class="service-chip">Instant AirDrop / QR</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 10px; margin-left: auto;">
+                    <a href="/service-detail?id=glam-360" style="color: #0F172A; font-weight: 700; font-size: 0.78rem; text-decoration: none; border-bottom: 1.5px solid #CBD5E1; padding-bottom: 2px;">Explore Details →</a>
+                    <button type="button" class="service-inline-book-btn" onclick="event.stopPropagation(); openBookingModal('360° Cinematic Video Booth');">
+                      <span>Reserve Setup →</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="service-accordion-item" data-service-key="glam" tabindex="0" role="tab" aria-selected="false">
+              <button type="button" class="service-accordion-header">
+                <div class="service-header-left">
+                  <span class="service-item-num">03</span>
+                  <span class="service-item-title">The B&amp;W Kardashian Glam Booth</span>
+                </div>
+                <div class="service-header-right">
+                  <span class="service-item-tag">Editorial Glam</span>
+                  <span class="service-accordion-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </span>
+                </div>
+              </button>
+              <div class="service-accordion-body">
+                <p>Proprietary real-time skin softening algorithm, crisp high-contrast studio ring-flash lighting, pure white editorial tension backdrop, and heavy 300gsm metallic photo cardstock.</p>
+                <div class="service-body-footer">
+                  <div class="service-body-chips">
+                    <span class="service-chip">Skin-Smoothing AI</span>
+                    <span class="service-chip">Studio Ring Flash</span>
+                    <span class="service-chip">300gsm Cardstock</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 10px; margin-left: auto;">
+                    <a href="/service-detail?id=kardashian-glam" style="color: #0F172A; font-weight: 700; font-size: 0.78rem; text-decoration: none; border-bottom: 1.5px solid #CBD5E1; padding-bottom: 2px;">Explore Details →</a>
+                    <button type="button" class="service-inline-book-btn" onclick="event.stopPropagation(); openBookingModal('The B&W Kardashian Glam Booth');">
+                      <span>Reserve Setup →</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="service-accordion-item" data-service-key="audio" tabindex="0" role="tab" aria-selected="false">
+              <button type="button" class="service-accordion-header">
+                <div class="service-header-left">
+                  <span class="service-item-num">04</span>
+                  <span class="service-item-title">Vintage Audio Guestbook</span>
+                </div>
+                <div class="service-header-right">
+                  <span class="service-item-tag">Voice Memories</span>
+                  <span class="service-accordion-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </span>
+                </div>
+              </button>
+              <div class="service-accordion-body">
+                <p>Restored 1970s GPO rotary telephone in vintage hues with custom recorded greeting by the hosts. Guests leave heartfelt voice recordings, delivered as master audio tracks &amp; vinyl records.</p>
+                <div class="service-body-footer">
+                  <div class="service-body-chips">
+                    <span class="service-chip">Authentic 1970s GPO</span>
+                    <span class="service-chip">Custom Host Greeting</span>
+                    <span class="service-chip">Vinyl Record Keepsake</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 10px; margin-left: auto;">
+                    <a href="/service-detail?id=retro-audio-guestbook" style="color: #0F172A; font-weight: 700; font-size: 0.78rem; text-decoration: none; border-bottom: 1.5px solid #CBD5E1; padding-bottom: 2px;">Explore Details →</a>
+                    <button type="button" class="service-inline-book-btn" onclick="event.stopPropagation(); openBookingModal('Vintage Audio Guestbook');">
+                      <span>Reserve Setup →</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="service-accordion-item" data-service-key="corporate" tabindex="0" role="tab" aria-selected="false">
+              <button type="button" class="service-accordion-header">
+                <div class="service-header-left">
+                  <span class="service-item-num">05</span>
+                  <span class="service-item-title">Corporate &amp; Brand Activation Booth</span>
+                </div>
+                <div class="service-header-right">
+                  <span class="service-item-tag">Enterprise Tech</span>
+                  <span class="service-accordion-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </span>
+                </div>
+              </button>
+              <div class="service-accordion-body">
+                <p>Full custom exterior vinyl hardware wrap, interactive survey UI, GDPR opt-in attendee data capture, live digital mosaic wall projection, and real-time impression analytics.</p>
+                <div class="service-body-footer">
+                  <div class="service-body-chips">
+                    <span class="service-chip">Bespoke Vinyl Branding</span>
+                    <span class="service-chip">GDPR Data Capture</span>
+                    <span class="service-chip">Live Mosaic Projection</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 10px; margin-left: auto;">
+                    <a href="/service-detail?id=brand-activation" style="color: #0F172A; font-weight: 700; font-size: 0.78rem; text-decoration: none; border-bottom: 1.5px solid #CBD5E1; padding-bottom: 2px;">Explore Details →</a>
+                    <button type="button" class="service-inline-book-btn" onclick="event.stopPropagation(); openBookingModal('Corporate & Brand Activation Booth');">
+                      <span>Reserve Setup →</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="service-accordion-item" data-service-key="custom" tabindex="0" role="tab" aria-selected="false">
+              <button type="button" class="service-accordion-header">
+                <div class="service-header-left">
+                  <span class="service-item-num">06</span>
+                  <span class="service-item-title">Custom Immersive &amp; AI Set Experience</span>
+                </div>
+                <div class="service-header-right">
+                  <span class="service-item-tag">Bespoke Build</span>
+                  <span class="service-accordion-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </span>
+                </div>
+              </button>
+              <div class="service-accordion-body">
+                <p>Architectural physical backdrop fabrication, custom neon signage, real-time Generative AI background transformation, and dedicated creative director for high-profile film premieres.</p>
+                <div class="service-body-footer">
+                  <div class="service-body-chips">
+                    <span class="service-chip">Generative AI Morphing</span>
+                    <span class="service-chip">Fabricated Set Props</span>
+                    <span class="service-chip">Dedicated Art Director</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 10px; margin-left: auto;">
+                    <a href="/service-detail?id=custom-themed" style="color: #0F172A; font-weight: 700; font-size: 0.78rem; text-decoration: none; border-bottom: 1.5px solid #CBD5E1; padding-bottom: 2px;">Explore Details →</a>
+                    <button type="button" class="service-inline-book-btn" onclick="event.stopPropagation(); openBookingModal('Custom Immersive & AI Set Experience');">
+                      <span>Reserve Setup →</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Live Preview on Right (Image Only) -->
+          <div class="service-preview-card" id="service-preview-card">
+            <div class="preview-img-container">
+              <img id="preview-img" src="/images/hero_booth_studio.jpg" alt="The Signature Studio Photobooth">
+              <div class="preview-img-overlay">
+                <span class="preview-live-tag"><span class="pulse-dot"></span> Live Experience</span>
+                <span class="preview-uk-tag">Pan-India &amp; Overseas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- End of services-main-parent-card -->
+      </div>
+    </section>
+
+    <!-- Premium Modern Milestones & Stats Showcase -->
+    <section id="track-record" class="counts-section">
+        <div class="container">
+          <div class="counts-header">
+            <span class="counts-eyebrow">OUR TRACK RECORD</span>
+            <h3 class="counts-title">Numbers That Define Our Standard</h3>
+            <p class="counts-subtitle">Setting the benchmark for experiential event photobooths and interactive activations.</p>
+          </div>
+
+          <div class="counts-grid">
+            <!-- Stat 1 -->
+            <div class="count-card">
+              <div class="count-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E31D1C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="6"></circle>
+                  <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+                </svg>
+              </div>
+              <div class="count-num-wrap">
+                <span class="count-num">4</span><span class="count-accent">+</span>
+              </div>
+              <h4 class="count-label">Years of Excellence</h4>
+              <p class="count-desc">Pioneering bespoke event tech</p>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="count-card">
+              <div class="count-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E31D1C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                  <polygon points="12 11 13.5 14 17 14.5 14.5 17 15 20.5 12 18.8 9 20.5 9.5 17 7 14.5 10.5 14"></polygon>
+                </svg>
+              </div>
+              <div class="count-num-wrap">
+                <span class="count-num">150</span><span class="count-accent">+</span>
+              </div>
+              <h4 class="count-label">Brands Worked</h4>
+              <p class="count-desc">Fortune 500 &amp; luxury houses</p>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="count-card">
+              <div class="count-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E31D1C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <div class="count-num-wrap">
+                <span class="count-num">450</span><span class="count-accent">+</span>
+              </div>
+              <h4 class="count-label">Events Catered</h4>
+              <p class="count-desc">Weddings, galas &amp; festivals</p>
+            </div>
+
+            <!-- Stat 4 -->
+            <div class="count-card">
+              <div class="count-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E31D1C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                  <circle cx="12" cy="13" r="4"></circle>
+                </svg>
+              </div>
+              <div class="count-num-wrap">
+                <span class="count-num">120k</span><span class="count-accent">+</span>
+              </div>
+              <h4 class="count-label">Moments Printed</h4>
+              <p class="count-desc">Lab-grade metallic souvenirs</p>
+            </div>
+
+            <!-- Stat 5 -->
+            <div class="count-card">
+              <div class="count-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E31D1C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <div class="count-num-wrap">
+                <span class="count-num">25</span><span class="count-accent">+</span>
+              </div>
+              <h4 class="count-label">Cities Worldwide</h4>
+              <p class="count-desc">Pan-India &amp; global activations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         OUR REACH / BRANCHES SECTION (BILIMBE STYLE)
+         ==================================================================== -->
+    <section id="branches" class="branches-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-eyebrow">OUR REACH</span>
+          <h2 class="section-heading">The Smart Choice for Organisers in <span class="highlight">Your City</span></h2>
+          <p class="section-desc">
+            Luxury on-site photobooth installations and immersive event activations across Bangalore, Chennai, Hyderabad, Mumbai, and Delhi / NCR.
+          </p>
+        </div>
+
+        <!-- Horizontal Carousel / City Showcase Track -->
+        <div class="branch-carousel-wrap">
+          <div class="branch-cards-track" id="branch-cards-track">
+            <!-- 01: Bangalore -->
+            <div class="branch-card" onclick="selectCityAndBook('Bangalore')">
+              <div class="branch-card-media">
+                <img src="/images/branch_bangalore.jpg" alt="Bangalore Photobooth Rental &amp; Event Experiences" class="branch-card-img" loading="lazy">
+              </div>
+              <div class="branch-card-footer">
+                <h3 class="branch-card-city">Bangalore</h3>
+              </div>
+            </div>
+
+            <!-- 02: Chennai -->
+            <div class="branch-card" onclick="selectCityAndBook('Chennai')">
+              <div class="branch-card-media">
+                <img src="/images/branch_chennai.jpg" alt="Chennai Photobooth Rental &amp; Event Experiences" class="branch-card-img" loading="lazy">
+              </div>
+              <div class="branch-card-footer">
+                <h3 class="branch-card-city">Chennai</h3>
+              </div>
+            </div>
+
+            <!-- 03: Hyderabad -->
+            <div class="branch-card" onclick="selectCityAndBook('Hyderabad')">
+              <div class="branch-card-media">
+                <img src="/images/branch_hyderabad.jpg" alt="Hyderabad Photobooth Rental &amp; Event Experiences" class="branch-card-img" loading="lazy">
+              </div>
+              <div class="branch-card-footer">
+                <h3 class="branch-card-city">Hyderabad</h3>
+              </div>
+            </div>
+
+            <!-- 04: Mumbai -->
+            <div class="branch-card" onclick="selectCityAndBook('Mumbai')">
+              <div class="branch-card-media">
+                <img src="/images/branch_mumbai.jpg" alt="Mumbai Photobooth Rental &amp; Event Experiences" class="branch-card-img" loading="lazy">
+              </div>
+              <div class="branch-card-footer">
+                <h3 class="branch-card-city">Mumbai</h3>
+              </div>
+            </div>
+
+            <!-- 05: Delhi / NCR -->
+            <div class="branch-card" onclick="selectCityAndBook('Delhi')">
+              <div class="branch-card-media">
+                <img src="/images/branch_delhi.jpg" alt="Delhi &amp; NCR Photobooth Rental &amp; Event Experiences" class="branch-card-img" loading="lazy">
+              </div>
+              <div class="branch-card-footer">
+                <h3 class="branch-card-city">Delhi</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TESTIMONIALS (BILIMBE DUAL MARQUEE PATTERN)
+         ==================================================================== -->
+    <section id="testimonials" class="testimonials-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-eyebrow">PROVEN EXCELLENCE</span>
+          <h2 class="section-heading">Testimonials That <span class="highlight">Inspire and Elevate</span></h2>
+          <p class="section-desc">Real stories from brides, grooms, and global enterprise event directors.</p>
+        </div>
+      </div>
+
+      <!-- Single Continuous Marquee Row: Luxury Events, Weddings & Enterprise Brand Activations -->
+      <div class="marquee-container">
+        <div class="marquee-row scroll-left">
+          <!-- Card 1: Camilla Vance -->
+          <div class="testimonial-box">
+            <div class="test-top-row">
+              <div class="test-user-header">
+                <div class="test-avatar cv">CV</div>
+                <div class="test-user-info">
+                  <div class="test-name-line">
+                    <h5>Camilla Vance</h5>
+                    <span class="test-verified">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="#15803D"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                      Verified Host
+                    </span>
+                  </div>
+                  <span class="test-venue">Hedsor House, Buckinghamshire</span>
+                </div>
+              </div>
+            </div>
+            <p class="test-quote">
+              "The Glam Booth was the hit of our wedding reception. Everyone looked like movie stars with the skin smoothing and the prints were in their hands in 7 seconds!"
+            </p>
+            <div class="test-footer-row">
+              <div class="test-stars-group">
+                <span class="test-stars">★★★★★</span>
+              </div>
+              <span class="test-date">VIP Wedding</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Julian Montgomery -->
+          <div class="testimonial-box">
+            <div class="test-top-row">
+              <div class="test-user-header">
+                <div class="test-avatar jm">JM</div>
+                <div class="test-user-info">
+                  <div class="test-name-line">
+                    <h5>Julian Montgomery</h5>
+                    <span class="test-verified">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="#15803D"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                      Verified Host
+                    </span>
+                  </div>
+                  <span class="test-venue">Fintech Summit, London ExCeL</span>
+                </div>
+              </div>
+            </div>
+            <p class="test-quote">
+              "Over 850 qualified leads captured on our custom branded touchscreen kiosk. Seamless reliability, GDPR compliance, and brilliant staff on-site all day."
+            </p>
+            <div class="test-footer-row">
+              <div class="test-stars-group">
+                <span class="test-stars">★★★★★</span>
+              </div>
+              <span class="test-date">Fintech Summit</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Sienna Thorne -->
+          <div class="testimonial-box">
+            <div class="test-top-row">
+              <div class="test-user-header">
+                <div class="test-avatar st">ST</div>
+                <div class="test-user-info">
+                  <div class="test-name-line">
+                    <h5>Sienna Thorne</h5>
+                    <span class="test-verified">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="#15803D"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                      Verified Host
+                    </span>
+                  </div>
+                  <span class="test-venue">Covent Garden Luxury Launch</span>
+                </div>
+              </div>
+            </div>
+            <p class="test-quote">
+              "The 360° video booth with synchronized music went completely viral on TikTok. Mimori is in a league of its own when it comes to aesthetic refinement."
+            </p>
+            <div class="test-footer-row">
+              <div class="test-stars-group">
+                <span class="test-stars">★★★★★</span>
+              </div>
+              <span class="test-date">Brand Launch</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Lord Harrington -->
+          <div class="testimonial-box">
+            <div class="test-top-row">
+              <div class="test-user-header">
+                <div class="test-avatar lh">LH</div>
+                <div class="test-user-info">
+                  <div class="test-name-line">
+                    <h5>Lord Harrington</h5>
+                    <span class="test-verified">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="#15803D"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                      Verified Host
+                    </span>
+                  </div>
+                  <span class="test-venue">The Ritz London, Mayfair</span>
+                </div>
+              </div>
+            </div>
+            <p class="test-quote">
+              "The vintage rotary audio guestbook captured the most emotional and hilarious voice notes from our lifelong friends. An absolute treasure to cherish."
+            </p>
+            <div class="test-footer-row">
+              <div class="test-stars-group">
+                <span class="test-stars">★★★★★</span>
+              </div>
+              <span class="test-date">The Ritz Gala</span>
+            </div>
+          </div>
+
+          <!-- Card 5: Elena Moretti -->
+          <div class="testimonial-box">
+            <div class="test-top-row">
+              <div class="test-user-header">
+                <div class="test-avatar em">EM</div>
+                <div class="test-user-info">
+                  <div class="test-name-line">
+                    <h5>Elena Moretti</h5>
+                    <span class="test-verified">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="#15803D"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                      Verified Host
+                    </span>
+                  </div>
+                  <span class="test-venue">Villa d'Este, Lake Como</span>
+                </div>
+              </div>
+            </div>
+            <p class="test-quote">
+              "Our international guests praised the photo strip quality all weekend. The attendants spoke fluent Italian and English and kept everything impeccably elegant."
+            </p>
+            <div class="test-footer-row">
+              <div class="test-stars-group">
+                <span class="test-stars">★★★★★</span>
+              </div>
+              <span class="test-date">Lake Como Gala</span>
+            </div>
+          </div>
+
+          <!-- Card 6: Red Bull Events -->
+          <div class="testimonial-box">
+            <div class="test-top-row">
+              <div class="test-user-header">
+                <div class="test-avatar rb">RB</div>
+                <div class="test-user-info">
+                  <div class="test-name-line">
+                    <h5>Red Bull Events</h5>
+                    <span class="test-verified">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="#15803D"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                      Verified Host
+                    </span>
+                  </div>
+                  <span class="test-venue">Battersea Power Station, London</span>
+                </div>
+              </div>
+            </div>
+            <p class="test-quote">
+              "High energy, flawless 4K output, and real-time impression dashboard. The team executed our brand guidelines to perfection without a single hitch."
+            </p>
+            <div class="test-footer-row">
+              <div class="test-stars-group">
+                <span class="test-stars">★★★★★</span>
+              </div>
+              <span class="test-date">Sports Activation</span>
+            </div>
+          </div>
+
+          <!-- Card 7: Natasha Romanoff -->
+          <div class="testimonial-box">
+            <div class="test-top-row">
+              <div class="test-user-header">
+                <div class="test-avatar nr">NR</div>
+                <div class="test-user-info">
+                  <div class="test-name-line">
+                    <h5>Natasha Romanoff</h5>
+                    <span class="test-verified">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="#15803D"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                      Verified Host
+                    </span>
+                  </div>
+                  <span class="test-venue">The Savoy Hotel, Strand London</span>
+                </div>
+              </div>
+            </div>
+            <p class="test-quote">
+              "The custom silver foil print branding and bespoke photo envelopes added a tier of luxury our VIP donors adored. Raised over £240k for our foundation."
+            </p>
+            <div class="test-footer-row">
+              <div class="test-stars-group">
+                <span class="test-stars">★★★★★</span>
+              </div>
+              <span class="test-date">Charity Gala</span>
+            </div>
+          </div>
+
+          <!-- Card 8: Marcus Sterling -->
+          <div class="testimonial-box">
+            <div class="test-top-row">
+              <div class="test-user-header">
+                <div class="test-avatar ms">MS</div>
+                <div class="test-user-info">
+                  <div class="test-name-line">
+                    <h5>Marcus Sterling</h5>
+                    <span class="test-verified">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="#15803D"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                      Verified Host
+                    </span>
+                  </div>
+                  <span class="test-venue">Cannes Film Premiere, French Riviera</span>
+                </div>
+              </div>
+            </div>
+            <p class="test-quote">
+              "The robotic arm glambot captured cinema-grade slow motion of our cast on the red carpet. Distributed across 14 global press channels within 20 minutes."
+            </p>
+            <div class="test-footer-row">
+              <div class="test-stars-group">
+                <span class="test-stars">★★★★★</span>
+              </div>
+              <span class="test-date">Film Premiere</span>
+            </div>
+          </div>
+
+          <!-- Seamless Loop Duplicates (Cards 1 to 8 Duplicated for 50% Continuous Loop) -->
+          <div class="testimonial-box">
+            <div class="test-top-row">
+              <div class="test-user-header">
+                <div class="test-avatar cv">CV</div>
+                <div class="test-user-info">
+                  <div class="test-name-line">
+                    <h5>Camilla Vance</h5>
+                    <span class="test-verified">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="#15803D"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                      Verified Host
+                    </span>
+                  </div>
+                  <span class="test-venue">Hedsor House, Buckinghamshire</span>
+                </div>
+              </div>
+            </div>
+            <p class="test-quote">
+              "The Glam Booth was the hit of our wedding reception. Everyone looked like movie stars with the skin smoothing and the prints were in their hands in 7 seconds!"
+            </p>
+            <div class="test-footer-row">
+              <div class="test-stars-group">
+                <span class="test-stars">★★★★★</span>
+              </div>
+              <span class="test-date">VIP Wedding</span>
+            </div>
+          </div>
+
+          <div class="testimonial-box">
+            <div class="test-top-row">
+              <div class="test-user-header">
+                <div class="test-avatar jm">JM</div>
+                <div class="test-user-info">
+                  <div class="test-name-line">
+                    <h5>Julian Montgomery</h5>
+                    <span class="test-verified">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="#15803D"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                      Verified Host
+                    </span>
+                  </div>
+                  <span class="test-venue">Fintech Summit, London ExCeL</span>
+                </div>
+              </div>
+            </div>
+            <p class="test-quote">
+              "Over 850 qualified leads captured on our custom branded touchscreen kiosk. Seamless reliability, GDPR compliance, and brilliant staff on-site all day."
+            </p>
+            <div class="test-footer-row">
+              <div class="test-stars-group">
+                <span class="test-stars">★★★★★</span>
+              </div>
+              <span class="test-date">Fintech Summit</span>
+            </div>
+          </div>
+
+          <div class="testimonial-box">
+            <div class="test-top-row">
+              <div class="test-user-header">
+                <div class="test-avatar st">ST</div>
+                <div class="test-user-info">
+                  <div class="test-name-line">
+                    <h5>Sienna Thorne</h5>
+                    <span class="test-verified">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="#15803D"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                      Verified Host
+                    </span>
+                  </div>
+                  <span class="test-venue">Covent Garden Luxury Launch</span>
+                </div>
+              </div>
+            </div>
+            <p class="test-quote">
+              "The 360° video booth with synchronized music went completely viral on TikTok. Mimori is in a league of its own when it comes to aesthetic refinement."
+            </p>
+            <div class="test-footer-row">
+              <div class="test-stars-group">
+                <span class="test-stars">★★★★★</span>
+              </div>
+              <span class="test-date">Brand Launch</span>
+            </div>
+          </div>
+
+          <div class="testimonial-box">
+            <div class="test-top-row">
+              <div class="test-user-header">
+                <div class="test-avatar lh">LH</div>
+                <div class="test-user-info">
+                  <div class="test-name-line">
+                    <h5>Lord Harrington</h5>
+                    <span class="test-verified">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="#15803D"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                      Verified Host
+                    </span>
+                  </div>
+                  <span class="test-venue">The Ritz London, Mayfair</span>
+                </div>
+              </div>
+            </div>
+            <p class="test-quote">
+              "The vintage rotary audio guestbook captured the most emotional and hilarious voice notes from our lifelong friends. An absolute treasure to cherish."
+            </p>
+            <div class="test-footer-row">
+              <div class="test-stars-group">
+                <span class="test-stars">★★★★★</span>
+              </div>
+              <span class="test-date">The Ritz Gala</span>
+            </div>
+          </div>
+
+          <div class="testimonial-box">
+            <div class="test-top-row">
+              <div class="test-user-header">
+                <div class="test-avatar em">EM</div>
+                <div class="test-user-info">
+                  <div class="test-name-line">
+                    <h5>Elena Moretti</h5>
+                    <span class="test-verified">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="#15803D"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                      Verified Host
+                    </span>
+                  </div>
+                  <span class="test-venue">Villa d'Este, Lake Como</span>
+                </div>
+              </div>
+            </div>
+            <p class="test-quote">
+              "Our international guests praised the photo strip quality all weekend. The attendants spoke fluent Italian and English and kept everything impeccably elegant."
+            </p>
+            <div class="test-footer-row">
+              <div class="test-stars-group">
+                <span class="test-stars">★★★★★</span>
+              </div>
+              <span class="test-date">Lake Como Gala</span>
+            </div>
+          </div>
+
+          <div class="testimonial-box">
+            <div class="test-top-row">
+              <div class="test-user-header">
+                <div class="test-avatar rb">RB</div>
+                <div class="test-user-info">
+                  <div class="test-name-line">
+                    <h5>Red Bull Events</h5>
+                    <span class="test-verified">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="#15803D"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                      Verified Host
+                    </span>
+                  </div>
+                  <span class="test-venue">Battersea Power Station, London</span>
+                </div>
+              </div>
+            </div>
+            <p class="test-quote">
+              "High energy, flawless 4K output, and real-time impression dashboard. The team executed our brand guidelines to perfection without a single hitch."
+            </p>
+            <div class="test-footer-row">
+              <div class="test-stars-group">
+                <span class="test-stars">★★★★★</span>
+              </div>
+              <span class="test-date">Sports Activation</span>
+            </div>
+          </div>
+
+          <div class="testimonial-box">
+            <div class="test-top-row">
+              <div class="test-user-header">
+                <div class="test-avatar nr">NR</div>
+                <div class="test-user-info">
+                  <div class="test-name-line">
+                    <h5>Natasha Romanoff</h5>
+                    <span class="test-verified">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="#15803D"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                      Verified Host
+                    </span>
+                  </div>
+                  <span class="test-venue">The Savoy Hotel, Strand London</span>
+                </div>
+              </div>
+            </div>
+            <p class="test-quote">
+              "The custom silver foil print branding and bespoke photo envelopes added a tier of luxury our VIP donors adored. Raised over £240k for our foundation."
+            </p>
+            <div class="test-footer-row">
+              <div class="test-stars-group">
+                <span class="test-stars">★★★★★</span>
+              </div>
+              <span class="test-date">Charity Gala</span>
+            </div>
+          </div>
+
+          <div class="testimonial-box">
+            <div class="test-top-row">
+              <div class="test-user-header">
+                <div class="test-avatar ms">MS</div>
+                <div class="test-user-info">
+                  <div class="test-name-line">
+                    <h5>Marcus Sterling</h5>
+                    <span class="test-verified">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="#15803D"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                      Verified Host
+                    </span>
+                  </div>
+                  <span class="test-venue">Cannes Film Premiere, French Riviera</span>
+                </div>
+              </div>
+            </div>
+            <p class="test-quote">
+              "The robotic arm glambot captured cinema-grade slow motion of our cast on the red carpet. Distributed across 14 global press channels within 20 minutes."
+            </p>
+            <div class="test-footer-row">
+              <div class="test-stars-group">
+                <span class="test-stars">★★★★★</span>
+              </div>
+              <span class="test-date">Film Premiere</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         FINAL CALL-TO-ACTION SECTION (RESERVE YOUR EXPERIENCE & CONCIERGE)
+         ==================================================================== -->
+    <!-- ====================================================================
+         FINAL CALL-TO-ACTION SECTION (FULL-WIDTH RED THEME: TITLE + BOOK CTA ONLY)
+         ==================================================================== -->
+    <section id="get-in-touch" class="final-cta-section">
+      <div class="container">
+        <div class="final-cta-content">
+          <h2 class="final-cta-title">
+            Ready to Capture the Magic?<br>
+            <span class="final-cta-line2">Let's Create Your Unforgettable Experience.</span>
+          </h2>
+
+          <div class="final-cta-actions-row">
+            <a href="#booking-modal" class="final-btn-book" onclick="openBookingModal(); return false;">
+              <span>Book Your Event Experience</span>
+              <span class="btn-arrow-circle">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       FOOTER (BILIMBE CLEAN DESIGN)
+       ==================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-banner">
+        <div class="footer-cta-text">
+          <p>Ready to create unforgettable moments?</p>
+          <h3>Let's curate your event activation</h3>
+        </div>
+        <button type="button" class="btn btn-primary btn-lg" onclick="openBookingModal()">
+          <span>Book Your Event Experience</span>
+        </button>
+      </div>
+
+      <div class="footer-columns-grid">
+        <div>
+          <a href="/" class="footer-logo-wrap" aria-label="Mimori">
+            <img src="/images/Footer Logo.svg" onerror="this.onerror=null;this.src='/images/footer-logo.svg';" alt="Mimori - Look. Book. Enjoy" class="footer-logo-img">
+          </a>
+          <p style="color: #94A3B8; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+            Premier photobooths, 360° video entertainment, and digital event registration for luxury celebrations worldwide.
+          </p>
+          <p style="color: #CBD5E1; font-size: 0.85rem;">📞 +44 20 7946 0912</p>
+          <p style="color: #CBD5E1; font-size: 0.85rem;">✉️ concierge@mimoridigital.com</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Photo Booth Products</h5>
+          <ul class="footer-links-list">
+            <li><a href="/services">Signature Studio Booth</a></li>
+            <li><a href="/services">B&amp;W Kardashian Glam</a></li>
+            <li><a href="/services">Vintage Audio Guestbook</a></li>
+            <li><a href="/services">AR Digital Mirror</a></li>
+            <li><a href="/services">AI Mosaic Wall</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul class="footer-links-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">All Services</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/showcase">Showcase</a></li>
+            <li><a href="/contact">Contact Concierge</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Coverage Hubs</h5>
+          <ul class="footer-links-list">
+            <li><a href="/contact">London Mayfair HQ</a></li>
+            <li><a href="/contact">Oxfordshire &amp; Cotswolds</a></li>
+            <li><a href="/contact">Manchester &amp; North</a></li>
+            <li><a href="/contact">Lake Como &amp; Europe</a></li>
+            <li><a href="/contact">Dubai &amp; Middle East</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p>&copy; 2026 Mimori Digital. All rights reserved.</p>
+        <div style="display: flex; gap: 20px;">
+          <a href="/contact">Privacy Policy</a>
+          <a href="/contact">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================================================================
+       BOOKING REQUEST POPUP MODAL
+       ==================================================================== -->
+  <div class="booking-modal-overlay" id="booking-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="booking-modal-card">
+      <button type="button" class="booking-modal-close" id="booking-modal-close" aria-label="Close modal">&times;</button>
+      
+      <!-- Form View -->
+      <div id="modal-form-view">
+        <div class="booking-modal-header">
+          <span class="booking-modal-pill">VIP Reservation</span>
+          <h2 class="booking-modal-title" id="modal-title">Request Your Experience</h2>
+          <p class="booking-modal-subtitle">Tell us about your event. We will verify hardware availability and prepare a bespoke proposal within 2 hours.</p>
+        </div>
+
+        <form id="modal-booking-form">
+          <div class="booking-form-grid">
+            <div class="booking-form-row">
+              <input type="text" id="modal-name" class="booking-input" placeholder="Full Name*" required>
+              <input type="email" id="modal-email" class="booking-input" placeholder="Email Address*" required>
+            </div>
+            
+            <div class="booking-form-row">
+              <input type="tel" id="modal-phone" class="booking-input" placeholder="Phone Number (with Country Code)*" required>
+              <input type="date" id="modal-date" class="booking-input" required>
+            </div>
+
+            <div class="booking-form-row">
+              <select id="modal-city" class="booking-input" required>
+                <option value="" disabled selected>Choose Event City*</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi / NCR</option>
+                <option value="Other">Other Event City</option>
+              </select>
+
+              <select id="modal-booking-product" class="booking-input" required>
+                <option value="" disabled selected>Preferred Booth Setup*</option>
+                <option value="The Signature Studio Photobooth">Signature Studio Photobooth</option>
+                <option value="360° Cinematic Video Booth">360° Cinematic Glambot</option>
+                <option value="The B&W Kardashian Glam Booth">Kardashian Glam B&amp;W Booth</option>
+                <option value="Vintage Audio Guestbook">Vintage 1970s Audio Guestbook</option>
+                <option value="Custom Immersive & AI Set Experience">AR Digital Mirror Activation</option>
+                <option value="Corporate & Brand Activation Booth">AI Live Mosaic Wall &amp; Touch Games</option>
+              </select>
+            </div>
+
+            <textarea id="modal-notes" class="booking-input" rows="3" placeholder="Venue name, guest count, estimated hours, custom backdrop requests..."></textarea>
+
+            <button type="submit" class="booking-modal-submit">
+              <span>Submit VIP Booking Request</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Success Confirmation View -->
+      <div id="modal-success-view" class="booking-modal-success">
+        <div class="success-icon">✓</div>
+        <h3 style="font-size: 1.7rem; font-weight: 800; color: #0F172A; margin-bottom: 8px;">Reservation Request Sent!</h3>
+        <p style="color: #64748B; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+          Thank you! Our concierge team has received your event details. We are checking calendar availability and will email your tailored quote shortly.
+        </p>
+        <button type="button" class="btn btn-secondary btn-sm" onclick="closeBookingModal()">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       FLOATING WHATSAPP BUTTON (+91 67869 81769)
+       ==================================================================== -->
+  <a href="https://wa.me/916786981769?text=Hello%20Mimori%20Digital%2C%20I%20would%20like%20to%20enquire%20about%20booking%20a%20photobooth." 
+     class="whatsapp-float-btn" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Chat with Mimori Concierge on WhatsApp">
+    <span class="whatsapp-tooltip">Chat on WhatsApp (+91 67869 81769)</span>
+    <svg viewBox="0 0 24 24" width="58" height="58">
+      <path fill="#25D366" d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.947.556 3.766 1.523 5.309L2 22l4.82-1.488a9.986 9.986 0 005.211 1.52c5.536 0 10.031-4.495 10.031-10.031S17.567 2 12.031 2z"/>
+      <path fill="#FFFFFF" d="M17.865 16.17c-.244.686-1.42 1.328-1.957 1.385-.494.053-1.127.076-3.238-.8-2.697-1.118-4.423-3.864-4.557-4.043-.134-.179-1.09-1.45-1.09-2.766 0-1.316.689-1.961.933-2.227.244-.266.533-.333.711-.333.178 0 .356.002.511.01.167.009.39-.064.611.467.222.533.756 1.844.822 1.978.067.133.111.289.022.467-.089.178-.133.289-.267.444-.133.156-.28.348-.4.467-.133.133-.272.278-.117.544.156.267.689 1.133 1.478 1.833 1.016.903 1.872 1.182 2.139 1.315.267.133.422.111.578-.067.156-.178.667-.778.844-1.044.178-.267.356-.222.6-.133.244.089 1.556.733 1.822.867.267.133.444.2.511.311.067.111.067.644-.178 1.33z"/>
+    </svg>
+  </a>
+
+  <!-- Core Scripts with Cache Busting -->
+  <script src="/js/app.js?v=20261014_filter_fix_v26"></script>
+  <script src="/js/booking.js?v=20260924_globe_v9"></script>
+</body>
+</html>

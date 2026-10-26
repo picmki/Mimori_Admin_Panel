@@ -1,0 +1,161 @@
+[
+  {
+    "id": "signature-booth",
+    "title": "The Signature Studio Photobooth",
+    "tagline": "Magazine-quality portraits with instant lab-grade prints",
+    "badge": "Most Popular",
+    "category": "photobooth",
+    "suitableFor": [
+      "Luxury Weddings",
+      "Gala Dinners",
+      "Milestone Birthdays",
+      "Corporate Galas"
+    ],
+    "description": "Our flagship open-air photobooth combines full-frame Canon DSLR optics, soft beauty-dish studio strobe lighting, and ultra-fast 7-second dye-sublimation printing. Guests receive custom branded prints and instant AirDrop/QR digital copies.",
+    "features": [
+      "Full-Frame Canon EOS R-series camera system",
+      "Elinchrom studio beauty strobe with diffuse softbox",
+      "Unlimited custom-designed 4x6\" or 2x6\" magnetic photo strips",
+      "Instant AirDrop, SMS & QR Code gallery sharing",
+      "Curated luxury velvet, metallic, or floral backdrop",
+      "Dedicated white-glove booth concierge on-site"
+    ],
+    "startingPrice": "£695",
+    "icon": "camera"
+  },
+  {
+    "id": "glam-360",
+    "title": "360° Cinematic Video Booth",
+    "tagline": "Dynamic Hollywood slow-motion video with synced RGB lighting",
+    "badge": "Viral Experience",
+    "category": "videobooth",
+    "suitableFor": [
+      "Brand Activations",
+      "After-Parties",
+      "Music Festivals",
+      "VIP Celebrations"
+    ],
+    "description": "Step onto our tempered glass platform as a high-speed motorized 4K camera rotates 360 degrees around you. Our real-time video engine compiles slow-motion, boomerang effects, custom music, and branded animated overlays ready to share in 15 seconds.",
+    "features": [
+      "Ultra-wide 4-guest tempered glass LED platform",
+      "High-speed 4K 120fps gyro-stabilized camera arm",
+      "Custom soundtrack integration & branded motion graphics",
+      "Instant live sharing kiosk via AirDrop & QR Code",
+      "Programmable sound-activated RGB perimeter lighting",
+      "Two certified technicians for crowd flow and direction"
+    ],
+    "startingPrice": "£895",
+    "icon": "video"
+  },
+  {
+    "id": "kardashian-glam",
+    "title": "The B&W Kardashian Glam Booth",
+    "tagline": "Ultra-flattering skin-smoothing filter & editorial monochrome aesthetic",
+    "badge": "Celebrity Favorite",
+    "category": "photobooth",
+    "suitableFor": [
+      "Black-Tie Weddings",
+      "Fashion Week Events",
+      "Influencer Galas"
+    ],
+    "description": "Inspired by high-fashion editorial portraits and celebrity red carpets, our Glam Booth uses proprietary real-time skin-smoothing algorithms and high-contrast monochrome studio lighting to produce flawless, jaw-dropping black-and-white portraits.",
+    "features": [
+      "Proprietary real-time skin softening & glow algorithm",
+      "Crisp, high-contrast studio ring-flash lighting setup",
+      "Minimalist tension white backdrop for pure editorial contrast",
+      "Ultra-heavy 300gsm metallic photo cardstock prints",
+      "Custom typography and monograms designed by our in-house artist",
+      "Private VIP online gallery with high-res RAW downloads"
+    ],
+    "startingPrice": "£795",
+    "icon": "sparkles"
+  },
+  {
+    "id": "retro-audio-guestbook",
+    "title": "Vintage Audio Guestbook",
+    "tagline": "Heartfelt voice recordings on authentic restored 1970s rotary telephones delivered on bespoke vinyl.",
+    "badge": "EMOTIONAL KEEPSAKE • RETRO NOSTALGIA",
+    "category": "photobooth",
+    "suitableFor": [
+      "VIP Events",
+      "Luxury Celebrations"
+    ],
+    "description": "Heartfelt voice recordings on authentic restored 1970s rotary telephones delivered on bespoke vinyl.",
+    "features": [
+      "Hardware Era: Restored 1970s GPO",
+      "Audio Quality: 24-bit 48kHz WAV",
+      "Power Wire: 100% Wireless",
+      "Starting Price: Starting from £395"
+    ],
+    "startingPrice": "£395",
+    "icon": "camera"
+  },
+  {
+    "id": "brand-activation",
+    "title": "Corporate & Brand Activation Booth",
+    "tagline": "High-impact brand immersion, live data capture, and ROI analytics",
+    "badge": "Enterprise Ready",
+    "category": "digitalengagement",
+    "suitableFor": [
+      "Product Launches",
+      "Conferences",
+      "Pop-up Retail",
+      "Trade Shows"
+    ],
+    "description": "Transform guests into brand advocates. Includes complete custom exterior vinyl wrap, interactive branded touchscreens, opt-in GDPR compliant data collection, live social media amplification, and real-time impression analytics.",
+    "features": [
+      "Full custom vinyl wrap on photo kiosk & hardware enclosure",
+      "Custom branded UI flow, surveys & GDPR consent data capture",
+      "Live digital mosaic wall projection & microsite hosting",
+      "Custom branded animated GIF, Boomerang & MP4 output",
+      "Real-time analytics dashboard: shares, impressions & reach",
+      "SLA guarantee with enterprise on-site backup gear"
+    ],
+    "startingPrice": "£1,250",
+    "icon": "briefcase"
+  },
+  {
+    "id": "custom-themed",
+    "title": "Custom Immersive & AI Set Experience",
+    "tagline": "Bespoke set builds, custom neon, green screen & generative AI",
+    "badge": "Fully Bespoke",
+    "category": "customtech",
+    "suitableFor": [
+      "Film Premieres",
+      "Immersive Theatre",
+      "Festival VIP",
+      "Luxury Galas"
+    ],
+    "description": "Have an extraordinary creative vision? Our production designers build custom backdrops, install custom neon signs, integrate 3D physical props, or deploy real-time AI background synthesis to transport your guests into any fantasy realm or era.",
+    "features": [
+      "Custom architectural backdrop construction & neon signage",
+      "Real-time Generative AI background transformation",
+      "Curated physical prop design matching your event theme",
+      "Multi-camera bullet-time array or matrix-style capture",
+      "Dedicated creative director & technical lead on project",
+      "Full post-event video reel and social campaign cutdown"
+    ],
+    "startingPrice": "£1,850",
+    "icon": "palette"
+  },
+  {
+    "id": "testing",
+    "title": "testing",
+    "tagline": "High-fashion experiential photobooth activation.",
+    "badge": "NEW LUXURY ACTIVATION",
+    "category": "photobooth",
+    "suitableFor": [
+      "VIP Events",
+      "Luxury Celebrations"
+    ],
+    "description": "High-fashion experiential photobooth activation.",
+    "features": [
+      "Imaging Core: Full-Frame Studio",
+      "Print: 7s",
+      "White-Glove Crew: 2 Concierges",
+      "Base Investment: From £795"
+    ],
+    "startingPrice": "£795",
+    "icon": "camera"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "photobooth",
+    "name": "Photo Booth",
+    "description": "Lab-grade prints, full-frame optics & instant AirDrop sharing",
+    "image": "/images/megamenu_photobooth_featured.jpg",
+    "sortOrder": 1
+  },
+  {
+    "id": "videobooth",
+    "name": "Video Booth",
+    "description": "360-degree Hollywood slow-motion video with synced RGB lighting",
+    "image": "/images/service_booth.webp",
+    "sortOrder": 2
+  },
+  {
+    "id": "customtech",
+    "name": "Custom Tech Development",
+    "description": "Bespoke experiential builds, matrix camera arrays & generative AI installations",
+    "image": "/images/service_interactive.webp",
+    "sortOrder": 3
+  },
+  {
+    "id": "digitalengagement",
+    "name": "Digital Engagement Activities",
+    "description": "Interactive touchless kiosks, QR games, surveys & live social mosaic walls",
+    "image": "/images/service_qr.webp",
+    "sortOrder": 4
+  },
+  {
+    "id": "argame",
+    "name": "AR Game",
+    "description": "Augmented reality interactive motion-sensor brand games & holographic stages",
+    "image": "/images/service_games.webp",
+    "sortOrder": 5
+  }
+]

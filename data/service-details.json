@@ -1,0 +1,1284 @@
+{
+  "kardashian-glam": {
+    "id": "kardashian-glam",
+    "title": "The B&W Kardashian Glam Booth",
+    "tagline": "Ultra-flattering skin-smoothing filter & editorial monochrome aesthetic inspired by Hollywood red carpets.",
+    "badge": "EDITORIAL GLAMOUR • VIP ACTIVATION",
+    "heroBg": "/images/hero_booth_kardashian.jpg",
+    "metrics": [
+      {
+        "label": "Imaging Core",
+        "val": "Canon 45MP EOS R5"
+      },
+      {
+        "label": "Print Velocity",
+        "val": "7s Lab Metallic"
+      },
+      {
+        "label": "White-Glove Crew",
+        "val": "2 DBS Concierges"
+      },
+      {
+        "label": "Base Investment",
+        "val": "Starting from £795"
+      }
+    ],
+    "compareBefore": "/images/hero_booth_studio.jpg",
+    "compareAfter": "/images/hero_booth_kardashian.jpg",
+    "compareBeforeTitle": "Standard Uncalibrated Camera",
+    "compareAfterTitle": "Mimori Kardashian Glam Filter",
+    "lookbookPhotos": [
+      {
+        "title": "Vogue Summer Gala",
+        "venue": "Natural History Museum",
+        "img": "/images/hero_booth_kardashian.jpg",
+        "stats": "650 VIPs • 2,420 Prints",
+        "tall": true
+      },
+      {
+        "title": "Mayfair Winter White Ball",
+        "venue": "Claridge’s, Mayfair",
+        "img": "/images/service_booth.webp",
+        "stats": "320 Guests • 1,350 Prints",
+        "tall": false
+      },
+      {
+        "title": "Fashion Week VIP After-Hours",
+        "venue": "The Vinyl Factory, Soho",
+        "img": "/images/editorial_uluwatu.jpg",
+        "stats": "400 Attendees • 1,600 Prints",
+        "tall": false
+      },
+      {
+        "title": "Alexander & Sofia Wedding",
+        "venue": "Aynhoe Park, Cotswolds",
+        "img": "/images/branch_cotswolds.webp",
+        "stats": "180 Guests • 1,150 Prints",
+        "tall": false
+      },
+      {
+        "title": "St. Moritz Winter Summit",
+        "venue": "Badrutt’s Palace, Switzerland",
+        "img": "/images/dest_swiss_alps.jpg",
+        "stats": "280 VIPs • 920 Prints",
+        "tall": false
+      }
+    ],
+    "specsTable": [
+      {
+        "category": "Optics & Studio Strobe",
+        "details": "<strong>Canon EOS R5 Full-Frame (45 Megapixels)</strong> paired with <strong>Canon RF 50mm f/1.2 L USM</strong> prime glass. Circular studio ring strobe with soft diffusion dish delivering consistent 5600K daylight balance."
+      },
+      {
+        "category": "Proprietary Glam Algorithm",
+        "details": "Real-time GPU neural filter applying skin micro-texture softening, poreless glow, and high-contrast monochrome toning. 60fps zero-latency preview on touchscreen."
+      },
+      {
+        "category": "Print Media Substrate",
+        "details": "Industrial DNP dye-sublimation print engine. Dispenses fully dry <strong>300gsm metallic pearl cardstock</strong> in 7.2 seconds. Custom foil-pressed monograms or corporate branding."
+      },
+      {
+        "category": "Venue Requirements & Footprint",
+        "details": "Clear footprint: <strong>2.6m x 2.6m</strong> with 2.4m minimum ceiling clearance. Single 230V / 13A UK plug (<500W draw). Silent 90-minute load-in and calibration prior to guest arrival."
+      }
+    ],
+    "packages": [
+      {
+        "name": "Classic Glam",
+        "time": "3 Hours Operational",
+        "price": "£795",
+        "badge": "Essential",
+        "inclusions": [
+          "Full Kardashian Glam Booth & Tension Backdrop",
+          "Unlimited 300gsm Metallic Photo Cards",
+          "Custom Monogram & Typography Design",
+          "Instant AirDrop & QR Code Cloud Gallery",
+          "Two White-Glove On-Site Concierges"
+        ]
+      },
+      {
+        "name": "VIP Gold Experience",
+        "time": "4 Hours Operational (Most Popular)",
+        "price": "£995",
+        "badge": "Recommended",
+        "featured": true,
+        "inclusions": [
+          "Everything in Classic Glam",
+          "Handcrafted Leather Keepsake Guestbook Album",
+          "Custom Neon Backdrop Accent Signage",
+          "100-Pack Magnetic Acrylic Table Frames",
+          "High-Res Uncompressed RAW Digital Download Reel"
+        ]
+      },
+      {
+        "name": "Platinum Gala All-Inclusive",
+        "time": "Full Evening (Up to 6 Hours)",
+        "price": "£1,450",
+        "badge": "Couture",
+        "inclusions": [
+          "Full Evening Coverage with Zero Overrun Charges",
+          "Full Custom Vinyl Hardware Branding Wrap",
+          "VIP Live Digital Mosaic Wall Projection",
+          "Dedicated Production Supervisor on Site",
+          "Permanent Private Cloud Archive with VIP PIN"
+        ]
+      }
+    ],
+    "mosaicPhotos": [
+      "/images/hero_booth_kardashian.jpg",
+      "/images/hero_booth_kardashian.jpg",
+      "/images/service_booth.webp",
+      "/images/editorial_uluwatu.jpg",
+      "/images/branch_cotswolds.webp"
+    ],
+    "journey": [
+      {
+        "num": "01",
+        "title": "The Red Carpet Greeting",
+        "desc": "Guests are warmly welcomed by our uniformed black-tie concierges, positioned before our pure white tension backdrop.",
+        "tags": [
+          "Zero Staging Queue",
+          "Studio Ring Light"
+        ]
+      },
+      {
+        "num": "02",
+        "title": "Live 4K Real-Time Preview",
+        "desc": "On our anti-glare studio monitor, guests see their poreless skin smoothing applied in real-time at 60 frames per second.",
+        "tags": [
+          "Neural Skin Smoothing",
+          "Custom Monograms"
+        ]
+      },
+      {
+        "num": "03",
+        "title": "Instant Metallic Keepsake",
+        "desc": "In exactly 7.2 seconds, our laboratory dye-sublimation printer dispenses a dry, heavy 300gsm metallic pearl photo strip.",
+        "tags": [
+          "7s Print Speed",
+          "Metallic Cardstock"
+        ]
+      },
+      {
+        "num": "04",
+        "title": "AirDrop & Private VIP Cloud",
+        "desc": "Instant wireless dispatch directly to smartphones with encrypted guest PIN code.",
+        "tags": [
+          "AirDrop / QR",
+          "Private Cloud"
+        ]
+      }
+    ],
+    "brochure": {
+      "title": "Download The Complete 2026 Event Lookbook",
+      "subtitle": "Instant access to our complete collection of 24 experiential photobooths, architectural spatial blueprints, electrical requirements, custom monogram finishes, and transparent rate cards.",
+      "coverImg": "/images/hero_booth_kardashian.jpg",
+      "pdfUrl": "/downloads/Mimori_2026_Lookbook.pdf"
+    },
+    "overviewChips": [
+      "Up to 500+ VIP Guests",
+      "90-Min Silent Load-in",
+      "2 DBS Verified Concierges",
+      "£10M PLI Insured"
+    ],
+    "features": [
+      "The B&W Kardashian Glam Booth professional optical capture system",
+      "High-contrast studio strobe lighting & calibration",
+      "Instant AirDrop sharing & lab-grade keepsakes"
+    ],
+    "trustItems": [
+      "2026/2027 Calendar Open",
+      "Complimentary Date Shift",
+      "15-Min Producer Callback"
+    ]
+  },
+  "signature-booth": {
+    "id": "signature-booth",
+    "title": "The Signature Studio Photobooth",
+    "tagline": "Flagship open-air portrait studio combining full-frame optics with soft beauty-dish strobe illumination.",
+    "badge": "STUDIO FLAGSHIP • LUXURY COMMISSIONS",
+    "heroBg": "/images/hero_booth_studio.jpg",
+    "metrics": [
+      {
+        "label": "Optics System",
+        "val": "Canon EOS R5"
+      },
+      {
+        "label": "Strobe Power",
+        "val": "500W Studio Dish"
+      },
+      {
+        "label": "Print Output",
+        "val": "7s Metallic Cards"
+      },
+      {
+        "label": "Starting Price",
+        "val": "Starting from £695"
+      }
+    ],
+    "compareBefore": "/images/hero_booth_vintage_audio.jpg",
+    "compareAfter": "/images/hero_booth_studio.jpg",
+    "compareBeforeTitle": "Ambient Lighting",
+    "compareAfterTitle": "Mimori Studio Strobe Softbox",
+    "lookbookPhotos": [
+      {
+        "title": "The Dorchester Mayfair Gala",
+        "venue": "The Dorchester, London",
+        "img": "/images/hero_booth_studio.jpg",
+        "stats": "450 Guests • 1,850 Prints",
+        "tall": true
+      },
+      {
+        "title": "Victoria 30th Studio 54",
+        "venue": "The Ned, London",
+        "img": "/images/service_booth.webp",
+        "stats": "220 Guests • 1,450 Prints",
+        "tall": false
+      },
+      {
+        "title": "Cotswolds Botanical Wedding",
+        "venue": "Aynhoe Park, Oxfordshire",
+        "img": "/images/hero_canon_podium.jpg",
+        "stats": "180 Guests • 1,150 Prints",
+        "tall": false
+      },
+      {
+        "title": "Kensington Palace Pavilion",
+        "venue": "Kensington, London",
+        "img": "/images/branch_london.webp",
+        "stats": "300 Guests • 1,220 Prints",
+        "tall": false
+      },
+      {
+        "title": "Paris Private Residence Ball",
+        "venue": "Avenue Montaigne, Paris",
+        "img": "/images/branch_paris.jpg",
+        "stats": "200 Guests • 900 Prints",
+        "tall": false
+      }
+    ],
+    "specsTable": [
+      {
+        "category": "Optics & Illumination",
+        "details": "<strong>Canon EOS R5 Full-Frame 45MP</strong> with studio Elinchrom strobe beauty dish. Generates soft, wrap-around specular lighting that flatters all skin tones."
+      },
+      {
+        "category": "Laboratory Dye-Sub Printer",
+        "details": "High-speed industrial photo engine printing 4x6\" postcards in 7 seconds flat. Metallic pearl paper stock, smudge-proof, and fully dry immediately."
+      },
+      {
+        "category": "Digital Cloud Terminal",
+        "details": "Integrated high-speed wireless AirDrop lounge. Guests tap their iPhone or scan an animated QR code to save full-resolution JPEG and animated GIF files."
+      },
+      {
+        "category": "Venue Requirements",
+        "details": "Footprint: <strong>2.8m x 2.8m</strong>. Standard 230V UK wall plug (<600W). Dedicated white-glove concierges handle transport, positioning, and guest pacing."
+      }
+    ],
+    "packages": [
+      {
+        "name": "Classic Studio",
+        "time": "3 Hours Operational",
+        "price": "£695",
+        "badge": "Classic",
+        "inclusions": [
+          "Signature Open-Air Kiosk & Velvet/Sequin Backdrop",
+          "Unlimited Custom 4x6\" Prints with Foil Frame",
+          "Instant AirDrop & QR Code Sharing Lounge",
+          "Two Dedicated On-Site Attendants"
+        ]
+      },
+      {
+        "name": "Gold Studio Experience",
+        "time": "4 Hours Operational",
+        "price": "£895",
+        "badge": "Most Popular",
+        "featured": true,
+        "inclusions": [
+          "Everything in Classic Studio",
+          "Handmade Leather Keepsake Guestbook Album",
+          "100-Pack Magnetic Acrylic Table Frames",
+          "Full Digital Cloud Gallery with VIP Guest Code"
+        ]
+      },
+      {
+        "name": "Platinum Full-Day",
+        "time": "Up to 6 Hours Coverage",
+        "price": "£1,295",
+        "badge": "Full Evening",
+        "inclusions": [
+          "Full Evening Coverage with Zero Overrun Fees",
+          "Custom Neon Sign Crafted for the Host",
+          "Custom Hardware Enclosure Branding Wrap",
+          "Senior Event Producer On-Site"
+        ]
+      }
+    ],
+    "mosaicPhotos": [
+      "/images/hero_booth_studio.jpg",
+      "/images/hero_booth_studio.jpg",
+      "/images/service_booth.webp",
+      "/images/hero_canon_podium.jpg",
+      "/images/branch_london.webp"
+    ],
+    "journey": [
+      {
+        "num": "01",
+        "title": "The Red Carpet Greeting",
+        "desc": "Guests are warmly welcomed by our uniformed black-tie concierges, positioned before our pure white tension backdrop.",
+        "tags": [
+          "Zero Staging Queue",
+          "Studio Ring Light"
+        ]
+      },
+      {
+        "num": "02",
+        "title": "Live 4K Real-Time Preview",
+        "desc": "On our anti-glare studio monitor, guests see their poreless skin smoothing applied in real-time at 60 frames per second.",
+        "tags": [
+          "Neural Skin Smoothing",
+          "Custom Monograms"
+        ]
+      },
+      {
+        "num": "03",
+        "title": "Instant Metallic Keepsake",
+        "desc": "In exactly 7.2 seconds, our laboratory dye-sublimation printer dispenses a dry, heavy 300gsm metallic pearl photo strip.",
+        "tags": [
+          "7s Print Speed",
+          "Metallic Cardstock"
+        ]
+      },
+      {
+        "num": "04",
+        "title": "AirDrop & Private VIP Cloud",
+        "desc": "Instant wireless dispatch directly to smartphones with encrypted guest PIN code.",
+        "tags": [
+          "AirDrop / QR",
+          "Private Cloud"
+        ]
+      }
+    ],
+    "brochure": {
+      "title": "Download The Complete 2026 Event Lookbook",
+      "subtitle": "Instant access to our complete collection of 24 experiential photobooths, architectural spatial blueprints, electrical requirements, custom monogram finishes, and transparent rate cards.",
+      "coverImg": "/images/hero_booth_studio.jpg",
+      "pdfUrl": "/downloads/Mimori_2026_Lookbook.pdf"
+    },
+    "overviewChips": [
+      "Up to 500+ VIP Guests",
+      "90-Min Silent Load-in",
+      "2 DBS Verified Concierges",
+      "£10M PLI Insured"
+    ],
+    "features": [
+      "The Signature Studio Photobooth professional optical capture system",
+      "High-contrast studio strobe lighting & calibration",
+      "Instant AirDrop sharing & lab-grade keepsakes"
+    ],
+    "trustItems": [
+      "2026/2027 Calendar Open",
+      "Complimentary Date Shift",
+      "15-Min Producer Callback"
+    ]
+  },
+  "glam-360": {
+    "id": "glam-360",
+    "title": "360° Cinematic Video Rig",
+    "tagline": "High-speed robotic arm capturing 4K 120fps Hollywood slow-motion video with synced RGB lighting.",
+    "badge": "VIRAL ENTERTAINMENT • HOLLYWOOD RIG",
+    "heroBg": "/images/hero_booth_glambot.jpg",
+    "metrics": [
+      {
+        "label": "Capture Sensor",
+        "val": "Sony 4K 120fps"
+      },
+      {
+        "label": "Platform Deck",
+        "val": "Tempered Glass LED"
+      },
+      {
+        "label": "Video Velocity",
+        "val": "15s Cloud Render"
+      },
+      {
+        "label": "Starting Price",
+        "val": "Starting from £895"
+      }
+    ],
+    "compareBefore": "/images/banner_time_freeze.webp",
+    "compareAfter": "/images/hero_booth_glambot.jpg",
+    "compareBeforeTitle": "Static Event Photo",
+    "compareAfterTitle": "360° 4K Slow-Motion Cinema",
+    "lookbookPhotos": [
+      {
+        "title": "Red Bull Racing Gala",
+        "venue": "Battersea Power Station",
+        "img": "/images/hero_booth_glambot.jpg",
+        "stats": "900 Guests • 1,880 Slow-Mo Videos",
+        "tall": true
+      },
+      {
+        "title": "Paris Fashion Week After-Party",
+        "venue": "Palais de Tokyo, Paris",
+        "img": "/images/banner_glambot.webp",
+        "stats": "450 Guests • 980 Videos",
+        "tall": false
+      },
+      {
+        "title": "Formula 1 Paddock VIP Lounge",
+        "venue": "Silverstone Circuit",
+        "img": "/images/banner_time_freeze.webp",
+        "stats": "600 VIPs • 1,200 Videos",
+        "tall": false
+      },
+      {
+        "title": "TechCrunch Disrupt Celebration",
+        "venue": "ExCeL London",
+        "img": "/images/banner_slide6.webp",
+        "stats": "1,200 Attendees • 2,140 Videos",
+        "tall": false
+      },
+      {
+        "title": "Dubai Supercar Launch",
+        "venue": "Burj Al Arab, Dubai",
+        "img": "/images/banner_slide7.webp",
+        "stats": "350 VIPs • 800 Videos",
+        "tall": false
+      }
+    ],
+    "specsTable": [
+      {
+        "category": "Robotic Rig & Platform",
+        "details": "100cm tempered glass deck supporting up to 5 adults simultaneously. Motorized robotic arm with counter-weighted stabilization and adjustable 15-45 RPM speed."
+      },
+      {
+        "category": "Cinema Sensor & Grading",
+        "details": "Sony Cinema Sensor recording 4K at 120 frames per second. Real-time GPU cluster renders customized soundtracks, branded slow-mo ramps, and reverse boomerangs in 15 seconds."
+      },
+      {
+        "category": "Lighting & Atmosphere",
+        "details": "Surround perimeter sound-activated addressable RGB lighting towers and synchronized light bar."
+      },
+      {
+        "category": "Venue Requirements",
+        "details": "Footprint: <strong>3.2m x 3.2m</strong> clear level area. Infrared perimeter safety sensor for automatic emergency stops. 2 Certified Rigging Engineers on site."
+      }
+    ],
+    "packages": [
+      {
+        "name": "Cinema 360 Classic",
+        "time": "3 Hours Operational",
+        "price": "£895",
+        "badge": "Standard",
+        "inclusions": [
+          "Tempered Glass 360 Platform & Robotic Arm",
+          "4K 120fps Slow-Mo Capture with Custom Music",
+          "Instant AirDrop & QR Code Cloud Kiosk",
+          "Two Certified Rigging Technicians"
+        ]
+      },
+      {
+        "name": "Gold Cinema Experience",
+        "time": "4 Hours Operational",
+        "price": "£1,095",
+        "badge": "Recommended",
+        "featured": true,
+        "inclusions": [
+          "Everything in Classic 360",
+          "Synchronized RGB Atmospheric Light Towers",
+          "Custom Branded Animated Video Overlay Ramp",
+          "Live HD Projection Screen for Crowd Viewing"
+        ]
+      },
+      {
+        "name": "VIP Red Carpet Premiere",
+        "time": "Full Evening (6h Coverage)",
+        "price": "£1,595",
+        "badge": "Ultimate",
+        "inclusions": [
+          "Full Evening Coverage with VIP Queue Management",
+          "Custom Tension Enclosure & Crowd Velvet Ropes",
+          "Custom Video Edit Master Reel Delivered Next Morning",
+          "Senior Production Lead on Site"
+        ]
+      }
+    ],
+    "mosaicPhotos": [
+      "/images/hero_booth_glambot.jpg",
+      "/images/hero_booth_glambot.jpg",
+      "/images/banner_glambot.webp",
+      "/images/banner_time_freeze.webp",
+      "/images/banner_slide6.webp"
+    ],
+    "journey": [
+      {
+        "num": "01",
+        "title": "The Red Carpet Greeting",
+        "desc": "Guests are warmly welcomed by our uniformed black-tie concierges, positioned before our pure white tension backdrop.",
+        "tags": [
+          "Zero Staging Queue",
+          "Studio Ring Light"
+        ]
+      },
+      {
+        "num": "02",
+        "title": "Live 4K Real-Time Preview",
+        "desc": "On our anti-glare studio monitor, guests see their poreless skin smoothing applied in real-time at 60 frames per second.",
+        "tags": [
+          "Neural Skin Smoothing",
+          "Custom Monograms"
+        ]
+      },
+      {
+        "num": "03",
+        "title": "Instant Metallic Keepsake",
+        "desc": "In exactly 7.2 seconds, our laboratory dye-sublimation printer dispenses a dry, heavy 300gsm metallic pearl photo strip.",
+        "tags": [
+          "7s Print Speed",
+          "Metallic Cardstock"
+        ]
+      },
+      {
+        "num": "04",
+        "title": "AirDrop & Private VIP Cloud",
+        "desc": "Instant wireless dispatch directly to smartphones with encrypted guest PIN code.",
+        "tags": [
+          "AirDrop / QR",
+          "Private Cloud"
+        ]
+      }
+    ],
+    "brochure": {
+      "title": "Download The Complete 2026 Event Lookbook",
+      "subtitle": "Instant access to our complete collection of 24 experiential photobooths, architectural spatial blueprints, electrical requirements, custom monogram finishes, and transparent rate cards.",
+      "coverImg": "/images/hero_booth_glambot.jpg",
+      "pdfUrl": "/downloads/Mimori_2026_Lookbook.pdf"
+    },
+    "overviewChips": [
+      "Up to 500+ VIP Guests",
+      "90-Min Silent Load-in",
+      "2 DBS Verified Concierges",
+      "£10M PLI Insured"
+    ],
+    "features": [
+      "360° Cinematic Video Rig professional optical capture system",
+      "High-contrast studio strobe lighting & calibration",
+      "Instant AirDrop sharing & lab-grade keepsakes"
+    ],
+    "trustItems": [
+      "2026/2027 Calendar Open",
+      "Complimentary Date Shift",
+      "15-Min Producer Callback"
+    ]
+  },
+  "retro-audio-guestbook": {
+    "id": "retro-audio-guestbook",
+    "title": "Vintage Audio Guestbook",
+    "tagline": "Heartfelt voice recordings on authentic restored 1970s rotary telephones delivered on bespoke vinyl.",
+    "badge": "EMOTIONAL KEEPSAKE • RETRO NOSTALGIA",
+    "overviewChips": [
+      "Up to 500+ VIP Guests",
+      "90-Min Silent Load-in",
+      "2 DBS Verified Concierges",
+      "£10M PLI Insured"
+    ],
+    "features": [
+      "Vintage Audio Guestbook professional optical capture system",
+      "High-contrast studio strobe lighting & calibration",
+      "Instant AirDrop sharing & lab-grade keepsakes"
+    ],
+    "trustItems": [
+      "2026/2027 Calendar Open",
+      "Complimentary Date Shift",
+      "15-Min Producer Callback"
+    ],
+    "category": "photobooth",
+    "heroBg": "/images/hero_booth_vintage_audio.jpg",
+    "mosaicPhotos": [
+      "/images/hero_booth_vintage_audio.jpg",
+      "/images/hero_booth_vintage_audio.jpg",
+      "/images/branch_london.webp",
+      "/images/branch_cotswolds.webp",
+      "/images/dest_japan_nagano.jpg"
+    ],
+    "metrics": [
+      {
+        "label": "Hardware Era",
+        "val": "Restored 1970s GPO"
+      },
+      {
+        "label": "Audio Quality",
+        "val": "24-bit 48kHz WAV"
+      },
+      {
+        "label": "Power Wire",
+        "val": "100% Wireless"
+      },
+      {
+        "label": "Starting Price",
+        "val": "Starting from £395"
+      }
+    ],
+    "compareBefore": "/images/branch_cotswolds.webp",
+    "compareAfter": "/images/hero_booth_vintage_audio.jpg",
+    "compareBeforeTitle": "Paper Guestbook",
+    "compareAfterTitle": "Authentic 1970s Rotary Telephone",
+    "journey": [
+      {
+        "num": "01",
+        "title": "The Red Carpet Greeting",
+        "desc": "Guests are warmly welcomed by our uniformed black-tie concierges, positioned before our pure white tension backdrop.",
+        "tags": [
+          "Zero Staging Queue",
+          "Studio Ring Light"
+        ]
+      },
+      {
+        "num": "02",
+        "title": "Live 4K Real-Time Preview",
+        "desc": "On our anti-glare studio monitor, guests see their poreless skin smoothing applied in real-time at 60 frames per second.",
+        "tags": [
+          "Neural Skin Smoothing",
+          "Custom Monograms"
+        ]
+      },
+      {
+        "num": "03",
+        "title": "Instant Metallic Keepsake",
+        "desc": "In exactly 7.2 seconds, our laboratory dye-sublimation printer dispenses a dry, heavy 300gsm metallic pearl photo strip.",
+        "tags": [
+          "7s Print Speed",
+          "Metallic Cardstock"
+        ]
+      },
+      {
+        "num": "04",
+        "title": "AirDrop & Private VIP Cloud",
+        "desc": "Instant wireless dispatch directly to smartphones with encrypted guest PIN code.",
+        "tags": [
+          "AirDrop / QR",
+          "Private Cloud"
+        ]
+      }
+    ],
+    "lookbookPhotos": [
+      {
+        "img": "/images/hero_booth_vintage_audio.jpg",
+        "tall": true
+      },
+      {
+        "img": "/images/branch_london.webp",
+        "tall": false
+      },
+      {
+        "img": "/images/branch_cotswolds.webp",
+        "tall": false
+      },
+      {
+        "img": "/images/dest_japan_nagano.jpg",
+        "tall": false
+      },
+      {
+        "img": "/images/branch_paris.jpg",
+        "tall": false
+      }
+    ],
+    "specsTable": [
+      {
+        "category": "Authentic Chassis",
+        "details": "Original 1970s GPO rotary telephone restored to showroom condition. Built-in lithium battery runs 24 hours continuously without power cords."
+      },
+      {
+        "category": "Studio Acoustics & Mic",
+        "details": "Broadcast-grade microphone capsule concealed within the vintage earpiece. Captures rich 24-bit uncompressed voice recordings with background isolation."
+      },
+      {
+        "category": "Personalized Host Greeting",
+        "details": "Hosts record their custom greeting in advance. Guests lift the heavy receiver, hear your voice greeting, and leave their unscripted heartfelt messages."
+      },
+      {
+        "category": "Deliverables & Vinyl",
+        "details": "Edited digital audio master box set delivered in 48 hours. Optional 12\" custom vinyl record pressing with bespoke gatefold cover art."
+      }
+    ],
+    "brochure": {
+      "title": "Download The Complete 2026 Event Lookbook",
+      "subtitle": "Instant access to our complete collection of 24 experiential photobooths, architectural spatial blueprints, electrical requirements, custom monogram finishes, and transparent rate cards.",
+      "coverImg": "/images/hero_booth_vintage_audio.jpg",
+      "pdfUrl": "/downloads/Mimori_2026_Lookbook.pdf"
+    },
+    "packages": [
+      {
+        "badge": "Essential",
+        "name": "Classic Telephone",
+        "time": "Full Event Hire",
+        "price": "£395",
+        "inclusions": [
+          "Authentic Restored 1970s Rotary Telephone",
+          "Pre-Recorded Custom Host Greeting",
+          "Framed Guest Instruction Plaque",
+          "Full Digital WAV & MP3 Audio Reel Delivered in 48h"
+        ],
+        "featured": false
+      },
+      {
+        "badge": "Recommended",
+        "name": "Gold Audio Experience",
+        "time": "Full Event Hire",
+        "price": "£550",
+        "inclusions": [
+          "Everything in Classic Telephone",
+          "Vintage Neon \"Leave a Message\" Accent Light",
+          "Social Audio Waveform Video Clip for Instagram",
+          "Second Color-Matched Telephone for Cocktail Hour"
+        ],
+        "featured": true
+      },
+      {
+        "badge": "Couture",
+        "name": "Vinyl Masterpiece",
+        "time": "Full Event Hire",
+        "price": "£795",
+        "inclusions": [
+          "Everything in Gold Audio Experience",
+          "Real 12\" Vinyl Record Pressed with All Guest Messages",
+          "Custom Hardcover Gatefold Vinyl Jacket with Event Photos",
+          "Duplicate Vinyl Copy for Parents or Archiving"
+        ],
+        "featured": false
+      }
+    ]
+  },
+  "brand-activation": {
+    "id": "brand-activation",
+    "title": "Corporate Brand Activation Kiosk",
+    "tagline": "High-impact enterprise brand immersion, interactive touchscreen survey UI, live data capture, and ROI analytics.",
+    "badge": "ENTERPRISE TECH • DATA CAPTURE",
+    "heroBg": "/images/hero_booth_ai_mosaic.jpg",
+    "metrics": [
+      {
+        "label": "Branding Wrap",
+        "val": "Full 3M Vinyl"
+      },
+      {
+        "label": "Data Engine",
+        "val": "GDPR / CRM Sync"
+      },
+      {
+        "label": "Wall Output",
+        "val": "Live Mosaic Projection"
+      },
+      {
+        "label": "Starting Price",
+        "val": "Starting from £1,250"
+      }
+    ],
+    "compareBefore": "/images/service_qr.webp",
+    "compareAfter": "/images/hero_booth_ai_mosaic.jpg",
+    "compareBeforeTitle": "Standard Promo Banner",
+    "compareAfterTitle": "Full Hardware Wrap & Mosaic Wall",
+    "lookbookPhotos": [
+      {
+        "title": "Google Cloud London Summit",
+        "venue": "Olympia London",
+        "img": "/images/hero_booth_ai_mosaic.jpg",
+        "stats": "2,400 Delegates • 98% Data Capture",
+        "tall": true
+      },
+      {
+        "title": "Nike Air Max Product Launch",
+        "venue": "Coal Drops Yard, King’s Cross",
+        "img": "/images/service_interactive.webp",
+        "stats": "850 Attendees • 3,200 Social Shares",
+        "tall": false
+      },
+      {
+        "title": "F1 Paddock VIP Lounge",
+        "venue": "Silverstone Circuit",
+        "img": "/images/service_qr.webp",
+        "stats": "1,100 VIPs • 1,950 Prints",
+        "tall": false
+      },
+      {
+        "title": "Retail Tech Global Expo",
+        "venue": "ExCeL London",
+        "img": "/images/service_games.webp",
+        "stats": "3,000 Attendees • Real-Time CRM Webhook",
+        "tall": false
+      },
+      {
+        "title": "Mayfair Luxury Showcase",
+        "venue": "Bond Street, London",
+        "img": "/images/showcase_qr_kiosk.jpg",
+        "stats": "400 VIPs • Live Mosaic Wall",
+        "tall": false
+      }
+    ],
+    "specsTable": [
+      {
+        "category": "Custom Hardware Wrap",
+        "details": "Entire exterior column wrapped in seamless 3M architectural matte or gloss vinyl printed with your exact brand Pantone colors and logos."
+      },
+      {
+        "category": "GDPR Data Capture & API",
+        "details": "Custom branded UI with opt-in email, corporate job title, and survey questions. Direct real-time webhook sync into HubSpot, Salesforce, or Marketo."
+      },
+      {
+        "category": "Live Digital Mosaic Wall",
+        "details": "Photos taken at the booth are instantly mapped into coordinate tiles on a giant live video projection wall, building your brand mosaic in real-time."
+      },
+      {
+        "category": "Enterprise Connectivity",
+        "details": "Dual-SIM bonded 5G cellular router guarantees 100% cloud uptime without relying on venue WiFi. Full cold-standby backup hardware on site."
+      }
+    ],
+    "packages": [
+      {
+        "name": "Brand Kiosk Launch",
+        "time": "4 Hours Active",
+        "price": "£1,250",
+        "badge": "Standard",
+        "inclusions": [
+          "Full Custom Vinyl Wrap on Hardware Enclosure",
+          "Branded Touchscreen UI & Photo Output Frames",
+          "Opt-In Email & Phone Data Collection (GDPR)",
+          "Two Uniformed Brand Ambassador Technicians"
+        ]
+      },
+      {
+        "name": "Mosaic & Survey Summit",
+        "time": "Full Day (8 Hours)",
+        "price": "£1,850",
+        "badge": "Recommended",
+        "featured": true,
+        "inclusions": [
+          "Everything in Brand Kiosk Launch",
+          "Live Digital Mosaic Wall Video Projection Feed",
+          "Real-Time Analytics Dashboard & Live CRM Sync",
+          "Animated GIF, Boomerang & Video Output Capabilities"
+        ]
+      },
+      {
+        "name": "Multi-Day Enterprise Expo",
+        "time": "2-3 Days Coverage",
+        "price": "£2,950",
+        "badge": "Enterprise",
+        "inclusions": [
+          "Multi-Day Continuous Trade Show Operation",
+          "Executive Post-Event ROI PDF Analytics Report",
+          "Full Hardware Redundancy Backup On-Site",
+          "Dedicated Technical Project Manager"
+        ]
+      }
+    ],
+    "mosaicPhotos": [
+      "/images/hero_booth_ai_mosaic.jpg",
+      "/images/hero_booth_ai_mosaic.jpg",
+      "/images/service_interactive.webp",
+      "/images/service_qr.webp",
+      "/images/service_games.webp"
+    ],
+    "journey": [
+      {
+        "num": "01",
+        "title": "The Red Carpet Greeting",
+        "desc": "Guests are warmly welcomed by our uniformed black-tie concierges, positioned before our pure white tension backdrop.",
+        "tags": [
+          "Zero Staging Queue",
+          "Studio Ring Light"
+        ]
+      },
+      {
+        "num": "02",
+        "title": "Live 4K Real-Time Preview",
+        "desc": "On our anti-glare studio monitor, guests see their poreless skin smoothing applied in real-time at 60 frames per second.",
+        "tags": [
+          "Neural Skin Smoothing",
+          "Custom Monograms"
+        ]
+      },
+      {
+        "num": "03",
+        "title": "Instant Metallic Keepsake",
+        "desc": "In exactly 7.2 seconds, our laboratory dye-sublimation printer dispenses a dry, heavy 300gsm metallic pearl photo strip.",
+        "tags": [
+          "7s Print Speed",
+          "Metallic Cardstock"
+        ]
+      },
+      {
+        "num": "04",
+        "title": "AirDrop & Private VIP Cloud",
+        "desc": "Instant wireless dispatch directly to smartphones with encrypted guest PIN code.",
+        "tags": [
+          "AirDrop / QR",
+          "Private Cloud"
+        ]
+      }
+    ],
+    "brochure": {
+      "title": "Download The Complete 2026 Event Lookbook",
+      "subtitle": "Instant access to our complete collection of 24 experiential photobooths, architectural spatial blueprints, electrical requirements, custom monogram finishes, and transparent rate cards.",
+      "coverImg": "/images/hero_booth_ai_mosaic.jpg",
+      "pdfUrl": "/downloads/Mimori_2026_Lookbook.pdf"
+    },
+    "overviewChips": [
+      "Up to 500+ VIP Guests",
+      "90-Min Silent Load-in",
+      "2 DBS Verified Concierges",
+      "£10M PLI Insured"
+    ],
+    "features": [
+      "Corporate Brand Activation Kiosk professional optical capture system",
+      "High-contrast studio strobe lighting & calibration",
+      "Instant AirDrop sharing & lab-grade keepsakes"
+    ],
+    "trustItems": [
+      "2026/2027 Calendar Open",
+      "Complimentary Date Shift",
+      "15-Min Producer Callback"
+    ]
+  },
+  "custom-themed": {
+    "id": "custom-themed",
+    "title": "Custom Immersive & AI Set Experience",
+    "tagline": "Architectural physical set fabrication, custom LED neon signage, and real-time Generative AI background transformation.",
+    "badge": "BESPOKE BUILD • GENERATIVE AI",
+    "heroBg": "/images/service_ar.webp",
+    "metrics": [
+      {
+        "label": "Set Build",
+        "val": "Custom Fabricated"
+      },
+      {
+        "label": "AI Model",
+        "val": "Fine-Tuned SDXL"
+      },
+      {
+        "label": "Creative Lead",
+        "val": "Dedicated Art Director"
+      },
+      {
+        "label": "Starting Price",
+        "val": "Starting from £1,850"
+      }
+    ],
+    "compareBefore": "/images/dest_sahara_merzouga.jpg",
+    "compareAfter": "/images/service_ar.webp",
+    "compareBeforeTitle": "Physical Green Backdrop",
+    "compareAfterTitle": "Real-Time Generative AI Realm",
+    "lookbookPhotos": [
+      {
+        "title": "Warner Bros Film Premiere",
+        "venue": "Leicester Square, London",
+        "img": "/images/service_ar.webp",
+        "stats": "1,400 VIPs • Custom Sci-Fi Realm",
+        "tall": true
+      },
+      {
+        "title": "Met Gala After-Party London",
+        "venue": "180 The Strand",
+        "img": "/images/dest_sahara_merzouga.jpg",
+        "stats": "500 Celebrities • Fabricated Neon Cave",
+        "tall": false
+      },
+      {
+        "title": "Swiss Alps Luxury Summit",
+        "venue": "St. Moritz, Switzerland",
+        "img": "/images/dest_swiss_alps.jpg",
+        "stats": "300 Guests • Custom Ice Dome Studio",
+        "tall": false
+      },
+      {
+        "title": "Balearic Island Sunset Gala",
+        "venue": "Tarifa Beachfront",
+        "img": "/images/dest_tarifa_beach.jpg",
+        "stats": "400 VIPs • Kinetic Light Stage",
+        "tall": false
+      },
+      {
+        "title": "Kyoto Heritage Celebration",
+        "venue": "Nagano Heritage Villa",
+        "img": "/images/dest_japan_nagano.jpg",
+        "stats": "200 Guests • Custom Lantern Set",
+        "tall": false
+      }
+    ],
+    "specsTable": [
+      {
+        "category": "Physical Set Fabrication",
+        "details": "Wood, acrylic, and steel physical construction crafted in our London workshop. Custom fabricated neon signage and theatrical DMX lighting."
+      },
+      {
+        "category": "Generative AI GPU Server",
+        "details": "Custom Stable Diffusion SDXL model fine-tuned on your event aesthetic. Synthesizes fantasy realms or period aesthetics in 4 seconds while preserving guest identity."
+      },
+      {
+        "category": "Creative Art Direction",
+        "details": "Dedicated Art Director attends production calls with your planners. Delivers 3D visual renders 4 weeks prior to event date."
+      },
+      {
+        "category": "Logistics & Build Crew",
+        "details": "Requires 4-hour pre-event build window. Dedicated 4-person construction and imaging crew on site throughout the evening."
+      }
+    ],
+    "packages": [
+      {
+        "name": "AI Generative Set",
+        "time": "4 Hours Active",
+        "price": "£1,850",
+        "badge": "Digital Bespoke",
+        "inclusions": [
+          "Custom Fine-Tuned AI Generation Pipeline",
+          "Real-Time Live Touchscreen Background Transformation",
+          "Unlimited Branded Photo Card Prints",
+          "Two Dedicated Imaging Technicians"
+        ]
+      },
+      {
+        "name": "Fabricated Set & Neon",
+        "time": "Full Evening (8h)",
+        "price": "£2,850",
+        "badge": "Recommended",
+        "featured": true,
+        "inclusions": [
+          "Full Physical Architectural Backdrop & Custom Neon Sign",
+          "Curated Themed Hand Props & Theatrical DMX Lighting",
+          "Dedicated Art Director on Site for Guest Staging",
+          "Post-Event Cinematic Social Cutdown Video"
+        ]
+      },
+      {
+        "name": "Couture Immersive World",
+        "time": "Multi-Day Bespoke",
+        "price": "£4,500",
+        "badge": "Couture",
+        "inclusions": [
+          "Fully Bespoke 3D Environmental Set Construction",
+          "Multi-Camera Array or Bullet-Time Array Setup",
+          "Dedicated Production Supervisor & 4-Person Crew",
+          "Complete Exclusive Event Media Rights"
+        ]
+      }
+    ],
+    "mosaicPhotos": [
+      "/images/service_ar.webp",
+      "/images/service_ar.webp",
+      "/images/dest_sahara_merzouga.jpg",
+      "/images/dest_swiss_alps.jpg",
+      "/images/dest_tarifa_beach.jpg"
+    ],
+    "journey": [
+      {
+        "num": "01",
+        "title": "The Red Carpet Greeting",
+        "desc": "Guests are warmly welcomed by our uniformed black-tie concierges, positioned before our pure white tension backdrop.",
+        "tags": [
+          "Zero Staging Queue",
+          "Studio Ring Light"
+        ]
+      },
+      {
+        "num": "02",
+        "title": "Live 4K Real-Time Preview",
+        "desc": "On our anti-glare studio monitor, guests see their poreless skin smoothing applied in real-time at 60 frames per second.",
+        "tags": [
+          "Neural Skin Smoothing",
+          "Custom Monograms"
+        ]
+      },
+      {
+        "num": "03",
+        "title": "Instant Metallic Keepsake",
+        "desc": "In exactly 7.2 seconds, our laboratory dye-sublimation printer dispenses a dry, heavy 300gsm metallic pearl photo strip.",
+        "tags": [
+          "7s Print Speed",
+          "Metallic Cardstock"
+        ]
+      },
+      {
+        "num": "04",
+        "title": "AirDrop & Private VIP Cloud",
+        "desc": "Instant wireless dispatch directly to smartphones with encrypted guest PIN code.",
+        "tags": [
+          "AirDrop / QR",
+          "Private Cloud"
+        ]
+      }
+    ],
+    "brochure": {
+      "title": "Download The Complete 2026 Event Lookbook",
+      "subtitle": "Instant access to our complete collection of 24 experiential photobooths, architectural spatial blueprints, electrical requirements, custom monogram finishes, and transparent rate cards.",
+      "coverImg": "/images/service_ar.webp",
+      "pdfUrl": "/downloads/Mimori_2026_Lookbook.pdf"
+    },
+    "overviewChips": [
+      "Up to 500+ VIP Guests",
+      "90-Min Silent Load-in",
+      "2 DBS Verified Concierges",
+      "£10M PLI Insured"
+    ],
+    "features": [
+      "Custom Immersive & AI Set Experience professional optical capture system",
+      "High-contrast studio strobe lighting & calibration",
+      "Instant AirDrop sharing & lab-grade keepsakes"
+    ],
+    "trustItems": [
+      "2026/2027 Calendar Open",
+      "Complimentary Date Shift",
+      "15-Min Producer Callback"
+    ]
+  },
+  "testing": {
+    "id": "testing",
+    "title": "testing",
+    "tagline": "High-fashion experiential photobooth activation.",
+    "badge": "NEW LUXURY ACTIVATION",
+    "category": "photobooth",
+    "heroBg": "/images/hero_booth_kardashian.jpg",
+    "mosaicPhotos": [
+      "/images/hero_booth_kardashian.jpg",
+      "/images/hero_booth_kardashian.jpg",
+      "/images/hero_booth_kardashian.jpg",
+      "/images/hero_booth_kardashian.jpg",
+      "/images/hero_booth_kardashian.jpg"
+    ],
+    "metrics": [
+      {
+        "label": "Imaging Core",
+        "val": "Full-Frame Studio"
+      },
+      {
+        "label": "Print",
+        "val": "7s"
+      },
+      {
+        "label": "White-Glove Crew",
+        "val": "2 Concierges"
+      },
+      {
+        "label": "Base Investment",
+        "val": "From £795"
+      }
+    ],
+    "compareBefore": "/images/hero_booth_studio.jpg",
+    "compareAfter": "/images/hero_booth_kardashian.jpg",
+    "compareBeforeTitle": "Standard Uncalibrated Camera",
+    "compareAfterTitle": "Mimori Studio Grade Capture",
+    "journey": [
+      {
+        "num": "01",
+        "title": "The Red Carpet Greeting",
+        "desc": "Guests are warmly welcomed by our uniformed black-tie concierges.",
+        "tags": [
+          "Concierge Onsite"
+        ]
+      },
+      {
+        "num": "02",
+        "title": "Live 4K Real-Time Preview",
+        "desc": "High-speed studio monitor with zero latency capture.",
+        "tags": [
+          "Studio Lighting"
+        ]
+      },
+      {
+        "num": "03",
+        "title": "Instant Metallic Keepsake",
+        "desc": "300gsm metallic photo card dispensed dry in 7 seconds.",
+        "tags": [
+          "7s Print Speed"
+        ]
+      },
+      {
+        "num": "04",
+        "title": "AirDrop & VIP Online Cloud",
+        "desc": "Instant wireless dispatch directly to smartphones.",
+        "tags": [
+          "AirDrop / QR"
+        ]
+      }
+    ],
+    "lookbookPhotos": [
+      {
+        "img": "/images/hero_booth_kardashian.jpg",
+        "title": "testing Premiere",
+        "venue": "Claridge’s, Mayfair",
+        "stats": "400 VIPs • 1,600 Prints",
+        "tall": true
+      },
+      {
+        "img": "/images/hero_booth_kardashian.jpg",
+        "title": "Fashion Week Gala",
+        "venue": "The Vinyl Factory, Soho",
+        "stats": "320 Guests • 1,200 Prints",
+        "tall": false
+      }
+    ],
+    "specsTable": [
+      {
+        "category": "Optics & Studio Strobe",
+        "details": "Canon Full-Frame sensor paired with studio ring light and beauty softbox."
+      },
+      {
+        "category": "Print Media Substrate",
+        "details": "Dye-sublimation print engine dispensing 300gsm metallic cards in 7.2 seconds."
+      },
+      {
+        "category": "Venue Requirements",
+        "details": "Clear footprint 2.5m x 2.5m with standard 230V plug draw."
+      }
+    ],
+    "brochure": {
+      "title": "Download The Complete testing Rider & Lookbook",
+      "subtitle": "Instant access to spatial footprints, technical specifications, and transparent rate cards.",
+      "coverImg": "/images/hero_booth_kardashian.jpg",
+      "pdfUrl": "/downloads/Mimori_2026_Lookbook.pdf"
+    },
+    "packages": [
+      {
+        "badge": "Essential",
+        "name": "Classic Experience",
+        "time": "3 Hours Operational",
+        "price": "£795",
+        "inclusions": [
+          "Full Booth & Backdrop",
+          "Unlimited Metallic Prints",
+          "AirDrop & Cloud Gallery",
+          "2 Concierges"
+        ],
+        "featured": false
+      },
+      {
+        "badge": "Recommended",
+        "name": "VIP Gold Experience",
+        "time": "4 Hours Operational",
+        "price": "£995",
+        "inclusions": [
+          "Everything in Classic",
+          "Handcrafted Guestbook Album",
+          "Custom Monogram Branding",
+          "Priority Production"
+        ],
+        "featured": true
+      }
+    ],
+    "overviewChips": [
+      "Up to 500+ VIP Guests",
+      "90-Min Silent Load-in",
+      "2 DBS Verified Concierges",
+      "£10M PLI Insured"
+    ],
+    "features": [
+      "testing professional optical capture system",
+      "High-contrast studio strobe lighting & calibration",
+      "Instant AirDrop sharing & lab-grade keepsakes"
+    ],
+    "trustItems": [
+      "2026/2027 Calendar Open",
+      "Complimentary Date Shift",
+      "15-Min Producer Callback"
+    ]
+  }
+}

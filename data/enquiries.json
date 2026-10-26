@@ -1,0 +1,59 @@
+[
+  {
+    "referenceId": "MIM-67304",
+    "createdAt": "2026-09-24T05:17:54.327Z",
+    "fullName": "Charlotte Beaumount",
+    "email": "charlotte@bilimbe-style.com",
+    "phone": "+44 7911 888999",
+    "eventType": "Corporate",
+    "eventDate": "2026-11-28",
+    "eventLocation": "Somerset House, London",
+    "expectedGuests": "Not specified",
+    "services": [
+      "The Signature Studio Photobooth"
+    ],
+    "budgetRange": "Flexible",
+    "message": "Looking for clean white theme prints with custom monogram foil.",
+    "inspirationReference": null,
+    "status": "Under Review",
+    "estimatedResponse": "Within 12-24 hours"
+  },
+  {
+    "referenceId": "MIM-62172",
+    "createdAt": "2026-09-24T05:06:18.907Z",
+    "fullName": "Sophia Montgomery",
+    "email": "sophia.m@luxurygalas.com",
+    "phone": "+44 7911 123456",
+    "eventType": "Brand Activation",
+    "eventDate": "2026-12-10",
+    "eventLocation": "Somerset House, London",
+    "expectedGuests": "250 - 500",
+    "services": [
+      "The Signature Studio Photobooth",
+      "360° Cinematic Video Booth"
+    ],
+    "budgetRange": "£2,500 - £5,000",
+    "message": "Winter launch party with bespoke holographic print borders.",
+    "inspirationReference": null,
+    "status": "Under Review",
+    "estimatedResponse": "Within 12-24 hours"
+  },
+  {
+    "referenceId": "MIM-78421",
+    "createdAt": "2026-09-20T14:32:00.000Z",
+    "fullName": "Charlotte Beaumount",
+    "email": "charlotte.b@luxuryweddings.co.uk",
+    "phone": "+44 7700 900123",
+    "eventType": "Wedding",
+    "eventDate": "2026-11-14",
+    "eventLocation": "Cliveden House, Berkshire",
+    "expectedGuests": "150-250",
+    "services": [
+      "The B&W Kardashian Glam Booth",
+      "Vintage Audio Guestbook"
+    ],
+    "budgetRange": "£2,500 - £5,000",
+    "message": "Looking for black-tie styling with personalized foil-pressed print sleeves for our autumn wedding.",
+    "status": "Proposal Sent"
+  }
+]

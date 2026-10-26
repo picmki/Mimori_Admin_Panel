@@ -1,0 +1,3825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mimori Digital — VIP Admin & Experience Engine</title>
+  <meta name="description" content="Luxury Photobooth Management, Service Detail Visual Page Builder, Megamenu Hierarchy, and Supabase Live Sync.">
+  <link rel="icon" type="image/svg+xml" href="/images/Fav%20Icon.svg">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       LUXURY WHITE THEME DESIGN SYSTEM (MIMORI EXECUTIVE SUITE)
+       ========================================================================== */
+    :root {
+      --bg-base: #F8FAFC;
+      --bg-surface: #FFFFFF;
+      --bg-elevated: #F1F5F9;
+      --bg-card: #FFFFFF;
+      --bg-input: #FFFFFF;
+      --border-subtle: #E2E8F0;
+      --border-focus: #E31D1C;
+      --border-glow: rgba(227, 29, 28, 0.2);
+      --red-primary: #E31D1C;
+      --red-hover: #C51615;
+      --red-glow: 0 4px 16px rgba(227, 29, 28, 0.2);
+      --gold-accent: #B45309;
+      --emerald-live: #059669;
+      --text-white: #0F172A;
+      --text-primary: #0F172A;
+      --text-dim: #475569;
+      --text-muted: #64748B;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --font-heading: 'Outfit', 'Montserrat', -apple-system, sans-serif;
+      --font-body: 'Outfit', sans-serif;
+      --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+      --card-shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    /* Scrollbars */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F1F5F9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--red-primary);
+    }
+
+    /* ==========================================================================
+       TOP GLOBAL NAVIGATION BAR
+       ========================================================================== */
+    .admin-navbar {
+      height: 72px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .brand-logo-img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .admin-badge-pill {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 800;
+      padding: 4px 10px;
+      background: rgba(227, 29, 28, 0.08);
+      border: 1px solid rgba(227, 29, 28, 0.25);
+      color: var(--red-primary);
+      border-radius: var(--radius-sm);
+    }
+
+    .nav-tabs-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #F1F5F9;
+      padding: 4px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .nav-tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      font-family: var(--font-heading);
+    }
+
+    .nav-tab-btn:hover {
+      color: var(--text-primary);
+      background: rgba(0, 0, 0, 0.04);
+    }
+
+    .nav-tab-btn.active {
+      background: var(--red-primary);
+      color: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(227, 29, 28, 0.25);
+    }
+
+    .nav-tab-count {
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      background: #E2E8F0;
+      color: #475569;
+      border-radius: 10px;
+    }
+
+    .nav-tab-btn.active .nav-tab-count {
+      background: rgba(255, 255, 255, 0.25);
+      color: #FFFFFF;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .supabase-status-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: #ECFDF5;
+      border: 1px solid #A7F3D0;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #047857;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald-live);
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+      animation: pulseLive 2s infinite;
+    }
+
+    @keyframes pulseLive {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .btn-site-preview {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      color: #334155;
+      text-decoration: none;
+      padding: 8px 16px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+      transition: all 0.2s ease;
+    }
+
+    .btn-site-preview:hover {
+      background: #F8FAFC;
+      border-color: #CBD5E1;
+      color: var(--red-primary);
+    }
+
+    /* ==========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================== */
+    .admin-main {
+      flex: 1;
+      padding: 32px 36px 80px 36px;
+      max-width: 1600px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .section-tab-panel {
+      display: none;
+    }
+
+    .section-tab-panel.active {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==========================================================================
+       PAGE HEADER WITH QUICK STATS & ACTIONS
+       ========================================================================== */
+    .module-header-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .module-title-wrap h1 {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .module-title-wrap p {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+
+    .module-actions-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-primary {
+      background: var(--red-primary);
+      border: 1px solid var(--red-primary);
+      color: #FFFFFF;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      box-shadow: 0 3px 10px rgba(227, 29, 28, 0.25);
+      font-family: var(--font-heading);
+    }
+
+    .btn-primary:hover {
+      background: var(--red-hover);
+      box-shadow: 0 6px 18px rgba(227, 29, 28, 0.38);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      color: #334155;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      font-family: var(--font-heading);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+
+    .btn-secondary:hover {
+      background: #F8FAFC;
+      border-color: #CBD5E1;
+      color: var(--text-primary);
+    }
+
+    /* ==========================================================================
+       MODULE 1: FLEET & SERVICES CATALOG GRID
+       ========================================================================== */
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+      background: var(--bg-surface);
+      padding: 12px 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--card-shadow);
+    }
+
+    .filter-pills {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-pill-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-dim);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-pill-btn:hover {
+      color: var(--text-primary);
+      background: #F1F5F9;
+    }
+
+    .filter-pill-btn.active {
+      background: rgba(227, 29, 28, 0.08);
+      border-color: rgba(227, 29, 28, 0.3);
+      color: var(--red-primary);
+    }
+
+    .search-input-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #F8FAFC;
+      border: 1px solid var(--border-subtle);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      width: 280px;
+    }
+
+    .search-input-box input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text-primary);
+      font-size: 0.85rem;
+      width: 100%;
+    }
+
+    .search-input-box input::placeholder {
+      color: #94A3B8;
+    }
+
+    .services-fleet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s ease;
+      position: relative;
+      box-shadow: var(--card-shadow);
+    }
+
+    .service-card-item:hover {
+      border-color: rgba(227, 29, 28, 0.4);
+      transform: translateY(-3px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .service-card-thumb-wrap {
+      height: 200px;
+      background: #F1F5F9;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card-thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .service-card-item:hover .service-card-thumb-wrap img {
+      transform: scale(1.05);
+    }
+
+    .service-card-category-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      color: var(--text-primary);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    }
+
+    .service-card-slug-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(4px);
+      color: #FFFFFF;
+      font-family: monospace;
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 2px;
+    }
+
+    .service-card-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .service-card-tagline {
+      color: var(--text-dim);
+      font-size: 0.82rem;
+      line-height: 1.45;
+      margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .service-card-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: auto;
+      font-size: 0.82rem;
+    }
+
+    .meta-price-val {
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .service-card-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 20px;
+      background: #F8FAFC;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .btn-card-edit {
+      flex: 1;
+      background: var(--red-primary);
+      border: 1px solid var(--red-primary);
+      color: #FFFFFF;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-card-edit:hover {
+      background: var(--red-hover);
+    }
+
+    .btn-card-live {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-dim);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    }
+
+    .btn-card-live:hover {
+      color: var(--text-primary);
+      background: #F1F5F9;
+      border-color: #CBD5E1;
+    }
+
+    /* ==========================================================================
+       MODULE 2: MEGAMENU & CATEGORY MANAGEMENT
+       ========================================================================== */
+    .categories-admin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .cat-admin-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      box-shadow: var(--card-shadow);
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .cat-admin-card:hover {
+      border-color: #CBD5E1;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    }
+
+    .cat-admin-thumb {
+      width: 54px;
+      height: 54px;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+      background: #F1F5F9;
+      border: 1px solid var(--border-subtle);
+      flex-shrink: 0;
+    }
+
+    .cat-admin-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .cat-admin-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cat-admin-slug {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      font-family: monospace;
+      margin-top: 2px;
+      display: block;
+    }
+
+    .cat-admin-count {
+      display: inline-block;
+      margin-top: 4px;
+      padding: 2px 8px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      background: #EFF6FF;
+      color: #2563EB;
+      border-radius: 9999px;
+    }
+
+    .cat-admin-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .btn-cat-action {
+      padding: 5px 9px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .btn-cat-action:hover {
+      color: var(--text-primary);
+      border-color: #94A3B8;
+      background: #F8FAFC;
+    }
+
+    .btn-cat-action.delete:hover {
+      color: var(--red-primary);
+      border-color: #FCA5A5;
+      background: #FEF2F2;
+    }
+
+    .menu-organizer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .menu-column-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+    }
+
+    .menu-column-header {
+      padding: 16px 18px;
+      background: #F8FAFC;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .menu-col-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .menu-col-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #E31D1C;
+    }
+
+    .menu-col-title {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .menu-items-list {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+      min-height: 160px;
+    }
+
+    .menu-items-empty {
+      padding: 24px 16px;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.8rem;
+      border: 1px dashed var(--border-subtle);
+      border-radius: var(--radius-sm);
+      margin: auto 0;
+      background: #FAFAFA;
+    }
+
+    .menu-item-row {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    }
+
+    .menu-item-row:hover {
+      border-color: #CBD5E1;
+      background: #F8FAFC;
+    }
+
+    .menu-item-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .menu-item-title-input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px dashed transparent;
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 0.85rem;
+      width: 100%;
+      padding: 2px 0;
+      outline: none;
+    }
+
+    .menu-item-title-input:focus {
+      border-bottom-color: var(--red-primary);
+    }
+
+    .menu-item-slug-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-family: monospace;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .menu-item-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .menu-select-category {
+      background: #F8FAFC;
+      border: 1px solid var(--border-subtle);
+      color: #334155;
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: var(--radius-sm);
+      outline: none;
+    }
+
+    /* ==========================================================================
+       MODULE 3: END-TO-END VISUAL SERVICE DETAIL PAGE BUILDER
+       (MIRRORS SERVICE-DETAIL.HTML ARCHITECTURE EXACTLY)
+       ========================================================================== */
+    .editor-container {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .editor-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-subtle);
+      padding: 14px 24px;
+      border-radius: var(--radius-md);
+      position: sticky;
+      top: 88px;
+      z-index: 900;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    .editor-back-nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-editor-back {
+      background: #F8FAFC;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-dim);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-editor-back:hover {
+      color: var(--text-primary);
+      background: #F1F5F9;
+      border-color: #CBD5E1;
+    }
+
+    .editor-booth-id-badge {
+      font-family: monospace;
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      background: rgba(227, 29, 28, 0.08);
+      border: 1px solid rgba(227, 29, 28, 0.25);
+      color: var(--red-primary);
+      border-radius: 4px;
+    }
+
+    .editor-save-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .save-timestamp-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Section Card in Builder */
+    .builder-section-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 24px;
+      transition: border-color 0.2s ease;
+      box-shadow: var(--card-shadow);
+    }
+
+    .builder-section-card:hover {
+      border-color: #CBD5E1;
+    }
+
+    .builder-section-header {
+      padding: 16px 24px;
+      background: #F8FAFC;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .builder-section-num-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .builder-sec-num {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: var(--red-primary);
+      text-transform: uppercase;
+      background: rgba(227, 29, 28, 0.08);
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+
+    .builder-sec-heading {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .builder-sec-badge-hint {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+
+    .builder-section-body {
+      padding: 24px;
+    }
+
+    /* Form Fields Styling */
+    .form-group-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .form-input, .form-textarea, .form-select {
+      background: var(--bg-input);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-family: inherit;
+      outline: none;
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      border-color: var(--red-primary);
+      box-shadow: 0 0 0 3px rgba(227, 29, 28, 0.12);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 80px;
+      line-height: 1.45;
+    }
+
+    .form-help {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       SECTION 1: 5-PHOTO AIRBNB MOSAIC BUILDER (VISUAL REPLICA)
+       ========================================================================== */
+    .mosaic-preview-builder-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .mosaic-preview-builder-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .mosaic-slot-primary {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--card-shadow);
+    }
+
+    .mosaic-slot-quad-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .mosaic-slot-sub {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--card-shadow);
+    }
+
+    .mosaic-slot-thumb-box {
+      height: 160px;
+      background: #F1F5F9;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mosaic-slot-primary .mosaic-slot-thumb-box {
+      height: 240px;
+    }
+
+    .mosaic-slot-thumb-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .mosaic-slot-tag {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(4px);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 3px 6px;
+      border-radius: 2px;
+    }
+
+    .mosaic-slot-controls {
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      background: #F8FAFC;
+    }
+
+    .upload-input-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-file-upload {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      color: #334155;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+
+    .btn-file-upload:hover {
+      background: #F1F5F9;
+      border-color: #CBD5E1;
+      color: var(--text-primary);
+    }
+
+    /* ==========================================================================
+       SECTION 2: 4 KEY METRICS BAR BUILDER
+       ========================================================================== */
+    .metrics-builder-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .metrics-builder-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .metric-card-editor {
+      background: #F8FAFC;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .metric-preview-badge {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      padding: 6px 10px;
+      background: rgba(227, 29, 28, 0.06);
+      border-left: 3px solid var(--red-primary);
+      margin-bottom: 4px;
+    }
+
+    /* ==========================================================================
+       SECTION 3: VISUAL COMPARISON BEFORE / AFTER EDITOR
+       ========================================================================== */
+    .compare-builder-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 800px) {
+      .compare-builder-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .compare-side-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--card-shadow);
+    }
+
+    .compare-side-card.after-side {
+      border-color: rgba(227, 29, 28, 0.4);
+    }
+
+    .compare-side-thumb {
+      height: 200px;
+      background: #F1F5F9;
+      position: relative;
+    }
+
+    .compare-side-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .compare-badge-pill {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 4px 10px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 2px;
+    }
+
+    .compare-badge-before {
+      background: rgba(255, 255, 255, 0.95);
+      color: #334155;
+      border: 1px solid #CBD5E1;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    }
+
+    .compare-badge-after {
+      background: var(--red-primary);
+      color: #FFFFFF;
+      box-shadow: 0 2px 10px rgba(227, 29, 28, 0.35);
+    }
+
+    /* ==========================================================================
+       SECTION 4: 4-STEP GUEST EXPERIENCE JOURNEY BUILDER
+       ========================================================================== */
+    .journey-builder-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 1100px) {
+      .journey-builder-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .journey-builder-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .journey-step-editor-card {
+      background: #F8FAFC;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .journey-step-num-badge {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--red-primary);
+    }
+
+    /* ==========================================================================
+       SECTION 5: LOOKBOOK PRODUCTION GALLERY BUILDER
+       ========================================================================== */
+    .lookbook-items-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .lookbook-item-editor {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--card-shadow);
+    }
+
+    .lookbook-item-thumb {
+      height: 160px;
+      background: #F1F5F9;
+      position: relative;
+    }
+
+    .lookbook-item-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .btn-item-delete {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(227, 29, 28, 0.88);
+      border: none;
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-item-delete:hover {
+      background: #DC2626;
+      transform: scale(1.08);
+    }
+
+    .lookbook-item-fields {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: #F8FAFC;
+    }
+
+    /* ==========================================================================
+       SECTION 6: TECHNICAL RIDER & HARDWARE SPECS TABLE
+       ========================================================================== */
+    .specs-table-editor {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+    }
+
+    .specs-table-editor th {
+      text-align: left;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding: 10px 14px;
+      background: #F8FAFC;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .specs-table-editor td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border-subtle);
+      vertical-align: top;
+      color: var(--text-primary);
+    }
+
+    /* ==========================================================================
+       SECTION 7: BROCHURE DOWNLOAD SECTION BUILDER
+       ========================================================================== */
+    .brochure-builder-split {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 850px) {
+      .brochure-builder-split {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .brochure-cover-preview-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--card-shadow);
+    }
+
+    .brochure-cover-thumb {
+      height: 260px;
+      background: #F1F5F9;
+      position: relative;
+    }
+
+    .brochure-cover-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ==========================================================================
+       SECTION 8: COMMISSION PACKAGES & TIERS BUILDER
+       ========================================================================== */
+    .packages-builder-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 950px) {
+      .packages-builder-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .package-card-editor {
+      background: #F8FAFC;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+    }
+
+    .package-card-editor.featured-tier {
+      background: #FFFFFF;
+      border-color: rgba(227, 29, 28, 0.45);
+      box-shadow: 0 4px 18px rgba(227, 29, 28, 0.08);
+    }
+
+    /* ==========================================================================
+       MODULE 4: ENQUIRIES & CLIENT RESERVATION LEDGER
+       ========================================================================== */
+    .ledger-table-wrap {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow-x: auto;
+      box-shadow: var(--card-shadow);
+    }
+
+    .ledger-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.85rem;
+    }
+
+    .ledger-table th {
+      padding: 14px 18px;
+      background: #F8FAFC;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+    }
+
+    .ledger-table td {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border-subtle);
+      vertical-align: middle;
+      color: #334155;
+    }
+
+    .ledger-table tr:hover td {
+      background: #F8FAFC;
+    }
+
+    .ledger-ref-code {
+      font-family: monospace;
+      font-weight: 700;
+      color: var(--red-primary);
+      background: rgba(227, 29, 28, 0.08);
+      padding: 2px 8px;
+      border-radius: 2px;
+    }
+
+    .status-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 12px;
+    }
+
+    .status-review { background: #FEF3C7; color: #B45309; border: 1px solid #FCD34D; }
+    .status-contacted { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+    .status-confirmed { background: #ECFDF5; color: #047857; border: 1px solid #A7F3D0; }
+    .status-cancelled { background: #FEF2F2; color: #B91C1C; border: 1px solid #FECACA; }
+
+    /* ==========================================================================
+       MODAL DIALOGS
+       ========================================================================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.45);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      width: 100%;
+      max-width: 580px;
+      overflow: hidden;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+      animation: modalSlide 0.25s ease;
+    }
+
+    @keyframes modalSlide {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-header {
+      padding: 18px 24px;
+      background: #F8FAFC;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .btn-modal-close {
+      background: transparent;
+      border: none;
+      color: var(--text-dim);
+      font-size: 1.4rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .btn-modal-close:hover {
+      color: var(--text-primary);
+    }
+
+    .modal-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .modal-footer {
+      padding: 16px 24px;
+      background: #F8FAFC;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+
+    /* Toast Notification */
+    .toast-pill {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: #FFFFFF;
+      border: 1px solid var(--red-primary);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(227, 29, 28, 0.15);
+      color: var(--text-primary);
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 600;
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .toast-pill.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- ========================================================================
+       TOP GLOBAL HEADER & BAR
+       ======================================================================== -->
+  <header class="admin-navbar">
+    <div class="nav-left">
+      <a href="/admin" class="brand-logo-wrap">
+        <img src="/images/Header%20Logo.svg" alt="Mimori Digital Logo" class="brand-logo-img">
+        <span class="admin-badge-pill">VIP ADMIN SUITE</span>
+      </a>
+
+      <!-- Primary Navigation Tabs -->
+      <nav class="nav-tabs-group">
+        <button type="button" class="nav-tab-btn active" id="tab-btn-fleet" onclick="switchAdminTab('fleet')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Fleet &amp; Services</span>
+          <span class="nav-tab-count" id="fleet-count-pill">6</span>
+        </button>
+
+        <button type="button" class="nav-tab-btn" id="tab-btn-editor" onclick="switchAdminTab('editor')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+          <span>Visual Detail Builder</span>
+        </button>
+
+        <button type="button" class="nav-tab-btn" id="tab-btn-menu" onclick="switchAdminTab('menu')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <span>Menu &amp; Hierarchy</span>
+        </button>
+
+        <button type="button" class="nav-tab-btn" id="tab-btn-ledger" onclick="switchAdminTab('ledger')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span>Enquiry Ledger</span>
+          <span class="nav-tab-count" id="enquiry-count-pill">0</span>
+        </button>
+      </nav>
+    </div>
+
+    <div class="nav-right">
+      <!-- Supabase Sync Live Status -->
+      <div class="supabase-status-pill" id="supabase-pill" title="Live Database Synchronization Status">
+        <span class="pulse-dot"></span>
+        <span id="supabase-status-text">Supabase Live Connected</span>
+      </div>
+
+      <!-- Live Website Link -->
+      <a href="/" target="_blank" class="btn-site-preview">
+        <span>View Live Site</span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MAIN DASHBOARD BODY
+       ======================================================================== -->
+  <main class="admin-main">
+
+    <!-- ======================================================================
+         TAB 1: FLEET & SERVICES CATALOG OVERVIEW
+         ====================================================================== -->
+    <section class="section-tab-panel active" id="panel-fleet">
+      <div class="module-header-row">
+        <div class="module-title-wrap">
+          <h1>Experiential Fleet &amp; Services</h1>
+          <p>Manage all luxury photo, video, and audio booths. Add new models or customize existing production pages.</p>
+        </div>
+        <div class="module-actions-wrap">
+          <button type="button" class="btn-primary" onclick="openAddBoothModal()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            <span>+ Add New Booth</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Filter & Search Toolbar -->
+      <div class="filter-bar">
+        <div class="filter-pills" id="fleet-filter-pills">
+          <button type="button" class="filter-pill-btn active" data-filter="all" onclick="filterFleet('all', this)">All Experiences</button>
+        </div>
+
+        <div class="search-input-box">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="fleet-search-input" placeholder="Search booths by name..." oninput="searchFleet(this.value)">
+        </div>
+      </div>
+
+      <!-- Fleet Grid -->
+      <div class="services-fleet-grid" id="fleet-cards-grid">
+        <!-- Rendered dynamically via JavaScript -->
+      </div>
+    </section>
+
+
+    <!-- ======================================================================
+         TAB 2: END-TO-END VISUAL SERVICE DETAIL PAGE BUILDER
+         (MIRRORS SERVICE-DETAIL.HTML SECTIONS DIRECTLY)
+         ====================================================================== -->
+    <section class="section-tab-panel" id="panel-editor">
+      <div class="editor-container">
+
+        <!-- Top Sticky Action Bar -->
+        <div class="editor-top-bar">
+          <div class="editor-back-nav">
+            <button type="button" class="btn-editor-back" onclick="switchAdminTab('fleet')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              <span>Back to Fleet</span>
+            </button>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-weight: 700; font-size: 1rem; color: var(--text-primary);" id="editor-active-title">The B&amp;W Kardashian Glam Booth</span>
+              <span class="editor-booth-id-badge" id="editor-active-id-badge">ID: kardashian-glam</span>
+            </div>
+          </div>
+
+          <div class="editor-save-group">
+            <span class="save-timestamp-label" id="last-saved-time">All changes synchronized</span>
+            <a href="/service-detail.html?id=kardashian-glam" target="_blank" class="btn-secondary" id="editor-preview-link">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              <span>View On Live Website</span>
+            </a>
+            <button type="button" class="btn-primary" onclick="saveActiveServiceDetail()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+              <span>Save to Supabase &amp; Website</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             SECTION A: HERO HEADLINE & EDITORIAL BADGES
+             ================================================================== -->
+        <div class="builder-section-card">
+          <div class="builder-section-header">
+            <div class="builder-section-num-title">
+              <span class="builder-sec-num">01 / HERO</span>
+              <h2 class="builder-sec-heading">Hero Header, Tagline &amp; Rating Badges</h2>
+            </div>
+            <span class="builder-sec-badge-hint">Displayed at the very top of service-detail.html</span>
+          </div>
+          <div class="builder-section-body">
+            <div class="form-group-row">
+              <div class="form-group">
+                <label class="form-label">Service Title (H1)</label>
+                <input type="text" class="form-input" id="inp-title" placeholder="e.g. The B&W Kardashian Glam Booth" oninput="liveUpdateTitle(this.value)">
+                <span class="form-help">Headline displayed in bold uppercase on the live detail page.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Editorial Badge</label>
+                <input type="text" class="form-input" id="inp-badge" placeholder="e.g. EDITORIAL GLAMOUR • VIP ACTIVATION">
+                <span class="form-help">Pill tag shown above the main title.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Category Assignment</label>
+                <select class="form-select" id="inp-category">
+                  <option value="photobooth">Photo Booth</option>
+                  <option value="video-360">360 Video Booth</option>
+                  <option value="glam">Kardashian Glam</option>
+                  <option value="audio">Audio Guestbook</option>
+                  <option value="custom">Custom Tech / AI Development</option>
+                </select>
+                <span class="form-help">Governs mega-menu sorting and category filters.</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Hero Tagline / Subtitle</label>
+              <textarea class="form-textarea" id="inp-tagline" placeholder="Editorial sub-paragraph describing the experience..."></textarea>
+              <span class="form-help">Appears beneath the headline in high-fashion editorial typography.</span>
+            </div>
+
+            <div class="form-group" style="margin-top: 14px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                <label class="form-label" style="margin: 0;">Overview Meta Chips (Subtitle Highlights - Separate Inputs)</label>
+                <button type="button" class="btn-secondary" style="padding: 4px 10px; font-size: 0.75rem; display: inline-flex; align-items: center; gap: 4px;" onclick="addChipField()">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                  <span>+ Add Meta Chip</span>
+                </button>
+              </div>
+              <div id="chips-container" style="display: flex; flex-direction: column; gap: 8px;">
+                <!-- Dynamically populated with individual input fields per chip -->
+              </div>
+              <span class="form-help">Separate input fields displayed directly beneath the subtitle (e.g. <em>Up to 500+ VIP Guests • 90-Min Silent Load-in • 2 DBS Verified Concierges • £10M PLI Insured</em>).</span>
+            </div>
+
+            <div class="form-group" style="margin-top: 14px;">
+              <label class="form-label">Key Experience Feature Bullets (3 Checkmark Points)</label>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <input type="text" class="form-input" id="inp-bullet-1" placeholder="Bullet 1: e.g. The B&W Kardashian Glam Booth professional optical capture system">
+                <input type="text" class="form-input" id="inp-bullet-2" placeholder="Bullet 2: e.g. High-contrast studio strobe lighting & calibration">
+                <input type="text" class="form-input" id="inp-bullet-3" placeholder="Bullet 3: e.g. Instant AirDrop sharing & lab-grade keepsakes">
+              </div>
+              <span class="form-help">The 3 red checkmark inclusion bullets shown in the host overview card.</span>
+            </div>
+
+            <div class="form-group" style="margin-top: 14px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                <label class="form-label" style="margin: 0;">Hero Trust &amp; Guarantee Bar Highlights (Separate Inputs)</label>
+                <button type="button" class="btn-secondary" style="padding: 4px 10px; font-size: 0.75rem; display: inline-flex; align-items: center; gap: 4px;" onclick="addTrustItemField()">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                  <span>+ Add Highlight</span>
+                </button>
+              </div>
+              <div id="trust-items-container" style="display: flex; flex-direction: column; gap: 8px;">
+                <!-- Dynamically populated with individual input fields per item -->
+              </div>
+              <span class="form-help">Separate input fields displayed in the guarantee strip beneath the Reserve CTA (e.g. <em>■ 2026/2027 Calendar Open • Complimentary Date Shift • 15-Min Producer Callback</em>). Item 1 automatically receives the live green status dot.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             SECTION B: 5-PHOTO AIRBNB MOSAIC GRID (VISUAL REPLICA)
+             ================================================================== -->
+        <div class="builder-section-card">
+          <div class="builder-section-header">
+            <div class="builder-section-num-title">
+              <span class="builder-sec-num">02 / MOSAIC</span>
+              <h2 class="builder-sec-heading">5-Photo Airbnb Hero Mosaic Grid</h2>
+            </div>
+            <span class="builder-sec-badge-hint">Exactly mirrors the 5-photo grid on the live page</span>
+          </div>
+          <div class="builder-section-body">
+            <div class="mosaic-preview-builder-grid">
+
+              <!-- Slot 0: Big Left Primary Editorial Photo -->
+              <div class="mosaic-slot-primary">
+                <div class="mosaic-slot-thumb-box">
+                  <img id="img-preview-mosaic-0" src="/images/hero_booth_kardashian.jpg" alt="Primary Hero">
+                  <span class="mosaic-slot-tag">01 / PRIMARY HERO COVER</span>
+                </div>
+                <div class="mosaic-slot-controls">
+                  <div class="upload-input-wrap">
+                    <input type="text" class="form-input" id="inp-mosaic-0" placeholder="/images/photo.jpg" oninput="updateSlotPreview(0, this.value)">
+                    <label class="btn-file-upload">
+                      <input type="file" accept="image/*" style="display:none;" onchange="handleImageUpload(event, 0)">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                      <span>Upload</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slots 1, 2, 3, 4: Right 2x2 Quadrant -->
+              <div class="mosaic-slot-quad-grid">
+                <!-- Slot 1: Top Right 1 -->
+                <div class="mosaic-slot-sub">
+                  <div class="mosaic-slot-thumb-box">
+                    <img id="img-preview-mosaic-1" src="/images/service_booth.webp" alt="Angle 2">
+                    <span class="mosaic-slot-tag">02 / TOP RIGHT</span>
+                  </div>
+                  <div class="mosaic-slot-controls">
+                    <div class="upload-input-wrap">
+                      <input type="text" class="form-input" id="inp-mosaic-1" placeholder="/images/..." oninput="updateSlotPreview(1, this.value)">
+                      <label class="btn-file-upload">
+                        <input type="file" accept="image/*" style="display:none;" onchange="handleImageUpload(event, 1)">
+                        <span>Upload</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slot 2: Top Right 2 -->
+                <div class="mosaic-slot-sub">
+                  <div class="mosaic-slot-thumb-box">
+                    <img id="img-preview-mosaic-2" src="/images/editorial_uluwatu.jpg" alt="Angle 3">
+                    <span class="mosaic-slot-tag">03 / MID RIGHT</span>
+                  </div>
+                  <div class="mosaic-slot-controls">
+                    <div class="upload-input-wrap">
+                      <input type="text" class="form-input" id="inp-mosaic-2" placeholder="/images/..." oninput="updateSlotPreview(2, this.value)">
+                      <label class="btn-file-upload">
+                        <input type="file" accept="image/*" style="display:none;" onchange="handleImageUpload(event, 2)">
+                        <span>Upload</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slot 3: Bottom Left -->
+                <div class="mosaic-slot-sub">
+                  <div class="mosaic-slot-thumb-box">
+                    <img id="img-preview-mosaic-3" src="/images/branch_cotswolds.webp" alt="Angle 4">
+                    <span class="mosaic-slot-tag">04 / BTM LEFT</span>
+                  </div>
+                  <div class="mosaic-slot-controls">
+                    <div class="upload-input-wrap">
+                      <input type="text" class="form-input" id="inp-mosaic-3" placeholder="/images/..." oninput="updateSlotPreview(3, this.value)">
+                      <label class="btn-file-upload">
+                        <input type="file" accept="image/*" style="display:none;" onchange="handleImageUpload(event, 3)">
+                        <span>Upload</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slot 4: Bottom Right -->
+                <div class="mosaic-slot-sub">
+                  <div class="mosaic-slot-thumb-box">
+                    <img id="img-preview-mosaic-4" src="/images/dest_swiss_alps.jpg" alt="Angle 5">
+                    <span class="mosaic-slot-tag">05 / BTM RIGHT</span>
+                  </div>
+                  <div class="mosaic-slot-controls">
+                    <div class="upload-input-wrap">
+                      <input type="text" class="form-input" id="inp-mosaic-4" placeholder="/images/..." oninput="updateSlotPreview(4, this.value)">
+                      <label class="btn-file-upload">
+                        <input type="file" accept="image/*" style="display:none;" onchange="handleImageUpload(event, 4)">
+                        <span>Upload</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             SECTION C: 4 KEY SPEC METRICS
+             ================================================================== -->
+        <div class="builder-section-card">
+          <div class="builder-section-header">
+            <div class="builder-section-num-title">
+              <span class="builder-sec-num">03 / METRICS</span>
+              <h2 class="builder-sec-heading">Key Production Metrics Bar</h2>
+            </div>
+            <span class="builder-sec-badge-hint">4 architectural counters displayed beneath the mosaic</span>
+          </div>
+          <div class="builder-section-body">
+            <div class="metrics-builder-grid">
+              <!-- Metric 1 -->
+              <div class="metric-card-editor">
+                <div class="metric-preview-badge" id="preview-metric-0">Canon 45MP EOS R5</div>
+                <div class="form-group">
+                  <label class="form-label">Metric 1 Label</label>
+                  <input type="text" class="form-input" id="inp-metric-label-0" value="Imaging Core">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Metric 1 Value</label>
+                  <input type="text" class="form-input" id="inp-metric-val-0" value="Canon 45MP EOS R5" oninput="document.getElementById('preview-metric-0').textContent=this.value">
+                </div>
+              </div>
+
+              <!-- Metric 2 -->
+              <div class="metric-card-editor">
+                <div class="metric-preview-badge" id="preview-metric-1">7s Lab Metallic</div>
+                <div class="form-group">
+                  <label class="form-label">Metric 2 Label</label>
+                  <input type="text" class="form-input" id="inp-metric-label-1" value="Print Velocity">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Metric 2 Value</label>
+                  <input type="text" class="form-input" id="inp-metric-val-1" value="7s Lab Metallic" oninput="document.getElementById('preview-metric-1').textContent=this.value">
+                </div>
+              </div>
+
+              <!-- Metric 3 -->
+              <div class="metric-card-editor">
+                <div class="metric-preview-badge" id="preview-metric-2">2 DBS Concierges</div>
+                <div class="form-group">
+                  <label class="form-label">Metric 3 Label</label>
+                  <input type="text" class="form-input" id="inp-metric-label-2" value="White-Glove Crew">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Metric 3 Value</label>
+                  <input type="text" class="form-input" id="inp-metric-val-2" value="2 DBS Concierges" oninput="document.getElementById('preview-metric-2').textContent=this.value">
+                </div>
+              </div>
+
+              <!-- Metric 4 -->
+              <div class="metric-card-editor">
+                <div class="metric-preview-badge" id="preview-metric-3">Starting from £795</div>
+                <div class="form-group">
+                  <label class="form-label">Metric 4 Label</label>
+                  <input type="text" class="form-input" id="inp-metric-label-3" value="Base Investment">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Metric 4 Value</label>
+                  <input type="text" class="form-input" id="inp-metric-val-3" value="Starting from £795" oninput="document.getElementById('preview-metric-3').textContent=this.value">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             SECTION D: BEFORE / AFTER GLAM SLIDER COMPARISON
+             ================================================================== -->
+        <div class="builder-section-card">
+          <div class="builder-section-header">
+            <div class="builder-section-num-title">
+              <span class="builder-sec-num">04 / COMPARISON</span>
+              <h2 class="builder-sec-heading">Visual Comparison Before / After Slider</h2>
+            </div>
+            <span class="builder-sec-badge-hint">Interactive drag-slider showcasing camera optics filter</span>
+          </div>
+          <div class="builder-section-body">
+            <div class="compare-builder-grid">
+              <!-- Before Side -->
+              <div class="compare-side-card">
+                <div class="compare-side-thumb">
+                  <img id="img-preview-compare-before" src="/images/hero_booth_studio.jpg" alt="Before">
+                  <span class="compare-badge-pill compare-badge-before" id="badge-preview-before">Standard Camera</span>
+                </div>
+                <div style="padding: 16px; display: flex; flex-direction: column; gap: 10px;">
+                  <div class="form-group">
+                    <label class="form-label">Before Label / Tag</label>
+                    <input type="text" class="form-input" id="inp-compare-before-title" value="Standard Uncalibrated Camera" oninput="document.getElementById('badge-preview-before').textContent=this.value">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Before Image URL</label>
+                    <div class="upload-input-wrap">
+                      <input type="text" class="form-input" id="inp-compare-before-img" value="/images/hero_booth_studio.jpg" oninput="document.getElementById('img-preview-compare-before').src=this.value">
+                      <label class="btn-file-upload">
+                        <input type="file" accept="image/*" style="display:none;" onchange="handleImageUploadDirect(event, 'inp-compare-before-img', 'img-preview-compare-before')">
+                        <span>Upload</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- After Side -->
+              <div class="compare-side-card after-side">
+                <div class="compare-side-thumb">
+                  <img id="img-preview-compare-after" src="/images/hero_booth_kardashian.jpg" alt="After">
+                  <span class="compare-badge-pill compare-badge-after" id="badge-preview-after">Mimori Kardashian Filter</span>
+                </div>
+                <div style="padding: 16px; display: flex; flex-direction: column; gap: 10px;">
+                  <div class="form-group">
+                    <label class="form-label">After Label / Tag</label>
+                    <input type="text" class="form-input" id="inp-compare-after-title" value="Mimori Kardashian Glam Filter" oninput="document.getElementById('badge-preview-after').textContent=this.value">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">After Image URL</label>
+                    <div class="upload-input-wrap">
+                      <input type="text" class="form-input" id="inp-compare-after-img" value="/images/hero_booth_kardashian.jpg" oninput="document.getElementById('img-preview-compare-after').src=this.value">
+                      <label class="btn-file-upload">
+                        <input type="file" accept="image/*" style="display:none;" onchange="handleImageUploadDirect(event, 'inp-compare-after-img', 'img-preview-compare-after')">
+                        <span>Upload</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             SECTION E: 4-STEP GUEST EXPERIENCE JOURNEY
+             ================================================================== -->
+        <div class="builder-section-card">
+          <div class="builder-section-header">
+            <div class="builder-section-num-title">
+              <span class="builder-sec-num">05 / JOURNEY</span>
+              <h2 class="builder-sec-heading">The 4-Step Guest Experience Flow</h2>
+            </div>
+            <span class="builder-sec-badge-hint">Arrival, Staging, Capture, and Instant Keepsake Delivery</span>
+          </div>
+          <div class="builder-section-body">
+            <div class="journey-builder-grid" id="journey-cards-container">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             SECTION F: REAL ACTIVATIONS LOOKBOOK GALLERY
+             ================================================================== -->
+        <div class="builder-section-card">
+          <div class="builder-section-header">
+            <div class="builder-section-num-title">
+              <span class="builder-sec-num">06 / GALLERY</span>
+              <h2 class="builder-sec-heading">Real Production Activations &amp; Lookbook Masonry</h2>
+            </div>
+            <button type="button" class="btn-secondary" onclick="addLookbookPhotoRow()">+ Add Lookbook Photo</button>
+          </div>
+          <div class="builder-section-body">
+            <div class="lookbook-items-container" id="lookbook-items-container">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             SECTION G: TECHNICAL RIDER & HARDWARE SPECIFICATIONS
+             ================================================================== -->
+        <div class="builder-section-card">
+          <div class="builder-section-header">
+            <div class="builder-section-num-title">
+              <span class="builder-sec-num">07 / TECH RIDER</span>
+              <h2 class="builder-sec-heading">Technical Hardware &amp; Venue Specifications Table</h2>
+            </div>
+            <button type="button" class="btn-secondary" onclick="addSpecTableRow()">+ Add Tech Row</button>
+          </div>
+          <div class="builder-section-body">
+            <table class="specs-table-editor">
+              <thead>
+                <tr>
+                  <th style="width: 28%;">Specification Category</th>
+                  <th>Hardware &amp; Production Details (Supports HTML &amp; Bold)</th>
+                  <th style="width: 60px; text-align: center;">Action</th>
+                </tr>
+              </thead>
+              <tbody id="specs-table-editor-tbody">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             SECTION H: LOOKBOOK BROCHURE & SPATIAL RIDER DOWNLOAD
+             ================================================================== -->
+        <div class="builder-section-card">
+          <div class="builder-section-header">
+            <div class="builder-section-num-title">
+              <span class="builder-sec-num">08 / BROCHURE</span>
+              <h2 class="builder-sec-heading">Production Lookbook &amp; PDF Rider Box</h2>
+            </div>
+            <span class="builder-sec-badge-hint">Download CTA section on the website</span>
+          </div>
+          <div class="builder-section-body">
+            <div class="brochure-builder-split">
+              <!-- Left: Cover Preview -->
+              <div class="brochure-cover-preview-card">
+                <div class="brochure-cover-thumb">
+                  <img id="img-preview-brochure" src="/images/megamenu_photobooth_featured.jpg" alt="Brochure Cover">
+                </div>
+                <div style="padding: 12px; display: flex; flex-direction: column; gap: 8px;">
+                  <label class="form-label">Cover Image URL</label>
+                  <div class="upload-input-wrap">
+                    <input type="text" class="form-input" id="inp-brochure-cover" value="/images/megamenu_photobooth_featured.jpg" oninput="document.getElementById('img-preview-brochure').src=this.value">
+                    <label class="btn-file-upload">
+                      <input type="file" accept="image/*" style="display:none;" onchange="handleImageUploadDirect(event, 'inp-brochure-cover', 'img-preview-brochure')">
+                      <span>Upload</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Content Fields -->
+              <div style="display: flex; flex-direction: column; gap: 16px;">
+                <div class="form-group">
+                  <label class="form-label">Brochure Section Title</label>
+                  <input type="text" class="form-input" id="inp-brochure-title" value="Download The Complete 2026 Event Lookbook">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Brochure Lead Description</label>
+                  <textarea class="form-textarea" id="inp-brochure-sub" rows="3">Instant access to our complete collection of 24 experiential photobooths, architectural spatial blueprints, electrical requirements, custom monogram finishes, and transparent rate cards.</textarea>
+                </div>
+                <div class="form-group">
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                    <label class="form-label" style="margin-bottom: 0;">PDF Download Link / Manual Brochure</label>
+                    <a id="btn-view-current-pdf" href="/downloads/Mimori_2026_Lookbook.pdf" target="_blank" style="font-size: 0.78rem; color: var(--accent-red); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                      <span>Preview Current PDF</span>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                  </div>
+                  <div class="upload-input-wrap">
+                    <input type="text" class="form-input" id="inp-brochure-pdf" value="/downloads/Mimori_2026_Lookbook.pdf" placeholder="/downloads/Lookbook.pdf" oninput="updatePdfPreviewLink(this.value)">
+                    <label class="btn-file-upload">
+                      <input type="file" accept="application/pdf,.pdf" style="display:none;" onchange="handlePdfUploadDirect(event, 'inp-brochure-pdf')">
+                      <span>Upload PDF</span>
+                    </label>
+                  </div>
+                  <span style="font-size: 0.76rem; color: var(--text-dim); margin-top: 4px; display: block;">Upload your lookbook manual / spec rider (.pdf) or enter an external PDF link.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             SECTION I: COMMISSION PACKAGES & TIERS
+             ================================================================== -->
+        <div class="builder-section-card">
+          <div class="builder-section-header">
+            <div class="builder-section-num-title">
+              <span class="builder-sec-num">09 / PACKAGES</span>
+              <h2 class="builder-sec-heading">Commission Packages &amp; Pricing Tiers</h2>
+            </div>
+            <button type="button" class="btn-secondary" onclick="addPackageCard()">+ Add Pricing Package</button>
+          </div>
+          <div class="builder-section-body">
+            <div class="packages-builder-grid" id="packages-cards-container">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================================================
+         TAB 3: MEGAMENU & CATEGORY MANAGEMENT
+         ====================================================================== -->
+    <section class="section-tab-panel" id="panel-menu">
+      <div class="module-header-row">
+        <div class="module-title-wrap">
+          <h1>Website Categories &amp; Mega-Menu Organizer</h1>
+          <p>Create and edit navigation categories (header tabs) and organize which real database booths appear under each category.</p>
+        </div>
+        <div class="module-actions-wrap">
+          <button type="button" class="btn-secondary" onclick="openAddCategoryModal()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            <span>+ Create New Category</span>
+          </button>
+          <button type="button" class="btn-primary" onclick="saveMegamenuHierarchy()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+            <span>Save Megamenu to Supabase</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Section: Navigation Categories Cards -->
+      <div style="margin-bottom: 36px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+          <div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin: 0;">
+              Navigation Categories (Header Dropdown Tabs)
+            </h3>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin: 2px 0 0 0;">
+              These categories appear directly as the clickable tabs inside the "Our Booths" website navigation dropdown.
+            </p>
+          </div>
+          <span class="count-pill" id="categories-count-pill">0 Categories</span>
+        </div>
+        <div class="categories-admin-grid" id="categories-admin-grid">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+
+      <!-- Section: Dynamic Megamenu Hierarchy Placement -->
+      <div>
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+          <div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin: 0;">
+              Megamenu Dropdown Booth Placements
+            </h3>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin: 2px 0 0 0;">
+              Reassign real database booths to different category tabs or rename their menu labels.
+            </p>
+          </div>
+        </div>
+        <div class="menu-organizer-grid" id="dynamic-menu-organizer-grid">
+          <!-- Dynamically populated per category via JS -->
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ======================================================================
+         TAB 4: CLIENT RESERVATION & ENQUIRY LEDGER
+         ====================================================================== -->
+    <section class="section-tab-panel" id="panel-ledger">
+      <div class="module-header-row">
+        <div class="module-title-wrap">
+          <h1>Client Enquiry &amp; Date-Hold Ledger</h1>
+          <p>Real-time client reservation submissions synced from the website date-hold modal and Supabase database.</p>
+        </div>
+        <div class="module-actions-wrap">
+          <button type="button" class="btn-secondary" onclick="loadEnquiriesLedger()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+            <span>Refresh Ledger</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="ledger-table-wrap">
+        <table class="ledger-table">
+          <thead>
+            <tr>
+              <th>Ref Code</th>
+              <th>Client Name</th>
+              <th>Contact Details</th>
+              <th>Service / Booth</th>
+              <th>Event Date &amp; Location</th>
+              <th>Current Status</th>
+              <th>Update Status</th>
+            </tr>
+          </thead>
+          <tbody id="enquiries-tbody">
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ========================================================================
+       MODAL: ADD NEW BOOTH
+       ======================================================================== -->
+  <div class="modal-backdrop" id="modal-add-booth">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">+ Add New Experiential Booth</h3>
+        <button type="button" class="btn-modal-close" onclick="closeAddBoothModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Booth Identifier / Slug (URL-Safe)</label>
+          <input type="text" class="form-input" id="new-booth-id" placeholder="e.g. vogue-mirror-booth">
+          <span class="form-help">Will form the website link: /service-detail.html?id=vogue-mirror-booth</span>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Full Booth Title</label>
+          <input type="text" class="form-input" id="new-booth-title" placeholder="e.g. The Vogue Mirror Photobooth">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Category</label>
+          <select class="form-select" id="new-booth-category">
+            <option value="photobooth">Photo Booth</option>
+            <option value="videobooth">Video Booth</option>
+            <option value="customtech">Custom Tech Development</option>
+            <option value="digitalengagement">Digital Engagement Activities</option>
+            <option value="argame">AR Game</option>
+            <option value="video-360">360 Video Booth</option>
+            <option value="glam">Kardashian Glam</option>
+            <option value="audio">Audio Guestbook</option>
+            <option value="custom">Custom Tech / AI Build</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Editorial Tagline</label>
+          <textarea class="form-textarea" id="new-booth-tagline" placeholder="Editorial description of the experience..."></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Primary Hero Photo URL</label>
+          <div class="upload-input-wrap">
+            <input type="text" class="form-input" id="new-booth-photo" value="/images/hero_booth_kardashian.jpg">
+            <label class="btn-file-upload">
+              <input type="file" accept="image/*" style="display:none;" onchange="handleImageUploadDirect(event, 'new-booth-photo')">
+              <span>Upload</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="closeAddBoothModal()">Cancel</button>
+        <button type="button" class="btn-primary" onclick="createNewBoothSubmit()">Create &amp; Open Visual Editor</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================
+       MODAL: CREATE / EDIT CATEGORY
+       ======================================================================== -->
+  <div class="modal-backdrop" id="modal-category">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-category-title">+ Create New Category</h3>
+        <button type="button" class="btn-modal-close" onclick="closeCategoryModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="edit-category-original-id" value="">
+        <div class="form-group">
+          <label class="form-label">Category Name</label>
+          <input type="text" class="form-input" id="cat-input-name" placeholder="e.g. VIP Hologram Experiences" oninput="autoGenerateCategorySlug(this.value)">
+          <span class="form-help">Appears as the tab title in the website "Our Booths" dropdown megamenu.</span>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Category Identifier / Slug (URL-Safe)</label>
+          <input type="text" class="form-input" id="cat-input-id" placeholder="e.g. hologram">
+          <span class="form-help">Unique slug used in code and links. Lowercase letters and numbers only.</span>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tagline / Short Description</label>
+          <textarea class="form-textarea" id="cat-input-desc" placeholder="Brief editorial preview shown inside the dropdown panel..."></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Featured Image URL</label>
+          <div class="upload-input-wrap">
+            <input type="text" class="form-input" id="cat-input-image" placeholder="/images/service_booth.webp" value="/images/service_booth.webp">
+            <label class="btn-file-upload">
+              <input type="file" accept="image/*" style="display:none;" onchange="handleImageUploadDirect(event, 'cat-input-image')">
+              <span>Upload</span>
+            </label>
+          </div>
+          <span class="form-help">Card visual displayed inside the megamenu panel for this category tab.</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="closeCategoryModal()">Cancel</button>
+        <button type="button" class="btn-primary" onclick="submitCategoryForm()">Save Category</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- ========================================================================
+       FLOATING TOAST NOTIFICATION
+       ======================================================================== -->
+  <div class="toast-pill" id="admin-toast">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toast-message">Data saved successfully</span>
+  </div>
+
+
+  <!-- ========================================================================
+       ADMIN JAVASCRIPT CONTROLLER
+       ======================================================================== -->
+  <script>
+    // State
+    let catalogState = {};
+    let servicesListState = [];
+    let categoriesState = [];
+    let currentEditingId = 'kardashian-glam';
+    let currentFilter = 'all';
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      await initializeAdminSuite();
+
+      // Keyboard shortcut: Ctrl+S / Cmd+S to save active editor
+      window.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+          e.preventDefault();
+          const activePanel = document.querySelector('.section-tab-panel.active');
+          if (activePanel && activePanel.id === 'panel-editor') {
+            saveActiveServiceDetail();
+          } else if (activePanel && activePanel.id === 'panel-menu') {
+            saveMegamenuHierarchy();
+          }
+        }
+      });
+    });
+
+    // Initialize all data from backend/Supabase in parallel
+    async function initializeAdminSuite() {
+      try {
+        // Fetch service details, categories, and services concurrently
+        const [catRes, categoriesRes, sRes] = await Promise.all([
+          fetch('/api/service-details').then(r => r.json()).catch(() => ({ data: {} })),
+          fetch('/api/categories').then(r => r.json()).catch(() => ({ data: [] })),
+          fetch('/api/services').then(r => r.json()).catch(() => ({ data: [] }))
+        ]);
+
+        if (catRes && catRes.data) {
+          catalogState = catRes.data;
+        }
+        if (categoriesRes && categoriesRes.data) {
+          categoriesState = categoriesRes.data;
+        }
+        if (sRes && sRes.data) {
+          servicesListState = sRes.data;
+        }
+
+        populateCategoryDropdowns();
+        renderCategoriesGrid();
+        renderFilterPills();
+
+        // Update counts
+        const keys = Object.keys(catalogState);
+        document.getElementById('fleet-count-pill').textContent = keys.length;
+
+        // Render modules
+        renderFleetGrid();
+        renderMegamenuOrganizer();
+
+        // Check if query param specifies an ID
+        const params = new URLSearchParams(window.location.search);
+        const reqBooth = params.get('edit') || params.get('id');
+        if (reqBooth && catalogState[reqBooth]) {
+          openVisualEditor(reqBooth);
+        } else if (keys.length > 0) {
+          loadServiceIntoEditor(keys[0]);
+        }
+
+        // 4. Load enquiries ledger in background
+        loadEnquiriesLedger();
+
+      } catch (err) {
+        console.error('Admin Init Error:', err);
+        showToast('Running in local cache mode', 'warn');
+      }
+    }
+
+    // Categories Loading & Synchronization
+    async function loadCategories() {
+      try {
+        const res = await fetch('/api/categories');
+        const json = await res.json();
+        if (json && json.data) {
+          categoriesState = json.data;
+        }
+      } catch (err) {
+        console.warn('Failed to load categories:', err);
+      }
+      populateCategoryDropdowns();
+      renderCategoriesGrid();
+      renderFilterPills();
+    }
+
+    function populateCategoryDropdowns() {
+      const newBoothCatSelect = document.getElementById('new-booth-category');
+      const editorCatSelect = document.getElementById('inp-category');
+
+      if (!categoriesState.length) return;
+
+      const optionsHtml = categoriesState.map(c => `
+        <option value="${c.id}">${c.name}</option>
+      `).join('');
+
+      if (newBoothCatSelect) {
+        const cur = newBoothCatSelect.value;
+        newBoothCatSelect.innerHTML = optionsHtml;
+        if (cur && categoriesState.some(c => c.id === cur)) newBoothCatSelect.value = cur;
+      }
+
+      if (editorCatSelect) {
+        const cur = editorCatSelect.value;
+        editorCatSelect.innerHTML = optionsHtml;
+        if (cur && categoriesState.some(c => c.id === cur)) editorCatSelect.value = cur;
+      }
+    }
+
+    function renderFilterPills() {
+      const container = document.getElementById('fleet-filter-pills');
+      if (!container) return;
+
+      let pillsHtml = `
+        <button type="button" class="filter-pill-btn ${currentFilter === 'all' ? 'active' : ''}" data-filter="all" onclick="filterFleet('all', this)">All Experiences</button>
+      `;
+
+      categoriesState.forEach(cat => {
+        pillsHtml += `
+          <button type="button" class="filter-pill-btn ${currentFilter === cat.id ? 'active' : ''}" data-filter="${cat.id}" onclick="filterFleet('${cat.id}', this)">${cat.name}</button>
+        `;
+      });
+
+      container.innerHTML = pillsHtml;
+    }
+
+    // Switch between Admin Tabs
+    function switchAdminTab(tabName) {
+      document.querySelectorAll('.nav-tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.section-tab-panel').forEach(p => p.classList.remove('active'));
+
+      const activeBtn = document.getElementById(`tab-btn-${tabName}`);
+      const activePanel = document.getElementById(`panel-${tabName}`);
+      if (activeBtn) activeBtn.classList.add('active');
+      if (activePanel) activePanel.classList.add('active');
+
+      if (tabName === 'ledger') {
+        loadEnquiriesLedger();
+      } else if (tabName === 'menu') {
+        renderCategoriesGrid();
+        renderMegamenuOrganizer();
+      }
+    }
+
+    // --------------------------------------------------------------------------
+    // MODULE 1: FLEET & SERVICES
+    // --------------------------------------------------------------------------
+    function renderFleetGrid() {
+      const grid = document.getElementById('fleet-cards-grid');
+      if (!grid) return;
+
+      const keys = Object.keys(catalogState);
+      const filteredKeys = keys.filter(id => {
+        const item = catalogState[id];
+        if (!item) return false;
+        if (currentFilter !== 'all') {
+          const cat = (item.category || '').toLowerCase();
+          const target = currentFilter.toLowerCase();
+          if (cat !== target && !cat.includes(target)) {
+            if (target === 'photobooth' && (cat.includes('photo') || cat.includes('glam') || cat.includes('retro'))) return true;
+            if (target === 'videobooth' && (cat.includes('video') || cat.includes('360'))) return true;
+            if (target === 'customtech' && (cat.includes('custom') || cat.includes('tech'))) return true;
+            if (target === 'digitalengagement' && (cat.includes('digital') || cat.includes('brand'))) return true;
+            return false;
+          }
+        }
+        return true;
+      });
+
+      if (filteredKeys.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; padding: 48px; text-align: center; color: var(--text-dim); background: var(--bg-surface); border-radius: var(--radius-md);">
+            <h3>No booths match this filter</h3>
+            <p style="margin-top: 6px;">Try selecting another category or click "+ Add New Booth"</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filteredKeys.map(id => {
+        const s = catalogState[id];
+        const coverImg = s.heroBg || (s.lookbookPhotos && s.lookbookPhotos[0] ? s.lookbookPhotos[0].img : '/images/hero_booth_kardashian.jpg');
+        const price = (s.packages && s.packages[0] ? s.packages[0].price : '£795');
+
+        return `
+          <div class="service-card-item" id="card-${s.id}">
+            <div class="service-card-thumb-wrap">
+              <img src="${coverImg}" alt="${s.title}" loading="lazy">
+              <span class="service-card-category-tag">${s.category || 'Photo Booth'}</span>
+              <span class="service-card-slug-badge">id: ${s.id}</span>
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">${s.title}</h3>
+              <p class="service-card-tagline">${s.tagline || 'Editorial high-fashion activation.'}</p>
+              <div class="service-card-meta-row">
+                <span style="color: var(--text-dim);">${s.badge || 'VIP Activation'}</span>
+                <span class="meta-price-val">${price}</span>
+              </div>
+            </div>
+            <div class="service-card-actions">
+              <button type="button" class="btn-card-edit" onclick="openVisualEditor('${s.id}')">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                <span>Edit Full Page Details</span>
+              </button>
+              <a href="/service-detail.html?id=${s.id}" target="_blank" class="btn-card-live" title="View live page on website">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <button type="button" class="btn-card-live" style="color: #F87171;" title="Delete this booth" onclick="deleteBooth('${s.id}')">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function filterFleet(cat, btn) {
+      currentFilter = cat;
+      document.querySelectorAll('.filter-pill-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderFleetGrid();
+    }
+
+    function searchFleet(query) {
+      const q = (query || '').toLowerCase().trim();
+      const items = document.querySelectorAll('.service-card-item');
+      items.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(q) ? 'flex' : 'none';
+      });
+    }
+
+    // --------------------------------------------------------------------------
+    // MODULE 2: VISUAL DETAIL BUILDER
+    // --------------------------------------------------------------------------
+    function openVisualEditor(id) {
+      loadServiceIntoEditor(id);
+      switchAdminTab('editor');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function loadServiceIntoEditor(id) {
+      const data = catalogState[id];
+      if (!data) return;
+      currentEditingId = id;
+
+      // Update Bar Labels
+      document.getElementById('editor-active-title').textContent = data.title;
+      document.getElementById('editor-active-id-badge').textContent = `ID: ${data.id}`;
+      document.getElementById('editor-preview-link').href = `/service-detail.html?id=${data.id}`;
+
+      // Section A: Hero Headline & Badges
+      document.getElementById('inp-title').value = data.title || '';
+      document.getElementById('inp-tagline').value = data.tagline || '';
+      document.getElementById('inp-badge').value = data.badge || '';
+      document.getElementById('inp-category').value = data.category || 'photobooth';
+
+      // Overview Meta Chips (Separate Inputs)
+      renderChipInputs(data.overviewChips);
+
+      // Feature Bullets (3 Checkmark Inclusions)
+      const feats = (data.features && Array.isArray(data.features) && data.features.length > 0)
+        ? data.features
+        : [
+            `${data.title || 'Booth'} professional optical capture system`,
+            'High-contrast studio strobe lighting & calibration',
+            'Instant AirDrop sharing & lab-grade keepsakes'
+          ];
+      document.getElementById('inp-bullet-1').value = feats[0] || '';
+      document.getElementById('inp-bullet-2').value = feats[1] || '';
+      document.getElementById('inp-bullet-3').value = feats[2] || '';
+
+      // Trust Bar Items (Separate Inputs)
+      renderTrustItemInputs(data.trustItems);
+
+      // Section B: 5-Photo Mosaic Grid
+      const mosaicPhotos = (data.mosaicPhotos && Array.isArray(data.mosaicPhotos) && data.mosaicPhotos.length >= 5)
+        ? data.mosaicPhotos
+        : [
+            data.heroBg || '/images/hero_booth_kardashian.jpg',
+            ...(data.lookbookPhotos ? data.lookbookPhotos.map(p => p.img) : [])
+          ];
+
+      for (let i = 0; i < 5; i++) {
+        const url = mosaicPhotos[i] || data.heroBg || '/images/hero_booth_kardashian.jpg';
+        const inp = document.getElementById(`inp-mosaic-${i}`);
+        const img = document.getElementById(`img-preview-mosaic-${i}`);
+        if (inp) inp.value = url;
+        if (img) img.src = url;
+      }
+
+      // Section C: 4 Key Metrics Bar
+      const metrics = data.metrics || [
+        { label: 'Imaging Core', val: 'Canon 45MP EOS R5' },
+        { label: 'Print Velocity', val: '7s Lab Metallic' },
+        { label: 'White-Glove Crew', val: '2 DBS Concierges' },
+        { label: 'Base Investment', val: 'Starting from £795' }
+      ];
+      for (let i = 0; i < 4; i++) {
+        const m = metrics[i] || { label: 'Metric', val: 'Value' };
+        const lInp = document.getElementById(`inp-metric-label-${i}`);
+        const vInp = document.getElementById(`inp-metric-val-${i}`);
+        const pBadge = document.getElementById(`preview-metric-${i}`);
+        if (lInp) lInp.value = m.label;
+        if (vInp) vInp.value = m.val;
+        if (pBadge) pBadge.textContent = m.val;
+      }
+
+      // Section D: Visual Comparison Before / After
+      document.getElementById('inp-compare-before-title').value = data.compareBeforeTitle || 'Standard Camera';
+      document.getElementById('inp-compare-before-img').value = data.compareBefore || '/images/hero_booth_studio.jpg';
+      document.getElementById('img-preview-compare-before').src = data.compareBefore || '/images/hero_booth_studio.jpg';
+      document.getElementById('badge-preview-before').textContent = data.compareBeforeTitle || 'Standard Camera';
+
+      document.getElementById('inp-compare-after-title').value = data.compareAfterTitle || 'Mimori Glam Filter';
+      document.getElementById('inp-compare-after-img').value = data.compareAfter || '/images/hero_booth_kardashian.jpg';
+      document.getElementById('img-preview-compare-after').src = data.compareAfter || '/images/hero_booth_kardashian.jpg';
+      document.getElementById('badge-preview-after').textContent = data.compareAfterTitle || 'Mimori Glam Filter';
+
+      // Section E: 4-Step Guest Experience Journey
+      renderJourneyCardsEditor(data.journey || [
+        { num: '01', title: 'The Red Carpet Greeting', desc: 'Guests are warmly welcomed by our uniformed black-tie concierges, positioned before our pure white tension backdrop.', tags: ['Zero Staging Queue', 'Studio Ring Light'] },
+        { num: '02', title: 'Live 4K Real-Time Preview', desc: 'On our anti-glare studio monitor, guests see their poreless skin smoothing applied in real-time at 60 frames per second.', tags: ['Neural Skin Smoothing', 'Custom Monograms'] },
+        { num: '03', title: 'Instant Metallic Keepsake', desc: 'In exactly 7.2 seconds, our laboratory dye-sublimation printer dispenses a dry, heavy 300gsm metallic pearl photo strip.', tags: ['7s Print Speed', 'Metallic Cardstock'] },
+        { num: '04', title: 'AirDrop & Private VIP Cloud', desc: 'Instant wireless dispatch directly to smartphones with encrypted guest PIN code.', tags: ['AirDrop / QR', 'Private Cloud'] }
+      ]);
+
+      // Section F: Real Activations Lookbook Gallery
+      renderLookbookPhotosEditor(data.lookbookPhotos || []);
+
+      // Section G: Technical Rider Table
+      renderSpecsTableEditor(data.specsTable || []);
+
+      // Section H: Brochure & Spatial Rider Download Box
+      const brochure = data.brochure || {};
+      document.getElementById('inp-brochure-title').value = brochure.title || 'Download The Complete 2026 Event Lookbook';
+      document.getElementById('inp-brochure-sub').value = brochure.subtitle || 'Instant access to our complete collection of 24 experiential photobooths, architectural spatial blueprints, electrical requirements, custom monogram finishes, and transparent rate cards.';
+      const currentPdf = brochure.pdfUrl || '/downloads/Mimori_2026_Lookbook.pdf';
+      document.getElementById('inp-brochure-pdf').value = currentPdf;
+      updatePdfPreviewLink(currentPdf);
+      document.getElementById('inp-brochure-cover').value = brochure.coverImg || data.heroBg || '/images/megamenu_photobooth_featured.jpg';
+      document.getElementById('img-preview-brochure').src = brochure.coverImg || data.heroBg || '/images/megamenu_photobooth_featured.jpg';
+
+      // Section I: Commission Packages & Tiers
+      renderPackagesEditor(data.packages || []);
+    }
+
+    // Overview Meta Chips: Separate Inputs Controller
+    function renderChipInputs(chips) {
+      const container = document.getElementById('chips-container');
+      if (!container) return;
+
+      const chipList = (chips && Array.isArray(chips) && chips.length > 0)
+        ? chips
+        : ['Up to 500+ VIP Guests', '90-Min Silent Load-in', '2 DBS Verified Concierges', '£10M PLI Insured'];
+
+      container.innerHTML = chipList.map((chip, idx) => `
+        <div class="chip-input-row" id="chip-row-${idx}" style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 0.75rem; font-weight: 700; color: #64748B; width: 62px; flex-shrink: 0;">Chip ${idx + 1}</span>
+          <input type="text" class="form-input chip-item-input" value="${chip}" placeholder="e.g. Up to 500+ VIP Guests" style="flex: 1;">
+          <button type="button" class="btn-card-live" style="width: 32px; height: 32px; padding: 0; color: #94A3B8; flex-shrink: 0;" title="Remove this meta chip" onclick="removeChipField(${idx})">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+      `).join('');
+    }
+
+    function addChipField(val = '') {
+      const container = document.getElementById('chips-container');
+      if (!container) return;
+      const count = container.querySelectorAll('.chip-input-row').length;
+      const newIdx = count;
+
+      const row = document.createElement('div');
+      row.className = 'chip-input-row';
+      row.id = `chip-row-${newIdx}`;
+      row.style.cssText = 'display: flex; align-items: center; gap: 8px;';
+      row.innerHTML = `
+        <span style="font-size: 0.75rem; font-weight: 700; color: #64748B; width: 62px; flex-shrink: 0;">Chip ${newIdx + 1}</span>
+        <input type="text" class="form-input chip-item-input" value="${val}" placeholder="e.g. Bespoke Branding Included" style="flex: 1;">
+        <button type="button" class="btn-card-live" style="width: 32px; height: 32px; padding: 0; color: #94A3B8; flex-shrink: 0;" title="Remove this meta chip" onclick="this.closest('.chip-input-row').remove()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      `;
+      container.appendChild(row);
+      const inp = row.querySelector('input');
+      if (inp) inp.focus();
+    }
+
+    function removeChipField(idx) {
+      const row = document.getElementById(`chip-row-${idx}`);
+      if (row) row.remove();
+    }
+
+    // Trust Bar Items: Separate Inputs Controller
+    function renderTrustItemInputs(items) {
+      const container = document.getElementById('trust-items-container');
+      if (!container) return;
+
+      const trustList = (items && Array.isArray(items) && items.length > 0)
+        ? items
+        : ['2026/2027 Calendar Open', 'Complimentary Date Shift', '15-Min Producer Callback'];
+
+      container.innerHTML = trustList.map((item, idx) => `
+        <div class="trust-input-row" id="trust-row-${idx}" style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 0.75rem; font-weight: 700; color: ${idx === 0 ? '#10B981' : '#64748B'}; width: 62px; flex-shrink: 0; display: flex; align-items: center; gap: 5px;">
+            ${idx === 0 ? '<span style="width:7px; height:7px; background:#10B981; border-radius:50%; display:inline-block;"></span> Item 1' : `Item ${idx + 1}`}
+          </span>
+          <input type="text" class="form-input trust-item-input" value="${item}" placeholder="e.g. 2026/2027 Calendar Open" style="flex: 1;">
+          <button type="button" class="btn-card-live" style="width: 32px; height: 32px; padding: 0; color: #94A3B8; flex-shrink: 0;" title="Remove this highlight" onclick="removeTrustItemField(${idx})">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+      `).join('');
+    }
+
+    function addTrustItemField(val = '') {
+      const container = document.getElementById('trust-items-container');
+      if (!container) return;
+      const count = container.querySelectorAll('.trust-input-row').length;
+      const newIdx = count;
+
+      const row = document.createElement('div');
+      row.className = 'trust-input-row';
+      row.id = `trust-row-${newIdx}`;
+      row.style.cssText = 'display: flex; align-items: center; gap: 8px;';
+      row.innerHTML = `
+        <span style="font-size: 0.75rem; font-weight: 700; color: #64748B; width: 62px; flex-shrink: 0;">Item ${newIdx + 1}</span>
+        <input type="text" class="form-input trust-item-input" value="${val}" placeholder="e.g. Dedicated Lead Producer" style="flex: 1;">
+        <button type="button" class="btn-card-live" style="width: 32px; height: 32px; padding: 0; color: #94A3B8; flex-shrink: 0;" title="Remove this highlight" onclick="this.closest('.trust-input-row').remove()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      `;
+      container.appendChild(row);
+      const inp = row.querySelector('input');
+      if (inp) inp.focus();
+    }
+
+    function removeTrustItemField(idx) {
+      const row = document.getElementById(`trust-row-${idx}`);
+      if (row) row.remove();
+    }
+
+    // Live Title update in bar
+    function liveUpdateTitle(val) {
+      document.getElementById('editor-active-title').textContent = val || 'Untitled Booth';
+    }
+
+    // Mosaic Preview slot update
+    function updateSlotPreview(slotIndex, val) {
+      const img = document.getElementById(`img-preview-mosaic-${slotIndex}`);
+      if (img) img.src = val;
+    }
+
+    // Handle File Upload from Local Device to server
+    async function handleImageUpload(event, slotIndex) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = async (e) => {
+        const base64Data = e.target.result;
+        try {
+          showToast('Uploading image...', 'info');
+          const res = await fetch('/api/upload', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ filename: file.name, data: base64Data })
+          });
+          const json = await res.json();
+          if (json.success && json.url) {
+            document.getElementById(`inp-mosaic-${slotIndex}`).value = json.url;
+            document.getElementById(`img-preview-mosaic-${slotIndex}`).src = json.url;
+            showToast('Photo uploaded & preview updated!');
+          }
+        } catch (err) {
+          showToast('Upload error: ' + err.message, 'error');
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function updatePdfPreviewLink(url) {
+      const btn = document.getElementById('btn-view-current-pdf');
+      if (!btn) return;
+      if (url && url.trim()) {
+        btn.href = url.trim();
+        btn.style.display = 'inline-flex';
+      } else {
+        btn.style.display = 'none';
+      }
+    }
+
+    // Direct PDF Upload Helper
+    async function handlePdfUploadDirect(event, inputId) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      if (!file.name.toLowerCase().endsWith('.pdf') && file.type !== 'application/pdf') {
+        showToast('Please select a valid PDF file (.pdf)', 'error');
+        return;
+      }
+
+      showToast('Uploading PDF document...', 'info');
+      const reader = new FileReader();
+      reader.onload = async (e) => {
+        try {
+          const res = await fetch('/api/upload', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ filename: file.name, data: e.target.result })
+          });
+          const json = await res.json();
+          if (json.success && json.url) {
+            const input = document.getElementById(inputId);
+            if (input) input.value = json.url;
+            updatePdfPreviewLink(json.url);
+            showToast('PDF manual uploaded successfully!');
+          } else {
+            showToast('PDF upload failed: ' + (json.message || 'Error'), 'error');
+          }
+        } catch (err) {
+          showToast('Upload error: ' + err.message, 'error');
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // Direct Upload Helper
+    async function handleImageUploadDirect(event, inputId, previewImgId) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = async (e) => {
+        try {
+          showToast('Uploading image...', 'info');
+          const res = await fetch('/api/upload', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ filename: file.name, data: e.target.result })
+          });
+          const json = await res.json();
+          if (json.success && json.url) {
+            document.getElementById(inputId).value = json.url;
+            if (previewImgId) document.getElementById(previewImgId).src = json.url;
+            showToast('Image uploaded!');
+          }
+        } catch (err) {
+          showToast('Upload failed: ' + err.message, 'error');
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // Render 4 Journey Cards
+    function renderJourneyCardsEditor(steps) {
+      const container = document.getElementById('journey-cards-container');
+      if (!container) return;
+
+      container.innerHTML = steps.map((step, idx) => `
+        <div class="journey-step-editor-card">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <span class="journey-step-num-badge">${step.num || '0' + (idx + 1)}</span>
+            <input type="text" class="form-input" style="width: 60px; text-align: center;" value="${step.num || '0' + (idx + 1)}" id="journey-num-${idx}">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Step Title</label>
+            <input type="text" class="form-input" value="${step.title || ''}" id="journey-title-${idx}">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Step Description</label>
+            <textarea class="form-textarea" style="min-height: 70px;" id="journey-desc-${idx}">${step.desc || ''}</textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Feature Chips (comma-separated)</label>
+            <input type="text" class="form-input" value="${(step.tags || []).join(', ')}" id="journey-tags-${idx}">
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Render Lookbook Photos Manager (Image upload only)
+    function renderLookbookPhotosEditor(photos) {
+      const container = document.getElementById('lookbook-items-container');
+      if (!container) return;
+
+      container.innerHTML = photos.map((p, idx) => `
+        <div class="lookbook-item-editor" id="lookbook-row-${idx}">
+          <div class="lookbook-item-thumb">
+            <img id="img-lookbook-${idx}" src="${p.img || '/images/hero_booth_kardashian.jpg'}" alt="Photo">
+            <button type="button" class="btn-item-delete" onclick="removeLookbookPhoto(${idx})" title="Remove photograph">&times;</button>
+          </div>
+          <div class="lookbook-item-fields">
+            <div class="form-group">
+              <label class="form-label">Photo URL</label>
+              <div class="upload-input-wrap">
+                <input type="text" class="form-input" id="inp-lookbook-img-${idx}" value="${p.img || ''}" oninput="document.getElementById('img-lookbook-${idx}').src=this.value" placeholder="/images/photo.jpg">
+                <label class="btn-file-upload">
+                  <input type="file" accept="image/*" style="display:none;" onchange="handleImageUploadDirect(event, 'inp-lookbook-img-${idx}', 'img-lookbook-${idx}')">
+                  <span>Upload</span>
+                </label>
+              </div>
+            </div>
+            <label style="display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: var(--text-dim); margin-top: 4px; cursor: pointer;">
+              <input type="checkbox" id="inp-lookbook-tall-${idx}" ${p.tall ? 'checked' : ''}>
+              <span>Display as Featured Tall Card</span>
+            </label>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function addLookbookPhotoRow() {
+      const container = document.getElementById('lookbook-items-container');
+      const idx = container.children.length;
+      const newCard = document.createElement('div');
+      newCard.className = 'lookbook-item-editor';
+      newCard.id = `lookbook-row-${idx}`;
+      newCard.innerHTML = `
+        <div class="lookbook-item-thumb">
+          <img id="img-lookbook-${idx}" src="/images/hero_booth_kardashian.jpg" alt="Photo">
+          <button type="button" class="btn-item-delete" onclick="removeLookbookPhoto(${idx})" title="Remove photograph">&times;</button>
+        </div>
+        <div class="lookbook-item-fields">
+          <div class="form-group">
+            <label class="form-label">Photo URL</label>
+            <div class="upload-input-wrap">
+              <input type="text" class="form-input" id="inp-lookbook-img-${idx}" value="/images/hero_booth_kardashian.jpg" oninput="document.getElementById('img-lookbook-${idx}').src=this.value" placeholder="/images/photo.jpg">
+              <label class="btn-file-upload">
+                <input type="file" accept="image/*" style="display:none;" onchange="handleImageUploadDirect(event, 'inp-lookbook-img-${idx}', 'img-lookbook-${idx}')">
+                <span>Upload</span>
+              </label>
+            </div>
+          </div>
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: var(--text-dim); margin-top: 4px; cursor: pointer;">
+            <input type="checkbox" id="inp-lookbook-tall-${idx}">
+            <span>Display as Featured Tall Card</span>
+          </label>
+        </div>
+      `;
+      container.appendChild(newCard);
+    }
+
+    function removeLookbookPhoto(idx) {
+      const el = document.getElementById(`lookbook-row-${idx}`);
+      if (el) el.remove();
+    }
+
+    // Render Specs Table Editor
+    function renderSpecsTableEditor(specs) {
+      const tbody = document.getElementById('specs-table-editor-tbody');
+      if (!tbody) return;
+
+      tbody.innerHTML = specs.map((row, idx) => `
+        <tr id="spec-row-${idx}">
+          <td>
+            <input type="text" class="form-input" id="inp-spec-cat-${idx}" value="${row.category || ''}" placeholder="e.g. Optics & Studio Strobe">
+          </td>
+          <td>
+            <textarea class="form-textarea" style="min-height: 50px;" id="inp-spec-details-${idx}" placeholder="Technical hardware details...">${row.details || ''}</textarea>
+          </td>
+          <td style="text-align: center;">
+            <button type="button" class="btn-item-delete" style="position: static;" onclick="removeSpecTableRow(${idx})" title="Delete row">&times;</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function addSpecTableRow() {
+      const tbody = document.getElementById('specs-table-editor-tbody');
+      const idx = tbody.children.length;
+      const tr = document.createElement('tr');
+      tr.id = `spec-row-${idx}`;
+      tr.innerHTML = `
+        <td>
+          <input type="text" class="form-input" id="inp-spec-cat-${idx}" value="Custom Tech Feature" placeholder="Category">
+        </td>
+        <td>
+          <textarea class="form-textarea" style="min-height: 50px;" id="inp-spec-details-${idx}" placeholder="Technical details...">Full description of specifications...</textarea>
+        </td>
+        <td style="text-align: center;">
+          <button type="button" class="btn-item-delete" style="position: static;" onclick="removeSpecTableRow(${idx})">&times;</button>
+        </td>
+      `;
+      tbody.appendChild(tr);
+    }
+
+    function removeSpecTableRow(idx) {
+      const row = document.getElementById(`spec-row-${idx}`);
+      if (row) row.remove();
+    }
+
+    // Render Packages Editor
+    function renderPackagesEditor(packages) {
+      const container = document.getElementById('packages-cards-container');
+      if (!container) return;
+
+      container.innerHTML = packages.map((pkg, idx) => `
+        <div class="package-card-editor ${pkg.featured ? 'featured-tier' : ''}" id="package-card-${idx}">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <input type="text" class="form-input" style="width: 140px; font-weight: 700; color: var(--red-primary);" value="${pkg.badge || 'Essential'}" id="pkg-badge-${idx}" placeholder="Tier Badge">
+            <button type="button" class="btn-item-delete" style="position: static;" onclick="removePackageCard(${idx})" title="Remove package">&times;</button>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tier Package Name</label>
+            <input type="text" class="form-input" value="${pkg.name || ''}" id="pkg-name-${idx}" placeholder="e.g. Classic Glam">
+          </div>
+          <div class="form-group-row" style="margin-bottom: 0;">
+            <div class="form-group">
+              <label class="form-label">Operational Time</label>
+              <input type="text" class="form-input" value="${pkg.time || ''}" id="pkg-time-${idx}" placeholder="3 Hours Operational">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Investment / Price</label>
+              <input type="text" class="form-input" style="font-weight: 800;" value="${pkg.price || ''}" id="pkg-price-${idx}" placeholder="£795">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Inclusions Checklist (One per line)</label>
+            <textarea class="form-textarea" style="min-height: 110px;" id="pkg-inclusions-${idx}">${(pkg.inclusions || []).join('\n')}</textarea>
+          </div>
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: var(--text-dim); margin-top: 4px;">
+            <input type="checkbox" id="pkg-featured-${idx}" ${pkg.featured ? 'checked' : ''}>
+            <span>Highlight as Recommended / Most Popular Tier</span>
+          </label>
+        </div>
+      `).join('');
+    }
+
+    function addPackageCard() {
+      const container = document.getElementById('packages-cards-container');
+      const idx = container.children.length;
+      const div = document.createElement('div');
+      div.className = 'package-card-editor';
+      div.id = `package-card-${idx}`;
+      div.innerHTML = `
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <input type="text" class="form-input" style="width: 140px; font-weight: 700; color: var(--red-primary);" value="Exclusive Tier" id="pkg-badge-${idx}">
+          <button type="button" class="btn-item-delete" style="position: static;" onclick="removePackageCard(${idx})">&times;</button>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tier Package Name</label>
+          <input type="text" class="form-input" value="Custom VIP Production" id="pkg-name-${idx}">
+        </div>
+        <div class="form-group-row" style="margin-bottom: 0;">
+          <div class="form-group">
+            <label class="form-label">Operational Time</label>
+            <input type="text" class="form-input" value="4 Hours Operational" id="pkg-time-${idx}">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Investment / Price</label>
+            <input type="text" class="form-input" style="font-weight: 800;" value="£1,195" id="pkg-price-${idx}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Inclusions Checklist (One per line)</label>
+          <textarea class="form-textarea" style="min-height: 110px;" id="pkg-inclusions-${idx}">Full Experiential Booth System\nUnlimited High-Gloss Prints\nInstant AirDrop & Cloud Sharing\n2 Dedicated Concierges</textarea>
+        </div>
+        <label style="display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: var(--text-dim); margin-top: 4px;">
+          <input type="checkbox" id="pkg-featured-${idx}">
+          <span>Highlight as Recommended Tier</span>
+        </label>
+      `;
+      container.appendChild(div);
+    }
+
+    function removePackageCard(idx) {
+      const card = document.getElementById(`package-card-${idx}`);
+      if (card) card.remove();
+    }
+
+    // SAVE ACTIVE SERVICE DETAIL TO SUPABASE & LOCAL
+    async function saveActiveServiceDetail() {
+      if (!currentEditingId) return;
+
+      showToast('Saving to Supabase & Website...', 'info');
+
+      // Gather Overview Meta Chips from separate inputs
+      const overviewChips = [];
+      document.querySelectorAll('.chip-item-input').forEach(inp => {
+        const val = inp.value.trim();
+        if (val) overviewChips.push(val);
+      });
+      if (overviewChips.length === 0) {
+        overviewChips.push('Up to 500+ VIP Guests', '90-Min Silent Load-in', '2 DBS Verified Concierges', '£10M PLI Insured');
+      }
+
+      // Gather Feature Bullets
+      const b1 = document.getElementById('inp-bullet-1')?.value.trim() || '';
+      const b2 = document.getElementById('inp-bullet-2')?.value.trim() || '';
+      const b3 = document.getElementById('inp-bullet-3')?.value.trim() || '';
+      const features = [b1, b2, b3].filter(Boolean);
+
+      // Gather Trust Items from separate inputs
+      const trustItems = [];
+      document.querySelectorAll('.trust-item-input').forEach(inp => {
+        const val = inp.value.trim();
+        if (val) trustItems.push(val);
+      });
+      if (trustItems.length === 0) {
+        trustItems.push('2026/2027 Calendar Open', 'Complimentary Date Shift', '15-Min Producer Callback');
+      }
+
+      // 1. Gather Mosaic Photos
+      const mosaicPhotos = [];
+      for (let i = 0; i < 5; i++) {
+        const inp = document.getElementById(`inp-mosaic-${i}`);
+        if (inp) mosaicPhotos.push(inp.value.trim());
+      }
+
+      // 2. Gather Metrics
+      const metrics = [];
+      for (let i = 0; i < 4; i++) {
+        const lInp = document.getElementById(`inp-metric-label-${i}`);
+        const vInp = document.getElementById(`inp-metric-val-${i}`);
+        if (lInp && vInp) {
+          metrics.push({ label: lInp.value.trim(), val: vInp.value.trim() });
+        }
+      }
+
+      // 3. Gather Journey
+      const journey = [];
+      const journeyCards = document.querySelectorAll('.journey-step-editor-card');
+      journeyCards.forEach((c, idx) => {
+        const num = document.getElementById(`journey-num-${idx}`)?.value.trim() || `0${idx + 1}`;
+        const title = document.getElementById(`journey-title-${idx}`)?.value.trim() || '';
+        const desc = document.getElementById(`journey-desc-${idx}`)?.value.trim() || '';
+        const tagsRaw = document.getElementById(`journey-tags-${idx}`)?.value || '';
+        const tags = tagsRaw.split(',').map(t => t.trim()).filter(Boolean);
+        journey.push({ num, title, desc, tags });
+      });
+
+      // 4. Gather Lookbook Photos
+      const lookbookPhotos = [];
+      const lbCards = document.querySelectorAll('.lookbook-item-editor');
+      lbCards.forEach((c) => {
+        const idx = c.id.replace('lookbook-row-', '');
+        const img = document.getElementById(`inp-lookbook-img-${idx}`)?.value.trim();
+        const tall = document.getElementById(`inp-lookbook-tall-${idx}`)?.checked || false;
+        if (img) {
+          lookbookPhotos.push({ img, tall });
+        }
+      });
+
+      // 5. Gather Specs Table
+      const specsTable = [];
+      const specRows = document.querySelectorAll('#specs-table-editor-tbody tr');
+      specRows.forEach((r) => {
+        const idx = r.id.replace('spec-row-', '');
+        const category = document.getElementById(`inp-spec-cat-${idx}`)?.value.trim();
+        const details = document.getElementById(`inp-spec-details-${idx}`)?.value.trim();
+        if (category) {
+          specsTable.push({ category, details });
+        }
+      });
+
+      // 6. Gather Packages
+      const packages = [];
+      const pkgCards = document.querySelectorAll('.package-card-editor');
+      pkgCards.forEach((c) => {
+        const idx = c.id.replace('package-card-', '');
+        const badge = document.getElementById(`pkg-badge-${idx}`)?.value.trim() || 'Essential';
+        const name = document.getElementById(`pkg-name-${idx}`)?.value.trim() || 'Experience';
+        const time = document.getElementById(`pkg-time-${idx}`)?.value.trim() || '3 Hours';
+        const price = document.getElementById(`pkg-price-${idx}`)?.value.trim() || '£795';
+        const inclusionsRaw = document.getElementById(`pkg-inclusions-${idx}`)?.value || '';
+        const inclusions = inclusionsRaw.split('\n').map(s => s.trim()).filter(Boolean);
+        const featured = document.getElementById(`pkg-featured-${idx}`)?.checked || false;
+        packages.push({ badge, name, time, price, inclusions, featured });
+      });
+
+      // Construct Complete Service Payload
+      const payload = {
+        id: currentEditingId,
+        title: document.getElementById('inp-title').value.trim(),
+        tagline: document.getElementById('inp-tagline').value.trim(),
+        badge: document.getElementById('inp-badge').value.trim(),
+        overviewChips: overviewChips.length > 0 ? overviewChips : [
+          'Up to 500+ VIP Guests', '90-Min Silent Load-in', '2 DBS Verified Concierges', '£10M PLI Insured'
+        ],
+        features: features.length > 0 ? features : [
+          `${document.getElementById('inp-title').value.trim()} professional optical capture system`,
+          'High-contrast studio strobe lighting & calibration',
+          'Instant AirDrop sharing & lab-grade keepsakes'
+        ],
+        trustItems: trustItems.length > 0 ? trustItems : [
+          '2026/2027 Calendar Open', 'Complimentary Date Shift', '15-Min Producer Callback'
+        ],
+        category: document.getElementById('inp-category').value,
+        heroBg: mosaicPhotos[0] || '/images/hero_booth_kardashian.jpg',
+        mosaicPhotos: mosaicPhotos,
+        metrics: metrics,
+        compareBefore: document.getElementById('inp-compare-before-img').value.trim(),
+        compareAfter: document.getElementById('inp-compare-after-img').value.trim(),
+        compareBeforeTitle: document.getElementById('inp-compare-before-title').value.trim(),
+        compareAfterTitle: document.getElementById('inp-compare-after-title').value.trim(),
+        journey: journey,
+        lookbookPhotos: lookbookPhotos,
+        specsTable: specsTable,
+        brochure: {
+          title: document.getElementById('inp-brochure-title').value.trim(),
+          subtitle: document.getElementById('inp-brochure-sub').value.trim(),
+          coverImg: document.getElementById('inp-brochure-cover').value.trim(),
+          pdfUrl: document.getElementById('inp-brochure-pdf').value.trim()
+        },
+        packages: packages
+      };
+
+      try {
+        const res = await fetch(`/api/service-details/${currentEditingId}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const resJson = await res.json();
+        if (resJson.success) {
+          catalogState[currentEditingId] = payload;
+          renderFleetGrid();
+          renderCategoriesGrid();
+          renderMegamenuOrganizer();
+          document.getElementById('last-saved-time').textContent = `Saved ${new Date().toLocaleTimeString()}`;
+          showToast(`✅ "${payload.title}" saved & synced to Supabase!`);
+        } else {
+          showToast('Save failed: ' + resJson.message, 'error');
+        }
+      } catch (err) {
+        showToast('Sync error: ' + err.message, 'error');
+      }
+    }
+
+    // --------------------------------------------------------------------------
+    // MODULE 3: MEGAMENU & CATEGORY MANAGEMENT
+    // --------------------------------------------------------------------------
+    function renderCategoriesGrid() {
+      const grid = document.getElementById('categories-admin-grid');
+      const pill = document.getElementById('categories-count-pill');
+      if (pill) pill.textContent = `${categoriesState.length} Categories`;
+      if (!grid) return;
+
+      if (!categoriesState.length) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; padding: 24px; text-align: center; color: var(--text-dim); background: var(--bg-surface); border-radius: var(--radius-md);">
+            No categories created yet. Click "+ Create New Category" above to add your first dropdown tab.
+          </div>
+        `;
+        return;
+      }
+
+      const keys = Object.keys(catalogState);
+
+      grid.innerHTML = categoriesState.map(cat => {
+        const count = keys.filter(id => {
+          const item = catalogState[id];
+          if (!item) return false;
+          const c = (item.category || '').toLowerCase();
+          return c === cat.id.toLowerCase() || (cat.id === 'photobooth' && c.includes('photo')) || (cat.id === 'videobooth' && (c.includes('video') || c.includes('360')));
+        }).length;
+
+        const img = cat.image || '/images/service_booth.webp';
+
+        return `
+          <div class="cat-admin-card" id="cat-card-${cat.id}">
+            <img src="${img}" alt="${cat.name}" class="cat-admin-thumb" onerror="this.src='/images/service_booth.webp'">
+            <div class="cat-admin-info">
+              <h4 class="cat-admin-title" title="${cat.name}">${cat.name}</h4>
+              <span class="cat-admin-slug">slug: ${cat.id}</span>
+              <span class="cat-admin-count">${count} Booth${count === 1 ? '' : 's'}</span>
+            </div>
+            <div class="cat-admin-actions">
+              <button type="button" class="btn-cat-action" onclick="openEditCategoryModal('${cat.id}')" title="Edit Category">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                <span>Edit</span>
+              </button>
+              <button type="button" class="btn-cat-action delete" onclick="deleteCategoryAction('${cat.id}')" title="Delete Category">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                <span>Delete</span>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderMegamenuOrganizer() {
+      const container = document.getElementById('dynamic-menu-organizer-grid');
+      if (!container) return;
+
+      if (!categoriesState.length) {
+        container.innerHTML = `
+          <div style="grid-column: 1 / -1; padding: 36px; text-align: center; color: var(--text-dim); background: var(--bg-surface); border-radius: var(--radius-md);">
+            No categories defined. Click "+ Create New Category" above to start.
+          </div>
+        `;
+        return;
+      }
+
+      const keys = Object.keys(catalogState);
+      const dotColors = ['#E31D1C', '#2563EB', '#10B981', '#8B5CF6', '#F59E0B', '#EC4899', '#06B6D4'];
+
+      const catSelectOptions = (currentCatId) => {
+        return categoriesState.map(c => `
+          <option value="${c.id}" ${c.id.toLowerCase() === (currentCatId || '').toLowerCase() ? 'selected' : ''}>${c.name}</option>
+        `).join('');
+      };
+
+      container.innerHTML = categoriesState.map((cat, idx) => {
+        const dotColor = dotColors[idx % dotColors.length];
+
+        const catBooths = keys.filter(id => {
+          const item = catalogState[id];
+          if (!item) return false;
+          const c = (item.category || '').toLowerCase();
+          return c === cat.id.toLowerCase() || (cat.id === 'photobooth' && c.includes('photo')) || (cat.id === 'videobooth' && (c.includes('video') || c.includes('360')));
+        });
+
+        let itemsHtml = '';
+        if (catBooths.length === 0) {
+          itemsHtml = `
+            <div class="menu-items-empty">
+              No real booths under "${cat.name}" yet.<br>
+              <span style="font-size: 0.72rem; color: #94A3B8;">Assign a booth below or create a new one.</span>
+            </div>
+          `;
+        } else {
+          itemsHtml = catBooths.map(id => {
+            const item = catalogState[id];
+            return `
+              <div class="menu-item-row" id="menu-item-${item.id}">
+                <div class="menu-item-info">
+                  <input type="text" class="menu-item-title-input" value="${item.title}" id="menu-title-${item.id}" title="Click to rename display title">
+                  <span class="menu-item-slug-label">/service-detail.html?id=${item.id}</span>
+                </div>
+                <div class="menu-item-controls">
+                  <select class="menu-select-category" id="menu-cat-${item.id}" onchange="changeItemCategory('${item.id}', this.value)">
+                    ${catSelectOptions(item.category || cat.id)}
+                  </select>
+                </div>
+              </div>
+            `;
+          }).join('');
+        }
+
+        return `
+          <div class="menu-column-card" id="menu-column-${cat.id}">
+            <div class="menu-column-header">
+              <div class="menu-col-title-wrap">
+                <span class="menu-col-dot" style="background: ${dotColor};"></span>
+                <span class="menu-col-title">${cat.name}</span>
+              </div>
+              <span style="font-size: 0.75rem; color: var(--text-dim);" id="count-menu-${cat.id}">${catBooths.length} items</span>
+            </div>
+            <div class="menu-items-list" id="menu-list-${cat.id}">
+              ${itemsHtml}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function changeItemCategory(id, newCat) {
+      if (catalogState[id]) {
+        catalogState[id].category = newCat;
+        renderCategoriesGrid();
+        renderMegamenuOrganizer();
+      }
+    }
+
+    async function saveMegamenuHierarchy() {
+      showToast('Saving menu hierarchy...', 'info');
+      try {
+        const keys = Object.keys(catalogState);
+        const updatedServices = keys.map(id => {
+          const item = catalogState[id];
+          const customTitleInput = document.getElementById(`menu-title-${id}`);
+          const customCatInput = document.getElementById(`menu-cat-${id}`);
+          if (customTitleInput) item.title = customTitleInput.value.trim();
+          if (customCatInput) item.category = customCatInput.value;
+
+          return {
+            id: item.id,
+            title: item.title,
+            tagline: item.tagline || '',
+            badge: item.badge || '',
+            category: item.category || 'photobooth',
+            suitableFor: item.suitableFor || ['VIP Events'],
+            description: item.tagline || item.title,
+            features: (item.metrics ? item.metrics.map(m => `${m.label}: ${m.val}`) : []),
+            startingPrice: item.packages && item.packages[0] ? item.packages[0].price : '£795',
+            icon: item.category.includes('video') ? 'video' : 'camera'
+          };
+        });
+
+        const res = await fetch('/api/services', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(updatedServices)
+        });
+        const resJson = await res.json();
+        if (resJson.success) {
+          showToast('✅ Megamenu & Hierarchy saved to Supabase!');
+          renderCategoriesGrid();
+          renderFleetGrid();
+        } else {
+          showToast('Menu save error: ' + resJson.message, 'error');
+        }
+      } catch (err) {
+        showToast('Failed to save menu: ' + err.message, 'error');
+      }
+    }
+
+    // Category Modal Controllers
+    function openAddCategoryModal() {
+      document.getElementById('modal-category-title').textContent = '+ Create New Category';
+      document.getElementById('edit-category-original-id').value = '';
+      document.getElementById('cat-input-id').value = '';
+      document.getElementById('cat-input-id').readOnly = false;
+      document.getElementById('cat-input-name').value = '';
+      document.getElementById('cat-input-desc').value = '';
+      document.getElementById('cat-input-image').value = '/images/service_booth.webp';
+      document.getElementById('modal-category').classList.add('open');
+      document.getElementById('cat-input-name').focus();
+    }
+
+    function openEditCategoryModal(catId) {
+      const cat = categoriesState.find(c => c.id === catId);
+      if (!cat) return;
+
+      document.getElementById('modal-category-title').textContent = `Edit Category: ${cat.name}`;
+      document.getElementById('edit-category-original-id').value = cat.id;
+      document.getElementById('cat-input-id').value = cat.id;
+      document.getElementById('cat-input-id').readOnly = true;
+      document.getElementById('cat-input-name').value = cat.name;
+      document.getElementById('cat-input-desc').value = cat.description || '';
+      document.getElementById('cat-input-image').value = cat.image || '/images/service_booth.webp';
+      document.getElementById('modal-category').classList.add('open');
+      document.getElementById('cat-input-name').focus();
+    }
+
+    function closeCategoryModal() {
+      document.getElementById('modal-category').classList.remove('open');
+    }
+
+    function autoGenerateCategorySlug(name) {
+      const originalId = document.getElementById('edit-category-original-id').value;
+      if (!originalId) {
+        const slug = (name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+        document.getElementById('cat-input-id').value = slug;
+      }
+    }
+
+    async function submitCategoryForm() {
+      const originalId = document.getElementById('edit-category-original-id').value.trim();
+      const rawId = document.getElementById('cat-input-id').value.trim();
+      const name = document.getElementById('cat-input-name').value.trim();
+      const description = document.getElementById('cat-input-desc').value.trim();
+      const image = document.getElementById('cat-input-image').value.trim() || '/images/service_booth.webp';
+
+      if (!rawId || !name) {
+        alert('Please provide both Category Name and Category Identifier/Slug.');
+        return;
+      }
+
+      const cleanId = rawId.toLowerCase().replace(/[^a-z0-9_-]/g, '-');
+
+      const payload = {
+        id: cleanId,
+        name: name,
+        description: description,
+        image: image,
+        originalId: originalId || undefined
+      };
+
+      try {
+        showToast('Saving category to database...', 'info');
+        const res = await fetch('/api/categories', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const json = await res.json();
+        if (json.success) {
+          closeCategoryModal();
+          await loadCategories();
+          renderMegamenuOrganizer();
+          showToast(`✅ Category "${name}" saved to database and live website!`);
+        } else {
+          alert('Failed to save category: ' + json.message);
+        }
+      } catch (err) {
+        alert('Category save error: ' + err.message);
+      }
+    }
+
+    async function deleteCategoryAction(catId) {
+      const cat = categoriesState.find(c => c.id === catId);
+      const catName = cat ? cat.name : catId;
+
+      if (!confirm(`Are you sure you want to delete category "${catName}"? This will remove its tab from the website megamenu.`)) {
+        return;
+      }
+
+      try {
+        showToast('Deleting category...', 'info');
+        const res = await fetch(`/api/categories/${catId}`, { method: 'DELETE' });
+        const json = await res.json();
+        if (json.success) {
+          await loadCategories();
+          renderMegamenuOrganizer();
+          showToast(`Category "${catName}" removed.`);
+        } else {
+          alert('Delete failed: ' + json.message);
+        }
+      } catch (err) {
+        showToast('Delete error: ' + err.message, 'error');
+      }
+    }
+
+    // --------------------------------------------------------------------------
+    // MODULE 4: ENQUIRIES LEDGER
+    // --------------------------------------------------------------------------
+    async function loadEnquiriesLedger() {
+      try {
+        const res = await fetch('/api/admin/enquiries');
+        const json = await res.json();
+        if (json && json.data) {
+          const tbody = document.getElementById('enquiries-tbody');
+          document.getElementById('enquiry-count-pill').textContent = json.data.length;
+
+          if (json.data.length === 0) {
+            tbody.innerHTML = `
+              <tr>
+                <td colspan="7" style="text-align: center; padding: 36px; color: var(--text-dim);">
+                  No event bookings received yet. Client submissions from website booking modals will appear here.
+                </td>
+              </tr>
+            `;
+            return;
+          }
+
+          tbody.innerHTML = json.data.map(enq => {
+            const statusClass = enq.status === 'Confirmed' ? 'status-confirmed'
+                              : enq.status === 'Contacted' ? 'status-contacted'
+                              : enq.status === 'Cancelled' ? 'status-cancelled'
+                              : 'status-review';
+
+            return `
+              <tr>
+                <td><span class="ledger-ref-code">${enq.referenceId || 'MIM-001'}</span></td>
+                <td>
+                  <strong style="color: var(--text-primary); font-weight: 700;">${enq.fullName || 'VIP Client'}</strong>
+                  <div style="font-size: 0.75rem; color: var(--text-muted);">${enq.eventType || 'Luxury Event'}</div>
+                </td>
+                <td>
+                  <div><a href="mailto:${enq.email}" style="color: #2563EB; font-weight: 500; text-decoration: none;">${enq.email}</a></div>
+                  <div style="color: #64748B; font-size: 0.78rem;">${enq.phone || '—'}</div>
+                </td>
+                <td><span style="font-weight: 600; color: var(--text-primary);">${Array.isArray(enq.services) ? enq.services.join(', ') : (enq.services || 'Photobooth')}</span></td>
+                <td>
+                  <div>${enq.eventDate || 'TBD'}</div>
+                  <div style="color: var(--text-dim); font-size: 0.75rem;">${enq.eventLocation || 'London, UK'}</div>
+                </td>
+                <td>
+                  <span class="status-badge ${statusClass}" id="status-badge-${enq.referenceId}">${enq.status || 'Under Review'}</span>
+                </td>
+                <td>
+                  <select class="form-select" style="font-size: 0.75rem; padding: 4px 8px;" onchange="updateBookingStatus('${enq.referenceId}', this.value)">
+                    <option value="Under Review" ${enq.status === 'Under Review' ? 'selected' : ''}>Under Review</option>
+                    <option value="Contacted" ${enq.status === 'Contacted' ? 'selected' : ''}>Contacted</option>
+                    <option value="Confirmed" ${enq.status === 'Confirmed' ? 'selected' : ''}>Confirmed</option>
+                    <option value="Completed" ${enq.status === 'Completed' ? 'selected' : ''}>Completed</option>
+                    <option value="Cancelled" ${enq.status === 'Cancelled' ? 'selected' : ''}>Cancelled</option>
+                  </select>
+                </td>
+              </tr>
+            `;
+          }).join('');
+        }
+      } catch (err) {
+        console.warn('Enquiry ledger load error:', err);
+      }
+    }
+
+    async function updateBookingStatus(referenceId, newStatus) {
+      try {
+        const res = await fetch(`/api/admin/enquiries/${referenceId}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ status: newStatus })
+        });
+        const json = await res.json();
+        if (json.success) {
+          const badge = document.getElementById(`status-badge-${referenceId}`);
+          if (badge) {
+            badge.textContent = newStatus;
+            badge.className = `status-badge ${newStatus === 'Confirmed' ? 'status-confirmed' : newStatus === 'Contacted' ? 'status-contacted' : newStatus === 'Cancelled' ? 'status-cancelled' : 'status-review'}`;
+          }
+          showToast(`Status updated to "${newStatus}" for ${referenceId}`);
+        }
+      } catch (err) {
+        showToast('Status update failed: ' + err.message, 'error');
+      }
+    }
+
+    // --------------------------------------------------------------------------
+    // ADD NEW BOOTH MODAL CONTROLLER
+    // --------------------------------------------------------------------------
+    function openAddBoothModal() {
+      document.getElementById('modal-add-booth').classList.add('open');
+      document.getElementById('new-booth-id').value = '';
+      document.getElementById('new-booth-title').value = '';
+      document.getElementById('new-booth-tagline').value = '';
+      document.getElementById('new-booth-id').focus();
+    }
+
+    function closeAddBoothModal() {
+      document.getElementById('modal-add-booth').classList.remove('open');
+    }
+
+    async function createNewBoothSubmit() {
+      const rawId = document.getElementById('new-booth-id').value.trim();
+      const title = document.getElementById('new-booth-title').value.trim();
+      const category = document.getElementById('new-booth-category').value;
+      const tagline = document.getElementById('new-booth-tagline').value.trim();
+      const photo = document.getElementById('new-booth-photo').value.trim() || '/images/hero_booth_kardashian.jpg';
+
+      if (!rawId || !title) {
+        alert('Please provide both a booth ID slug and a Title.');
+        return;
+      }
+
+      const cleanId = rawId.toLowerCase().replace(/[^a-z0-9_-]/g, '-');
+
+      const newBoothObj = {
+        id: cleanId,
+        title: title,
+        tagline: tagline || 'High-fashion experiential photobooth activation.',
+        badge: 'NEW LUXURY ACTIVATION',
+        category: category,
+        heroBg: photo,
+        mosaicPhotos: [photo, photo, photo, photo, photo],
+        metrics: [
+          { label: 'Imaging Core', val: 'Full-Frame Studio' },
+          { label: 'Print Velocity', val: '7s Lab Grade' },
+          { label: 'White-Glove Crew', val: '2 Concierges' },
+          { label: 'Base Investment', val: 'From £795' }
+        ],
+        compareBefore: '/images/hero_booth_studio.jpg',
+        compareAfter: photo,
+        compareBeforeTitle: 'Standard Uncalibrated Camera',
+        compareAfterTitle: 'Mimori Studio Grade Capture',
+        journey: [
+          { num: '01', title: 'The Red Carpet Greeting', desc: 'Guests are warmly welcomed by our uniformed black-tie concierges.', tags: ['Concierge Onsite'] },
+          { num: '02', title: 'Live 4K Real-Time Preview', desc: 'High-speed studio monitor with zero latency capture.', tags: ['Studio Lighting'] },
+          { num: '03', title: 'Instant Metallic Keepsake', desc: '300gsm metallic photo card dispensed dry in 7 seconds.', tags: ['7s Print Speed'] },
+          { num: '04', title: 'AirDrop & VIP Online Cloud', desc: 'Instant wireless dispatch directly to smartphones.', tags: ['AirDrop / QR'] }
+        ],
+        lookbookPhotos: [
+          { img: photo, tall: true },
+          { img: photo, tall: false }
+        ],
+        specsTable: [
+          { category: 'Optics & Studio Strobe', details: 'Canon Full-Frame sensor paired with studio ring light and beauty softbox.' },
+          { category: 'Print Media Substrate', details: 'Dye-sublimation print engine dispensing 300gsm metallic cards in 7.2 seconds.' },
+          { category: 'Venue Requirements', details: 'Clear footprint 2.5m x 2.5m with standard 230V plug draw.' }
+        ],
+        brochure: {
+          title: `Download The Complete ${title} Rider & Lookbook`,
+          subtitle: 'Instant access to spatial footprints, technical specifications, and transparent rate cards.',
+          coverImg: photo,
+          pdfUrl: '/downloads/Mimori_2026_Lookbook.pdf'
+        },
+        packages: [
+          { badge: 'Essential', name: 'Classic Experience', time: '3 Hours Operational', price: '£795', inclusions: ['Full Booth & Backdrop', 'Unlimited Metallic Prints', 'AirDrop & Cloud Gallery', '2 Concierges'], featured: false },
+          { badge: 'Recommended', name: 'VIP Gold Experience', time: '4 Hours Operational', price: '£995', inclusions: ['Everything in Classic', 'Handcrafted Guestbook Album', 'Custom Monogram Branding', 'Priority Production'], featured: true }
+        ]
+      };
+
+      try {
+        showToast('Creating new booth and saving to Supabase...', 'info');
+        const res = await fetch(`/api/service-details/${cleanId}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newBoothObj)
+        });
+        const json = await res.json();
+        if (json.success) {
+          catalogState[cleanId] = newBoothObj;
+          closeAddBoothModal();
+          renderFleetGrid();
+          renderCategoriesGrid();
+          renderMegamenuOrganizer();
+          openVisualEditor(cleanId);
+          showToast(`✅ "${title}" created successfully!`);
+        } else {
+          alert('Creation error: ' + json.message);
+        }
+      } catch (err) {
+        alert('Server error: ' + err.message);
+      }
+    }
+
+    // Delete Booth
+    async function deleteBooth(id) {
+      if (!confirm(`Are you sure you want to delete booth "${id}"? This will remove it from the website and Supabase.`)) {
+        return;
+      }
+      try {
+        const res = await fetch(`/api/service-details/${id}`, { method: 'DELETE' });
+        const json = await res.json();
+        if (json.success) {
+          delete catalogState[id];
+          renderFleetGrid();
+          renderCategoriesGrid();
+          renderMegamenuOrganizer();
+          showToast(`Booth "${id}" removed successfully.`);
+        }
+      } catch (err) {
+        showToast('Delete failed: ' + err.message, 'error');
+      }
+    }
+
+    // Toast Notification Utility
+    let toastTimeout = null;
+    function showToast(msg, type = 'success') {
+      const toast = document.getElementById('admin-toast');
+      const toastMsg = document.getElementById('toast-message');
+      if (!toast || !toastMsg) return;
+
+      toastMsg.textContent = msg;
+      toast.classList.add('visible');
+
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('visible');
+      }, 3500);
+    }
+  </script>
+</body>
+</html>

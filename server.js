@@ -692,24 +692,19 @@ const server = http.createServer(async (req, res) => {
   }
 
   let safePath = path.normalize(decodedPath).replace(/^(\.\.[\/\\])+/, '');
-  if (safePath === '/' || safePath === '') {
-    safePath = '/index.html';
-  }
-  if (safePath === '/booth' || safePath === '/booths') {
-    safePath = '/service-detail.html';
-  }
+
   if (safePath === '/admin-login' || safePath === '/admin/login' || safePath === '/login') {
     safePath = '/admin-login.html';
   }
   if (safePath === '/admin-login.html') {
     if (isAuthenticated(req)) {
-      res.writeHead(302, { Location: '/admin' });
+      res.writeHead(302, { Location: '/' });
       res.end();
       return;
     }
     safePath = '/admin-login.html';
   }
-  if (safePath === '/admin' || safePath === '/admin/' || safePath === '/admin/index.html' || safePath === '/admin.html') {
+  if (safePath === '/' || safePath === '' || safePath === '/index.html' || safePath === '/admin' || safePath === '/admin/' || safePath === '/admin/index.html' || safePath === '/admin.html') {
     if (!isAuthenticated(req)) {
       res.writeHead(302, { Location: '/admin-login.html' });
       res.end();

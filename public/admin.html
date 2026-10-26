@@ -231,6 +231,28 @@
       color: var(--red-primary);
     }
 
+    .btn-admin-logout {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      color: #64748b;
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+      transition: all 0.2s ease;
+    }
+
+    .btn-admin-logout:hover {
+      background: #FEF2F2;
+      border-color: #FECACA;
+      color: #DC2626;
+    }
+
     /* ==========================================================================
        MAIN CONTENT CONTAINER
        ========================================================================== */
@@ -1621,6 +1643,12 @@
         <span>View Live Site</span>
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
       </a>
+
+      <!-- Sign Out Button -->
+      <button type="button" class="btn-admin-logout" onclick="handleAdminLogout()" title="Sign out of Mimori VIP Admin Suite">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        <span>Sign Out</span>
+      </button>
     </div>
   </header>
 
@@ -2406,6 +2434,13 @@
     // Initialize all data from backend/Supabase in parallel
     async function initializeAdminSuite() {
       try {
+        // 0. Verify session authentication
+        const authCheck = await fetch('/api/admin/auth-check').then(r => r.json()).catch(() => ({ authenticated: false }));
+        if (!authCheck.authenticated) {
+          window.location.href = '/admin-login.html';
+          return;
+        }
+
         // Fetch service details, categories, and services concurrently
         const [catRes, categoriesRes, sRes] = await Promise.all([
           fetch('/api/service-details').then(r => r.json()).catch(() => ({ data: {} })),
@@ -2451,6 +2486,14 @@
         console.error('Admin Init Error:', err);
         showToast('Running in local cache mode', 'warn');
       }
+    }
+
+    async function handleAdminLogout() {
+      try {
+        await fetch('/api/admin/logout', { method: 'POST' });
+      } catch (err) {}
+      localStorage.removeItem('mimori_admin_token');
+      window.location.href = '/admin-login.html';
     }
 
     // Categories Loading & Synchronization

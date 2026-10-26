@@ -103,13 +103,46 @@ function parseRequestBody(req) {
   });
 }
 
+// ----------------------------------------------------
+// ADMIN AUTHENTICATION
+// User ID: Mimori | Password: Demo123
+// ----------------------------------------------------
+const ADMIN_CREDENTIALS = {
+  username: 'Mimori',
+  password: 'Demo123'
+};
+const activeAdminTokens = new Set();
+
+function parseCookies(req) {
+  const list = {};
+  const rc = req.headers.cookie;
+  if (rc) {
+    rc.split(';').forEach(cookie => {
+      const parts = cookie.split('=');
+      if (parts.length >= 2) {
+        list[parts.shift().trim()] = decodeURIComponent(parts.join('='));
+      }
+    });
+  }
+  return list;
+}
+
+function isAuthenticated(req) {
+  const cookies = parseCookies(req);
+  const tokenFromCookie = cookies['mimori_admin_token'];
+  const authHeader = req.headers['authorization'];
+  const tokenFromHeader = authHeader && authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null;
+  const token = tokenFromCookie || tokenFromHeader;
+  return Boolean(token && activeAdminTokens.has(token));
+}
+
 // Helper: Send JSON Response
 function sendJson(res, statusCode, data) {
   res.writeHead(statusCode, {
     'Content-Type': 'application/json; charset=UTF-8',
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
     'X-Content-Type-Options': 'nosniff'
   });
   res.end(JSON.stringify(data));
@@ -122,7 +155,7 @@ const server = http.createServer(async (req, res) => {
     res.writeHead(204, {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type'
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization'
     });
     res.end();
     return;
@@ -135,6 +168,65 @@ const server = http.createServer(async (req, res) => {
   // ----------------------------------------------------
   // API ROUTES
   // ----------------------------------------------------
+
+  // POST /api/admin/login
+  if (req.method === 'POST' && pathname === '/api/admin/login') {
+    try {
+      const body = await parseRequestBody(req);
+      const username = (body.username || body.userId || '').trim();
+      const password = (body.password || '').trim();
+
+      if (username.toLowerCase() === ADMIN_CREDENTIALS.username.toLowerCase() && password === ADMIN_CREDENTIALS.password) {
+        const token = 'mimori_adm_' + Date.now() + '_' + Math.random().toString(36).substring(2);
+        activeAdminTokens.add(token);
+
+        res.writeHead(200, {
+          'Content-Type': 'application/json; charset=UTF-8',
+          'Set-Cookie': `mimori_admin_token=${token}; Path=/; HttpOnly; SameSite=Lax; Max-Age=86400`,
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+        });
+        return res.end(JSON.stringify({
+          success: true,
+          message: 'Authentication successful',
+          token,
+          user: { id: ADMIN_CREDENTIALS.username, role: 'Super Admin' }
+        }));
+      }
+
+      return sendJson(res, 401, {
+        success: false,
+        message: 'Invalid User ID or Password. Please check credentials.'
+      });
+    } catch (err) {
+      return sendJson(res, 500, { success: false, message: err.message });
+    }
+  }
+
+  // POST /api/admin/logout
+  if (req.method === 'POST' && pathname === '/api/admin/logout') {
+    const cookies = parseCookies(req);
+    const token = cookies['mimori_admin_token'];
+    if (token) {
+      activeAdminTokens.delete(token);
+    }
+    res.writeHead(200, {
+      'Content-Type': 'application/json; charset=UTF-8',
+      'Set-Cookie': `mimori_admin_token=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0`,
+      'Access-Control-Allow-Origin': '*'
+    });
+    return res.end(JSON.stringify({ success: true, message: 'Logged out successfully' }));
+  }
+
+  // GET /api/admin/auth-check
+  if (req.method === 'GET' && pathname === '/api/admin/auth-check') {
+    const authed = isAuthenticated(req);
+    return sendJson(res, 200, {
+      authenticated: authed,
+      user: authed ? { id: ADMIN_CREDENTIALS.username, role: 'Super Admin' } : null
+    });
+  }
 
   // GET /api/health
   if (req.method === 'GET' && pathname === '/api/health') {
@@ -606,7 +698,23 @@ const server = http.createServer(async (req, res) => {
   if (safePath === '/booth' || safePath === '/booths') {
     safePath = '/service-detail.html';
   }
-  if (safePath === '/admin' || safePath === '/admin/' || safePath === '/admin/index.html') {
+  if (safePath === '/admin-login' || safePath === '/admin/login' || safePath === '/login') {
+    safePath = '/admin-login.html';
+  }
+  if (safePath === '/admin-login.html') {
+    if (isAuthenticated(req)) {
+      res.writeHead(302, { Location: '/admin' });
+      res.end();
+      return;
+    }
+    safePath = '/admin-login.html';
+  }
+  if (safePath === '/admin' || safePath === '/admin/' || safePath === '/admin/index.html' || safePath === '/admin.html') {
+    if (!isAuthenticated(req)) {
+      res.writeHead(302, { Location: '/admin-login.html' });
+      res.end();
+      return;
+    }
     safePath = '/admin.html';
   }
 

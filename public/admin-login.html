@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIP Admin Suite Login | Mimori Digital</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --accent-red: #ea2846;
+      --accent-red-hover: #d01d39;
+      --accent-light: #fff1f2;
+      --ring: rgba(234, 40, 70, 0.2);
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(234, 40, 70, 0.06) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(15, 23, 42, 0.04) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(255, 255, 255, 0.8) 0px, transparent 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      color: var(--text-main);
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 440px;
+    }
+
+    /* Brand Header */
+    .brand-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .brand-logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-light);
+      color: var(--accent-red);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 9999px;
+      border: 1px solid rgba(234, 40, 70, 0.2);
+      margin-bottom: 12px;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--accent-red);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent-red);
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .brand-subtitle {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* Login Card */
+    .login-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 32px;
+      box-shadow: 
+        0 10px 25px -5px rgba(15, 23, 42, 0.05),
+        0 8px 10px -6px rgba(15, 23, 42, 0.03),
+        0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: box-shadow 0.3s ease;
+    }
+
+    /* Alert Banner */
+    .alert-banner {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 10px;
+      color: #991b1b;
+      font-size: 0.84rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+      animation: shake 0.4s ease;
+    }
+
+    .alert-banner.active {
+      display: flex;
+    }
+
+    .alert-banner.success {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+      color: #166534;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-4px); }
+      40%, 80% { transform: translateX(4px); }
+    }
+
+    /* Form Fields */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 8px;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 14px;
+      color: #94a3b8;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 14px 0 42px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      transition: all 0.2s ease;
+      outline: none;
+    }
+
+    .form-input:focus {
+      border-color: var(--accent-red);
+      box-shadow: 0 0 0 4px var(--ring);
+    }
+
+    .toggle-pwd-btn {
+      position: absolute;
+      right: 12px;
+      background: none;
+      border: none;
+      color: #94a3b8;
+      cursor: pointer;
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      border-radius: 6px;
+      transition: color 0.15s ease;
+    }
+
+    .toggle-pwd-btn:hover {
+      color: var(--text-main);
+    }
+
+    /* Remember Row */
+    .remember-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    .remember-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .remember-checkbox {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      accent-color: var(--accent-red);
+      cursor: pointer;
+    }
+
+    /* Submit Button */
+    .btn-submit {
+      width: 100%;
+      height: 50px;
+      background: var(--accent-red);
+      color: #ffffff;
+      border: none;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 0.98rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(234, 40, 70, 0.35);
+      transition: all 0.2s ease;
+    }
+
+    .btn-submit:hover {
+      background: var(--accent-red-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(234, 40, 70, 0.45);
+    }
+
+    .btn-submit:active {
+      transform: translateY(0);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .spinner {
+      display: none;
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-top-color: #ffffff;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Demo Helper Box */
+    .demo-hint-box {
+      margin-top: 24px;
+      padding: 14px 16px;
+      background: #f1f5f9;
+      border: 1px dashed #cbd5e1;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .demo-hint-text {
+      font-size: 0.78rem;
+      color: #475569;
+      line-height: 1.4;
+    }
+
+    .demo-hint-text strong {
+      color: var(--text-main);
+    }
+
+    .btn-autofill {
+      flex-shrink: 0;
+      background: #ffffff;
+      color: var(--accent-red);
+      border: 1px solid rgba(234, 40, 70, 0.3);
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-autofill:hover {
+      background: var(--accent-light);
+    }
+
+    /* Footer links */
+    .login-footer {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 0.82rem;
+      color: #94a3b8;
+    }
+
+    .login-footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+
+    .login-footer a:hover {
+      color: var(--accent-red);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <!-- Brand Header -->
+    <header class="brand-header">
+      <a href="/" class="brand-logo-wrap" title="Return to Mimori Live Site">
+        <img src="/images/logo.png" alt="Mimori Digital" class="brand-logo" onerror="this.src='/images/Fav%20Icon.svg'">
+      </a>
+      <br>
+      <div class="badge-pill">
+        <span class="badge-dot"></span>
+        VIP Admin Suite
+      </div>
+      <h1 class="brand-title">Sign In to Mimori Studio</h1>
+      <p class="brand-subtitle">Restricted Access &bull; Authorized Fleet Management</p>
+    </header>
+
+    <!-- Login Card -->
+    <main class="login-card">
+      <!-- Error / Success Alert -->
+      <div id="alert-banner" class="alert-banner" role="alert">
+        <svg id="alert-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <span id="alert-message">Invalid credentials</span>
+      </div>
+
+      <form id="login-form" onsubmit="handleLoginSubmit(event)" autocomplete="on">
+        <!-- User ID -->
+        <div class="form-group">
+          <label class="form-label" for="inp-username">User ID</label>
+          <div class="input-wrapper">
+            <span class="input-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </span>
+            <input 
+              type="text" 
+              id="inp-username" 
+              name="username" 
+              class="form-input" 
+              placeholder="Mimori" 
+              required 
+              autofocus 
+              autocomplete="username"
+            >
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label class="form-label" for="inp-password">Password</label>
+          <div class="input-wrapper">
+            <span class="input-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            </span>
+            <input 
+              type="password" 
+              id="inp-password" 
+              name="password" 
+              class="form-input" 
+              placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" 
+              required 
+              autocomplete="current-password"
+            >
+            <button type="button" class="toggle-pwd-btn" onclick="togglePasswordVisibility()" aria-label="Toggle password view" title="Toggle password view">
+              <svg id="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Remember Me -->
+        <div class="remember-row">
+          <label class="remember-label">
+            <input type="checkbox" id="chk-remember" class="remember-checkbox" checked>
+            <span>Keep me signed in</span>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="btn-login-submit" class="btn-submit">
+          <span class="spinner" id="btn-spinner"></span>
+          <span id="btn-text">Sign In to Dashboard</span>
+          <svg id="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+      </form>
+
+      <!-- Quick Demo Credentials Box -->
+      <div class="demo-hint-box">
+        <div class="demo-hint-text">
+          Authorized Credentials:<br>
+          User ID: <strong>Mimori</strong> &bull; Pass: <strong>Demo123</strong>
+        </div>
+        <button type="button" class="btn-autofill" onclick="autofillDemo()">Autofill</button>
+      </div>
+    </main>
+
+    <!-- Footer link to website -->
+    <footer class="login-footer">
+      <a href="/">&larr; Return to Mimori Digital Live Website</a>
+    </footer>
+  </div>
+
+  <script>
+    function togglePasswordVisibility() {
+      const pwdInput = document.getElementById('inp-password');
+      const eyeIcon = document.getElementById('eye-icon');
+      if (pwdInput.type === 'password') {
+        pwdInput.type = 'text';
+        eyeIcon.innerHTML = '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line>';
+      } else {
+        pwdInput.type = 'password';
+        eyeIcon.innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>';
+      }
+    }
+
+    function autofillDemo() {
+      document.getElementById('inp-username').value = 'Mimori';
+      document.getElementById('inp-password').value = 'Demo123';
+      showAlert('', false);
+    }
+
+    function showAlert(msg, isSuccess = false) {
+      const alert = document.getElementById('alert-banner');
+      const msgEl = document.getElementById('alert-message');
+      if (!msg) {
+        alert.classList.remove('active', 'success');
+        return;
+      }
+      alert.classList.toggle('success', isSuccess);
+      msgEl.textContent = msg;
+      alert.classList.add('active');
+    }
+
+    async function handleLoginSubmit(event) {
+      event.preventDefault();
+      showAlert('', false);
+
+      const username = document.getElementById('inp-username').value.trim();
+      const password = document.getElementById('inp-password').value;
+      const submitBtn = document.getElementById('btn-login-submit');
+      const spinner = document.getElementById('btn-spinner');
+      const btnText = document.getElementById('btn-text');
+      const btnArrow = document.getElementById('btn-arrow');
+
+      if (!username || !password) {
+        showAlert('Please enter both User ID and Password.');
+        return;
+      }
+
+      // Button loading state
+      submitBtn.disabled = true;
+      spinner.style.display = 'inline-block';
+      btnText.textContent = 'Authenticating...';
+      btnArrow.style.display = 'none';
+
+      try {
+        const response = await fetch('/api/admin/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+
+        const data = await response.json();
+
+        if (data && data.success) {
+          showAlert('✅ Access granted. Redirecting to VIP Suite...', true);
+          if (data.token) {
+            localStorage.setItem('mimori_admin_token', data.token);
+          }
+          btnText.textContent = 'Redirecting...';
+          setTimeout(() => {
+            window.location.href = '/admin';
+          }, 400);
+        } else {
+          showAlert(data.message || 'Invalid User ID or Password. Please try again.');
+          submitBtn.disabled = false;
+          spinner.style.display = 'none';
+          btnText.textContent = 'Sign In to Dashboard';
+          btnArrow.style.display = 'inline-block';
+          document.getElementById('inp-password').select();
+        }
+      } catch (err) {
+        showAlert('Network or server error. Please try again.');
+        submitBtn.disabled = false;
+        spinner.style.display = 'none';
+        btnText.textContent = 'Sign In to Dashboard';
+        btnArrow.style.display = 'inline-block';
+      }
+    }
+  </script>
+</body>
+</html>

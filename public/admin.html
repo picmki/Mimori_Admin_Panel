@@ -1529,6 +1529,411 @@
       transform: translateY(0);
       opacity: 1;
     }
+
+    /* ==========================================================================
+       RESPONSIVE & MOBILE DESIGN SYSTEM (FULL MOBILE & TABLET COMPATIBILITY)
+       ========================================================================== */
+
+    /* Tablet & Medium Screens (max-width: 1024px) */
+    @media (max-width: 1024px) {
+      .admin-main {
+        padding: 24px 20px 70px 20px;
+      }
+      .services-fleet-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 18px;
+      }
+      .editor-top-bar {
+        top: 80px;
+        padding: 12px 18px;
+      }
+    }
+
+    /* Small Tablets & Mobile Devices (max-width: 900px) */
+    @media (max-width: 900px) {
+      .admin-navbar {
+        height: auto;
+        min-height: auto;
+        padding: 12px 16px 10px 16px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        row-gap: 10px;
+        column-gap: 12px;
+        align-items: center;
+        position: sticky;
+        top: 0;
+      }
+
+      .nav-left {
+        display: contents;
+      }
+
+      .brand-logo-wrap {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
+      }
+
+      .brand-logo-img {
+        height: 32px;
+      }
+
+      .nav-right {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+      }
+
+      .btn-admin-logout {
+        padding: 6px 12px;
+        font-size: 0.78rem;
+      }
+
+      .nav-tabs-group {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        white-space: nowrap;
+        padding: 4px;
+        display: flex;
+        gap: 6px;
+      }
+
+      .nav-tabs-group::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-tab-btn {
+        flex-shrink: 0;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+      }
+
+      .module-header-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+      }
+
+      .module-actions-wrap {
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      .module-actions-wrap button,
+      .module-actions-wrap .btn-primary,
+      .module-actions-wrap .btn-secondary {
+        flex: 1;
+        min-width: 140px;
+        justify-content: center;
+      }
+    }
+
+    /* Handheld Smartphones (max-width: 640px) */
+    @media (max-width: 640px) {
+      .admin-main {
+        padding: 16px 12px 60px 12px;
+      }
+
+      .module-title-wrap h1 {
+        font-size: 1.35rem;
+        line-height: 1.25;
+      }
+
+      .module-title-wrap p {
+        font-size: 0.82rem;
+      }
+
+      .module-actions-wrap {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .module-actions-wrap button,
+      .module-actions-wrap .btn-primary,
+      .module-actions-wrap .btn-secondary {
+        width: 100%;
+      }
+
+      /* Fleet Catalog Filter & Grid */
+      .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        padding: 10px 12px;
+      }
+
+      .filter-pills {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        flex-wrap: nowrap;
+        padding-bottom: 2px;
+      }
+
+      .filter-pills::-webkit-scrollbar {
+        display: none;
+      }
+
+      .filter-pill-btn {
+        flex-shrink: 0;
+        padding: 6px 12px;
+        font-size: 0.78rem;
+      }
+
+      .search-input-box {
+        width: 100%;
+      }
+
+      .services-fleet-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .service-card-body {
+        padding: 16px;
+      }
+
+      .service-card-actions {
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .service-card-actions button,
+      .service-card-actions a {
+        flex: 1;
+        min-width: 100px;
+        justify-content: center;
+        text-align: center;
+      }
+
+      /* Visual Builder (Tab 2) */
+      .editor-top-bar {
+        position: relative;
+        top: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        padding: 12px 14px;
+        margin-bottom: 16px;
+      }
+
+      .editor-back-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        width: 100%;
+      }
+
+      .btn-editor-back {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .editor-save-group {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+
+      .editor-save-group .btn-primary,
+      .editor-save-group .btn-secondary {
+        width: 100%;
+        justify-content: center;
+        padding: 12px;
+      }
+
+      .save-timestamp-label {
+        text-align: center;
+      }
+
+      .builder-section-card {
+        margin-bottom: 16px;
+      }
+
+      .builder-section-header {
+        padding: 12px 14px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .builder-sec-heading {
+        font-size: 1rem;
+      }
+
+      .builder-section-body {
+        padding: 14px 12px;
+      }
+
+      .form-group-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+
+      .mosaic-slot-quad-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .mosaic-slot-primary .mosaic-slot-thumb-box {
+        height: 180px;
+      }
+
+      .mosaic-slot-thumb-box {
+        height: 130px;
+      }
+
+      .metrics-builder-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .compare-builder-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .compare-side-thumb {
+        height: 150px;
+      }
+
+      .journey-builder-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .brochure-builder-split {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .brochure-cover-thumb {
+        height: 190px;
+      }
+
+      .packages-builder-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .specs-table-editor {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+      }
+
+      .specs-table-editor table {
+        min-width: 480px;
+      }
+
+      /* Menu & Hierarchy (Tab 3) */
+      .categories-admin-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .cat-admin-card {
+        padding: 12px;
+        flex-wrap: wrap;
+      }
+
+      .cat-admin-actions {
+        flex-direction: row;
+        width: 100%;
+        margin-top: 6px;
+        border-top: 1px solid var(--border-subtle);
+        padding-top: 6px;
+      }
+
+      .btn-cat-action {
+        flex: 1;
+        justify-content: center;
+        padding: 6px;
+      }
+
+      .menu-organizer-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      /* Enquiry Ledger (Tab 4) */
+      .ledger-table-wrap {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .ledger-table {
+        min-width: 650px;
+      }
+
+      .ledger-table th,
+      .ledger-table td {
+        padding: 10px 12px;
+        font-size: 0.78rem;
+      }
+
+      /* Modals */
+      .modal-backdrop {
+        padding: 10px;
+        align-items: flex-end;
+      }
+
+      .modal-card {
+        max-width: 100%;
+        max-height: 92vh;
+        border-radius: var(--radius-md) var(--radius-md) 0 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .modal-header {
+        padding: 14px 16px;
+        flex-shrink: 0;
+      }
+
+      .modal-body {
+        padding: 16px 14px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        max-height: calc(92vh - 130px);
+      }
+
+      .modal-footer {
+        padding: 12px 14px;
+        flex-direction: column-reverse;
+        gap: 8px;
+        flex-shrink: 0;
+      }
+
+      .modal-footer .btn-primary,
+      .modal-footer .btn-secondary {
+        width: 100%;
+        justify-content: center;
+        padding: 11px;
+      }
+
+      /* Toast Notification */
+      .toast-pill {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        justify-content: center;
+        text-align: center;
+        font-size: 0.8rem;
+        padding: 10px 14px;
+      }
+    }
   </style>
 
 </head>

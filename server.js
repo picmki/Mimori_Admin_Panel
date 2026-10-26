@@ -821,7 +821,11 @@ const server = http.createServer(async (req, res) => {
   `);
 });
 
-server.listen(PORT, () => {
-  console.log(`✨ Mimori Digital Server running at http://localhost:${PORT}`);
-  console.log(`✨ Mimori Admin Panel running at http://localhost:${PORT}/admin`);
-});
+if (!process.env.VERCEL) {
+  server.listen(PORT, () => {
+    console.log(`✨ Mimori Digital Server running at http://localhost:${PORT}`);
+    console.log(`✨ Mimori Admin Panel running at http://localhost:${PORT}/admin`);
+  });
+}
+
+export default server;
